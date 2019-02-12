@@ -11,7 +11,7 @@ import SceneKit
 public class SCNText2D {
 
     public static func create(from string: String, withFontNamed fontNamed: String) -> SCNGeometry {
-        let jsonURL = Bundle.main.url(forResource: fontNamed, withExtension: "json")!
+        let jsonURL = Bundle(for: SCNText2D.self).url(forResource: fontNamed, withExtension: "json")!
         let jsonData = try! Data(contentsOf: jsonURL)
 
         let fontMetrics = try! JSONDecoder().decode(FontMetrics.self, from: jsonData)
@@ -24,9 +24,9 @@ public class SCNText2D {
         let geometry = buildGeometry(string, fontMetrics)
         geometry.materials.first?.program = shaderProgram
 
-        if let url = Bundle.main.url(forResource: fontNamed, withExtension: "png") {
+        if let url = Bundle(for: SCNText2D.self).url(forResource: fontNamed, withExtension: "png") {
             #if os(iOS)
-            let fontTexture = UIImage(contentsOf: url)
+            let fontTexture = UIImage(contentsOfFile: url.path)
             #elseif os(macOS)
             let fontTexture = NSImage(contentsOf: url)
             #endif
