@@ -40,10 +40,10 @@ public class SCNText2D {
     }
 
     private static func buildGeometry(_ string: String, _ fontMetrics: FontMetrics) -> SCNGeometry {
-        let fontSize: Float = 1.0
+        let fontSize: SCNFloat = 1.0
 
-        var cursorX: Float = 0.0
-        let cursorY: Float = 0.0
+        var cursorX: SCNFloat = 0.0
+        let cursorY: SCNFloat = 0.0
 
         var vertices = [SCNVector3]()
         vertices.reserveCapacity(string.count * 4)
@@ -54,11 +54,15 @@ public class SCNText2D {
         var indices = [UInt16]()
         indices.reserveCapacity(string.count * 6)
 
+        var minX: SCNFloat = SCNFloat.infinity
+        var minY: SCNFloat = SCNFloat.infinity
+        var maxX: SCNFloat = -SCNFloat.infinity
+        var maxY: SCNFloat = -SCNFloat.infinity
 
         for (i, char) in string.enumerated() {
 
             guard let glyph = fontMetrics.glyphData["\(char)"] else {
-                cursorX += fontMetrics.spaceAdvance
+                cursorX += SCNFloat(fontMetrics.spaceAdvance)
                 continue
             }
 
@@ -67,19 +71,24 @@ public class SCNText2D {
                 let kernChar = String(string[strIndex])
                 let kernVal = glyph.kernings[kernChar] ?? 0.0
                 if (kernVal != 0.0 && (kernVal < -0.001 || kernVal > 0.001)) {
-                    cursorX += kernVal * fontSize;
+                    cursorX += SCNFloat(kernVal) * fontSize;
                 }
             }
 
-            let glyphWidth    = glyph.bboxWidth * fontSize;
-            let glyphHeight   = glyph.bboxHeight * fontSize;
-            let glyphBearingX = glyph.bearingX * fontSize;
-            let glyphBearingY = glyph.bearingY * fontSize;
-            let glyphAdvanceX = glyph.advanceX * fontSize;
+            let glyphWidth    = SCNFloat(glyph.bboxWidth) * fontSize;
+            let glyphHeight   = SCNFloat(glyph.bboxHeight) * fontSize;
+            let glyphBearingX = SCNFloat(glyph.bearingX) * fontSize;
+            let glyphBearingY = SCNFloat(glyph.bearingY) * fontSize;
+            let glyphAdvanceX = SCNFloat(glyph.advanceX) * fontSize;
 
             let x = cursorX + glyphBearingX;
             let y = cursorY + glyphBearingY;
-            let z = Float(i) * 0.0001
+            let z = SCNFloat(i) * 0.0001
+
+            if x > maxX { maxX = x }
+            if x < minX { minX = x }
+            if y > maxY { maxY = y }
+            if y < minY { minY = y }
 
             vertices.append(SCNVector3(x, y - glyphHeight, z))
             vertices.append(SCNVector3(x + glyphWidth, y - glyphHeight, z))
@@ -100,6 +109,21 @@ public class SCNText2D {
             indices.append(curidx + 2) // second triangle
 
             cursorX += glyphAdvanceX
+        }
+
+        // Center align the vertices
+        let width = maxX - minX
+        let height = maxY - minY
+
+        vertices = vertices.map {
+            (vertex: SCNVector3) in
+
+            var vertex = vertex
+
+            vertex.x -= width / 2
+            vertex.y -= height / 2
+
+            return vertex
         }
 
         let element = SCNGeometryElement(indices: indices, primitiveType: .triangles)
