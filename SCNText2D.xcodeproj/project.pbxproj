@@ -12,11 +12,14 @@
 		4B112A5822128C1B0067D10F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A5622128C1B0067D10F /* Main.storyboard */; };
 		4B112A5A22128C1C0067D10F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A5922128C1C0067D10F /* Assets.xcassets */; };
 		4B112A5D22128C1C0067D10F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A5B22128C1C0067D10F /* LaunchScreen.storyboard */; };
-		4B112A6922128DC10067D10F /* SCNText2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E986220FDA7B002E8328 /* SCNText2D.framework */; };
 		4B112A6B22128E4F0067D10F /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A47221280BF0067D10F /* OpenSans-Regular.json */; };
 		4B112A6D22128E530067D10F /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A47221280BF0067D10F /* OpenSans-Regular.json */; };
 		4B112A6E22128F660067D10F /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A46221280BE0067D10F /* OpenSans-Regular.png */; };
 		4B112A6F22128F670067D10F /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A46221280BE0067D10F /* OpenSans-Regular.png */; };
+		4B334E1B221292680091F760 /* SCNText2D.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E986220FDA7B002E8328 /* SCNText2D.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4B528F70221313EA00B52997 /* SCNText2D-Shaders.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 4B528F69221313C200B52997 /* SCNText2D-Shaders.metallib */; };
+		4B528F7A2213141000B52997 /* SCNText2D-Shaders.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 4B528F732213140700B52997 /* SCNText2D-Shaders.metallib */; };
+		4B528F7C2213144E00B52997 /* SDFText.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4B528F7B2213144E00B52997 /* SDFText.metal */; };
 		4BF7E990220FDA7C002E8328 /* SCNText2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E986220FDA7B002E8328 /* SCNText2D.framework */; };
 		4BF7E995220FDA7C002E8328 /* SCNText2D_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF7E994220FDA7C002E8328 /* SCNText2D_iOSTests.swift */; };
 		4BF7E997220FDA7C002E8328 /* SCNText2D_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BF7E989220FDA7B002E8328 /* SCNText2D_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,7 +37,6 @@
 		4BF7E9D1220FE2DA002E8328 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BF7E9D0220FE2DA002E8328 /* Assets.xcassets */; };
 		4BF7E9D4220FE2DA002E8328 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF7E9D2220FE2DA002E8328 /* Main.storyboard */; };
 		4BF7E9E2220FE9D6002E8328 /* SCNText2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E9A3220FDAF8002E8328 /* SCNText2D.framework */; };
-		4BF7E9E6220FECA5002E8328 /* SDFText.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4BF7E9E3220FEAA0002E8328 /* SDFText.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4BF7E985220FDA7B002E8328;
 			remoteInfo = "SCNText2D-iOS";
+		};
+		4B528F7F2213154800B52997 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BF7E97B220FDA1E002E8328 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B528F722213140700B52997;
+			remoteInfo = "SCNText2D-Shaders-macOS";
+		};
+		4B528F812213155200B52997 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BF7E97B220FDA1E002E8328 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B528F68221313C200B52997;
+			remoteInfo = "SCNText2D-Shaders-iOS";
 		};
 		4BF7E991220FDA7C002E8328 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -68,6 +84,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4B334E1C221292690091F760 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4B334E1B221292680091F760 /* SCNText2D.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4B112A46221280BE0067D10F /* OpenSans-Regular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OpenSans-Regular.png"; sourceTree = "<group>"; };
 		4B112A47221280BF0067D10F /* OpenSans-Regular.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "OpenSans-Regular.json"; sourceTree = "<group>"; };
@@ -78,6 +108,9 @@
 		4B112A5922128C1C0067D10F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B112A5C22128C1C0067D10F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B112A5E22128C1C0067D10F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B528F69221313C200B52997 /* SCNText2D-Shaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = "SCNText2D-Shaders.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B528F732213140700B52997 /* SCNText2D-Shaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = "SCNText2D-Shaders.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B528F7B2213144E00B52997 /* SDFText.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SDFText.metal; sourceTree = "<group>"; };
 		4BF7E986220FDA7B002E8328 /* SCNText2D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SCNText2D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF7E989220FDA7B002E8328 /* SCNText2D_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCNText2D_iOS.h; sourceTree = "<group>"; };
 		4BF7E98A220FDA7B002E8328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,7 +141,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B112A6922128DC10067D10F /* SCNText2D.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +207,22 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		4B528F6A221313C200B52997 /* SCNText2D-Shaders-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				4BF7E9E3220FEAA0002E8328 /* SDFText.metal */,
+			);
+			path = "SCNText2D-Shaders-iOS";
+			sourceTree = "<group>";
+		};
+		4B528F742213140700B52997 /* SCNText2D-Shaders-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				4B528F7B2213144E00B52997 /* SDFText.metal */,
+			);
+			path = "SCNText2D-Shaders-macOS";
+			sourceTree = "<group>";
+		};
 		4BF7E97A220FDA1E002E8328 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +233,8 @@
 				4BF7E9AF220FDAF8002E8328 /* SCNText2D-macOSTests */,
 				4BF7E9C9220FE2D8002E8328 /* SCNText2D-macOSTestApp */,
 				4B112A4F22128C1B0067D10F /* SCNText2D-iOSTestApp */,
+				4B528F6A221313C200B52997 /* SCNText2D-Shaders-iOS */,
+				4B528F742213140700B52997 /* SCNText2D-Shaders-macOS */,
 				4BF7E987220FDA7B002E8328 /* Products */,
 				4BF7E9E1220FE9D6002E8328 /* Frameworks */,
 			);
@@ -199,6 +249,8 @@
 				4BF7E9AB220FDAF8002E8328 /* SCNText2D-macOSTests.xctest */,
 				4BF7E9C8220FE2D8002E8328 /* SCNText2D-macOSTestApp.app */,
 				4B112A4E22128C1B0067D10F /* SCNText2D-iOSTestApp.app */,
+				4B528F69221313C200B52997 /* SCNText2D-Shaders.metallib */,
+				4B528F732213140700B52997 /* SCNText2D-Shaders.metallib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -246,7 +298,6 @@
 				4BF7E9BB220FDBA3002E8328 /* FontMetrics.swift */,
 				4BF7E9BE220FDBED002E8328 /* GlyphData.swift */,
 				4BF7E9C1220FDCAF002E8328 /* SCNText2D.swift */,
-				4BF7E9E3220FEAA0002E8328 /* SDFText.metal */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -300,6 +351,7 @@
 				4B112A4A22128C1B0067D10F /* Sources */,
 				4B112A4B22128C1B0067D10F /* Frameworks */,
 				4B112A4C22128C1B0067D10F /* Resources */,
+				4B334E1C221292690091F760 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,6 +362,36 @@
 			productName = "SCNText2D-iOSTestApp";
 			productReference = 4B112A4E22128C1B0067D10F /* SCNText2D-iOSTestApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		4B528F68221313C200B52997 /* SCNText2D-Shaders-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B528F6D221313C200B52997 /* Build configuration list for PBXNativeTarget "SCNText2D-Shaders-iOS" */;
+			buildPhases = (
+				4B528F67221313C200B52997 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SCNText2D-Shaders-iOS";
+			productName = "SCNText2D-Shaders-iOS";
+			productReference = 4B528F69221313C200B52997 /* SCNText2D-Shaders.metallib */;
+			productType = "com.apple.product-type.metal-library";
+		};
+		4B528F722213140700B52997 /* SCNText2D-Shaders-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B528F772213140700B52997 /* Build configuration list for PBXNativeTarget "SCNText2D-Shaders-macOS" */;
+			buildPhases = (
+				4B528F712213140700B52997 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SCNText2D-Shaders-macOS";
+			productName = "SCNText2D-Shaders-macOS";
+			productReference = 4B528F732213140700B52997 /* SCNText2D-Shaders.metallib */;
+			productType = "com.apple.product-type.metal-library";
 		};
 		4BF7E985220FDA7B002E8328 /* SCNText2D-iOS */ = {
 			isa = PBXNativeTarget;
@@ -323,6 +405,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4B528F822213155200B52997 /* PBXTargetDependency */,
 			);
 			name = "SCNText2D-iOS";
 			productName = "SCNText2D-iOS";
@@ -359,6 +442,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4B528F802213154800B52997 /* PBXTargetDependency */,
 			);
 			name = "SCNText2D-macOS";
 			productName = "SCNText2D-macOS";
@@ -413,6 +497,12 @@
 					4B112A4D22128C1B0067D10F = {
 						CreatedOnToolsVersion = 10.1;
 					};
+					4B528F68221313C200B52997 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					4B528F722213140700B52997 = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					4BF7E985220FDA7B002E8328 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
@@ -451,6 +541,8 @@
 				4BF7E9AA220FDAF8002E8328 /* SCNText2D-macOSTests */,
 				4BF7E9C7220FE2D8002E8328 /* SCNText2D-macOSTestApp */,
 				4B112A4D22128C1B0067D10F /* SCNText2D-iOSTestApp */,
+				4B528F68221313C200B52997 /* SCNText2D-Shaders-iOS */,
+				4B528F722213140700B52997 /* SCNText2D-Shaders-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -472,6 +564,7 @@
 			files = (
 				4B112A6D22128E530067D10F /* OpenSans-Regular.json in Resources */,
 				4B112A6E22128F660067D10F /* OpenSans-Regular.png in Resources */,
+				4B528F70221313EA00B52997 /* SCNText2D-Shaders.metallib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +581,7 @@
 			files = (
 				4B112A6B22128E4F0067D10F /* OpenSans-Regular.json in Resources */,
 				4B112A6F22128F670067D10F /* OpenSans-Regular.png in Resources */,
+				4B528F7A2213141000B52997 /* SCNText2D-Shaders.metallib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +610,21 @@
 			files = (
 				4B112A5522128C1B0067D10F /* GameViewController.swift in Sources */,
 				4B112A5122128C1B0067D10F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B528F67221313C200B52997 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B528F712213140700B52997 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B528F7C2213144E00B52997 /* SDFText.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,7 +669,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BF7E9CD220FE2D9002E8328 /* GameViewController.swift in Sources */,
-				4BF7E9E6220FECA5002E8328 /* SDFText.metal in Sources */,
 				4BF7E9CB220FE2D9002E8328 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,6 +680,16 @@
 			isa = PBXTargetDependency;
 			target = 4BF7E985220FDA7B002E8328 /* SCNText2D-iOS */;
 			targetProxy = 4B112A6222128C2D0067D10F /* PBXContainerItemProxy */;
+		};
+		4B528F802213154800B52997 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B528F722213140700B52997 /* SCNText2D-Shaders-macOS */;
+			targetProxy = 4B528F7F2213154800B52997 /* PBXContainerItemProxy */;
+		};
+		4B528F822213155200B52997 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B528F68221313C200B52997 /* SCNText2D-Shaders-iOS */;
+			targetProxy = 4B528F812213155200B52997 /* PBXContainerItemProxy */;
 		};
 		4BF7E992220FDA7C002E8328 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -621,6 +739,7 @@
 		4B112A5F22128C1C0067D10F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -694,6 +813,7 @@
 		4B112A6022128C1C0067D10F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -755,6 +875,64 @@
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4B528F6E221313C200B52997 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5N645UMVDP;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "SCNText2D-Shaders";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4B528F6F221313C200B52997 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5N645UMVDP;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "SCNText2D-Shaders";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		4B528F782213140700B52997 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5N645UMVDP;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "SCNText2D-Shaders";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4B528F792213140700B52997 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5N645UMVDP;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "SCNText2D-Shaders";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1519,6 +1697,24 @@
 			buildConfigurations = (
 				4B112A5F22128C1C0067D10F /* Debug */,
 				4B112A6022128C1C0067D10F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B528F6D221313C200B52997 /* Build configuration list for PBXNativeTarget "SCNText2D-Shaders-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B528F6E221313C200B52997 /* Debug */,
+				4B528F6F221313C200B52997 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B528F772213140700B52997 /* Build configuration list for PBXNativeTarget "SCNText2D-Shaders-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B528F782213140700B52997 /* Debug */,
+				4B528F792213140700B52997 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

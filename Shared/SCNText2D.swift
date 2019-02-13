@@ -16,10 +16,19 @@ public class SCNText2D {
 
         let fontMetrics = try! JSONDecoder().decode(FontMetrics.self, from: jsonData)
 
+        let shaderLibraryUrl = Bundle(for: SCNText2D.self).url(forResource: "SCNText2D-Shaders", withExtension: "metallib")!
+
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError( "Failed to get the system's default Metal device." )
+        }
+
+        let shaderLibrary = try! device.makeLibrary(URL: shaderLibraryUrl)
+
         let shaderProgram = SCNProgram()
         shaderProgram.vertexFunctionName = "sdfTextVertex"
         shaderProgram.fragmentFunctionName = "sdfTextFragment"
         shaderProgram.isOpaque = false
+        shaderProgram.library = shaderLibrary
 
         let geometry = buildGeometry(string, fontMetrics)
         geometry.materials.first?.program = shaderProgram
