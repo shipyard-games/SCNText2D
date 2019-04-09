@@ -9,8 +9,14 @@ import Foundation
 import SceneKit
 
 public class SCNText2D {
+    
+    public enum TextAlignment {
+        case left
+        case right
+        case centered
+    }
 
-    public static func create(from string: String, withFontNamed fontNamed: String) -> SCNGeometry {
+    public static func create(from string: String, withFontNamed fontNamed: String, alignment: TextAlignment = .centered) -> SCNGeometry {
         let jsonURL = Bundle(for: SCNText2D.self).url(forResource: fontNamed, withExtension: "json")!
         let jsonData = try! Data(contentsOf: jsonURL)
 
@@ -30,7 +36,7 @@ public class SCNText2D {
         shaderProgram.isOpaque = false
         shaderProgram.library = shaderLibrary
 
-        let geometry = buildGeometry(string, fontMetrics)
+        let geometry = buildGeometry(string, fontMetrics, alignment)
         geometry.materials.first?.program = shaderProgram
 
         if let url = Bundle(for: SCNText2D.self).url(forResource: fontNamed, withExtension: "png") {
@@ -48,7 +54,7 @@ public class SCNText2D {
         return geometry
     }
 
-    private static func buildGeometry(_ string: String, _ fontMetrics: FontMetrics) -> SCNGeometry {
+    private static func buildGeometry(_ string: String, _ fontMetrics: FontMetrics, _ alignment: TextAlignment) -> SCNGeometry {
         let fontSize: SCNFloat = 1.0
 
         var cursorX: SCNFloat = 0.0
@@ -56,6 +62,8 @@ public class SCNText2D {
 
         var vertices = [SCNVector3]()
         vertices.reserveCapacity(string.count * 4)
+        
+        var lineVertices = [SCNVector3]()
 
         var texCoords = [CGPoint]()
         texCoords.reserveCapacity(vertices.count)
@@ -76,8 +84,13 @@ public class SCNText2D {
         for (i, char) in string.enumerated() {
             guard char != "\n" else {
                 cursorY -= SCNFloat(fontMetrics.height)
+                
+                alignLine(&lineVertices, withAlignment: alignment, lineWidth: cursorX)
+                vertices.append(contentsOf: lineVertices)
+                
                 cursorX = 0
                 newlineCount += 1
+                lineVertices = []
                 continue
             }
             
@@ -115,10 +128,10 @@ public class SCNText2D {
             let v3 = SCNVector3(x, y, z)
             let v4 = SCNVector3(x + glyphWidth, y, z)
             
-            vertices.append(v1)
-            vertices.append(v2)
-            vertices.append(v3)
-            vertices.append(v4)
+            lineVertices.append(v1)
+            lineVertices.append(v2)
+            lineVertices.append(v3)
+            lineVertices.append(v4)
 
             texCoords.append(CGPoint(x: CGFloat(glyph.s0), y: 1.0 - CGFloat(glyph.t1)))
             texCoords.append(CGPoint(x: CGFloat(glyph.s1), y: 1.0 - CGFloat(glyph.t1)))
@@ -135,19 +148,28 @@ public class SCNText2D {
 
             cursorX += glyphAdvanceX
         }
+        
+        // Add the last line too.
+        alignLine(&lineVertices, withAlignment: alignment, lineWidth: cursorX)
+        vertices.append(contentsOf: lineVertices)
 
-        // Center align the vertices
-        let width = maxX - minX
+        // Center align the vertices vertically
         let height = maxY - minY
+        let width = maxX - minX
 
         vertices = vertices.map {
             (vertex: SCNVector3) in
-
             var vertex = vertex
-
-            vertex.x -= width / 2
             vertex.y -= height / 2
-
+            
+            switch (alignment) {
+            case .centered:
+                break // already aligned per line
+            case .left:
+                vertex.x -= width / 2
+            case .right:
+                vertex.x += width / 2
+            }
             return vertex
         }
 
@@ -158,6 +180,29 @@ public class SCNText2D {
         let geometry = SCNGeometry(sources: [vertexSource, uvSource], elements: [element])
 
         return geometry
+    }
+    
+    private static func alignLine(_ lineVertices: inout [SCNVector3], withAlignment alignment: TextAlignment, lineWidth: SCNFloat) {
+        switch (alignment) {
+        case .centered:
+            lineVertices = lineVertices.map {
+                (vertex: SCNVector3) -> SCNVector3 in
+                var vertex = vertex
+                vertex.x -= lineWidth / 2
+                return vertex
+            }
+        case .left:
+            // we keep the lines first glyph starting at zero and center the geometry once it is complete
+            break
+        case .right:
+            // we move the last glyphs position to zero so we can do right alignment once the geometry is complete
+            lineVertices = lineVertices.map {
+                (vertex: SCNVector3) -> SCNVector3 in
+                var vertex = vertex
+                vertex.x -= lineWidth
+                return vertex
+            }
+        }
     }
 }
 
