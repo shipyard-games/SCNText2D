@@ -55,12 +55,46 @@ class GameViewController: UIViewController {
         // configure the view
         scnView.backgroundColor = UIColor.black
 
-        let textGeometry = SCNText2D.create(from: "This is a test of SDF rendered text.", withFontNamed: "OpenSans-Regular")
+        let text =
+        """
+        It is a period of civil war.
+        Rebel spaceships, striking
+        from a hidden base, have won
+        their first victory against
+        the evil Galactic Empire.
 
+        During the battle, Rebel
+        spies managed to steal secret
+        plans to the Empire's
+        ultimate weapon, the DEATH
+        STAR, an armored space
+        station with enough power to
+        destroy an entire planet.
+
+        Pursued by the Empire's
+        sinister agents, Princess
+        Leia races home aboard her
+        starship, custodian of the
+        stolen plans that can save
+        her people and restore
+        freedom to the galaxy.....
+        """
+        
+        let textGeometry = SCNText2D.create(from: text, withFontNamed: "Roboto-Medium")
+        
+        let node = SCNNode()
+        node.eulerAngles.x += -35.0 * (180.0 / .pi)
+        
+        
         let textNode = SCNNode()
         textNode.geometry = textGeometry
-
-        scene.rootNode.addChildNode(textNode)
+        
+        let moveAction = SCNAction.move(by: SCNVector3(x:0, y: 200.0, z: 0.0), duration: 240.0)
+        textNode.runAction(moveAction)
+        
+        node.addChildNode(textNode)
+        
+        scene.rootNode.addChildNode(node)
     }
     
     override var shouldAutorotate: Bool {
