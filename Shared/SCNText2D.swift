@@ -52,7 +52,7 @@ public class SCNText2D {
         let fontSize: SCNFloat = 1.0
 
         var cursorX: SCNFloat = 0.0
-        let cursorY: SCNFloat = 0.0
+        var cursorY: SCNFloat = 0.0
 
         var vertices = [SCNVector3]()
         vertices.reserveCapacity(string.count * 4)
@@ -68,8 +68,19 @@ public class SCNText2D {
         var maxX: SCNFloat = -SCNFloat.infinity
         var maxY: SCNFloat = -SCNFloat.infinity
 
+        // We keep track of the number of newlines, since they don't generate any
+        // vertices like all other glyphs do. We use this count to adjust the indices
+        // of the test geometry.
+        var newlineCount = 0
+        
         for (i, char) in string.enumerated() {
-
+            guard char != "\n" else {
+                cursorY -= SCNFloat(fontMetrics.height)
+                cursorX = 0
+                newlineCount += 1
+                continue
+            }
+            
             guard let glyph = fontMetrics.glyphData["\(char)"] else {
                 cursorX += SCNFloat(fontMetrics.spaceAdvance)
                 continue
@@ -98,18 +109,23 @@ public class SCNText2D {
             if x < minX { minX = x }
             if y > maxY { maxY = y }
             if y < minY { minY = y }
-
-            vertices.append(SCNVector3(x, y - glyphHeight, z))
-            vertices.append(SCNVector3(x + glyphWidth, y - glyphHeight, z))
-            vertices.append(SCNVector3(x, y, z))
-            vertices.append(SCNVector3(x + glyphWidth, y, z))
+            
+            let v1 = SCNVector3(x, y - glyphHeight, z)
+            let v2 = SCNVector3(x + glyphWidth, y - glyphHeight, z)
+            let v3 = SCNVector3(x, y, z)
+            let v4 = SCNVector3(x + glyphWidth, y, z)
+            
+            vertices.append(v1)
+            vertices.append(v2)
+            vertices.append(v3)
+            vertices.append(v4)
 
             texCoords.append(CGPoint(x: CGFloat(glyph.s0), y: 1.0 - CGFloat(glyph.t1)))
             texCoords.append(CGPoint(x: CGFloat(glyph.s1), y: 1.0 - CGFloat(glyph.t1)))
             texCoords.append(CGPoint(x: CGFloat(glyph.s0), y: 1.0 - CGFloat(glyph.t0)))
             texCoords.append(CGPoint(x: CGFloat(glyph.s1), y: 1.0 - CGFloat(glyph.t0)))
 
-            let curidx: UInt16 = UInt16(i) * 4
+            let curidx: UInt16 = UInt16(i - newlineCount) * 4
             indices.append(curidx + 0)
             indices.append(curidx + 1)
             indices.append(curidx + 2) // first triangle
