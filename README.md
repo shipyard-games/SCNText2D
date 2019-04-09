@@ -10,6 +10,7 @@ Currently this framework uses a pre-generated font texture atlas to render 2D te
 
 - [ ] Take out the font files from the framework and write instructions on including them manually. They grow the binary size of the framework.
 - [ ] Implement text alignment. Currently text is always left aligned.
+- [ ] Add support for tvOS.
 - [ ] Figure out what to implement for the v1.0.
 
 ## Installing using Carthage
