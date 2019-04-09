@@ -21,11 +21,12 @@
 		4B219510225C80D600A2CB84 /* Roboto-Medium.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B219508225C80C200A2CB84 /* Roboto-Medium.json */; };
 		4B219511225C80D600A2CB84 /* Roboto-Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B219509225C80C200A2CB84 /* Roboto-Medium.png */; };
 		4B219512225C85E200A2CB84 /* SDFText.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4BF7E9E3220FEAA0002E8328 /* SDFText.metal */; };
-		4B21951A225C986C00A2CB84 /* SCNText2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B219519225C986C00A2CB84 /* SCNText2D.framework */; };
-		4B21951C225C99A500A2CB84 /* SCNText2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B21951B225C99A500A2CB84 /* SCNText2D.framework */; };
 		4B528F70221313EA00B52997 /* SCNText2D-Shaders.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 4B528F69221313C200B52997 /* SCNText2D-Shaders.metallib */; };
 		4B528F7A2213141000B52997 /* SCNText2D-Shaders.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 4B528F732213140700B52997 /* SCNText2D-Shaders.metallib */; };
 		4B528F7C2213144E00B52997 /* SDFText.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4B528F7B2213144E00B52997 /* SDFText.metal */; };
+		4BE7BB56225CE5980037CC87 /* SCNText2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E986220FDA7B002E8328 /* SCNText2D.framework */; };
+		4BE7BB58225CE5BA0037CC87 /* SCNText2D.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E986220FDA7B002E8328 /* SCNText2D.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4BE7BB5C225CE64B0037CC87 /* SCNText2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E9A3220FDAF8002E8328 /* SCNText2D.framework */; };
 		4BF7E990220FDA7C002E8328 /* SCNText2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E986220FDA7B002E8328 /* SCNText2D.framework */; };
 		4BF7E995220FDA7C002E8328 /* SCNText2D_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF7E994220FDA7C002E8328 /* SCNText2D_iOSTests.swift */; };
 		4BF7E997220FDA7C002E8328 /* SCNText2D_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BF7E989220FDA7B002E8328 /* SCNText2D_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,6 +60,20 @@
 			remoteGlobalIDString = 4B528F68221313C200B52997;
 			remoteInfo = "SCNText2D-Shaders-iOS";
 		};
+		4BE7BB54225CE5700037CC87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BF7E97B220FDA1E002E8328 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BF7E985220FDA7B002E8328;
+			remoteInfo = "SCNText2D-iOS";
+		};
+		4BE7BB5A225CE6430037CC87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BF7E97B220FDA1E002E8328 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BF7E9A2220FDAF8002E8328;
+			remoteInfo = "SCNText2D-macOS";
+		};
 		4BF7E991220FDA7C002E8328 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4BF7E97B220FDA1E002E8328 /* Project object */;
@@ -86,6 +101,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4BE7BB59225CE5BA0037CC87 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4BE7BB58225CE5BA0037CC87 /* SCNText2D.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -100,8 +126,6 @@
 		4B112A5E22128C1C0067D10F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B219508225C80C200A2CB84 /* Roboto-Medium.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Roboto-Medium.json"; sourceTree = "<group>"; };
 		4B219509225C80C200A2CB84 /* Roboto-Medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Roboto-Medium.png"; sourceTree = "<group>"; };
-		4B219519225C986C00A2CB84 /* SCNText2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCNText2D.framework; path = Carthage/Build/iOS/SCNText2D.framework; sourceTree = "<group>"; };
-		4B21951B225C99A500A2CB84 /* SCNText2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCNText2D.framework; path = Carthage/Build/Mac/SCNText2D.framework; sourceTree = "<group>"; };
 		4B21951D225C99EC00A2CB84 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4B21951E225C99F600A2CB84 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4B528F69221313C200B52997 /* SCNText2D-Shaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = "SCNText2D-Shaders.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B21951A225C986C00A2CB84 /* SCNText2D.framework in Frameworks */,
+				4BE7BB56225CE5980037CC87 /* SCNText2D.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B21951C225C99A500A2CB84 /* SCNText2D.framework in Frameworks */,
+				4BE7BB5C225CE64B0037CC87 /* SCNText2D.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,8 +343,6 @@
 		4BF7E9E1220FE9D6002E8328 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4B21951B225C99A500A2CB84 /* SCNText2D.framework */,
-				4B219519225C986C00A2CB84 /* SCNText2D.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -354,11 +376,12 @@
 				4B112A4A22128C1B0067D10F /* Sources */,
 				4B112A4B22128C1B0067D10F /* Frameworks */,
 				4B112A4C22128C1B0067D10F /* Resources */,
-				4B219518225C980500A2CB84 /* Carthage */,
+				4BE7BB59225CE5BA0037CC87 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4BE7BB55225CE5700037CC87 /* PBXTargetDependency */,
 			);
 			name = "SCNText2D-iOSTestApp";
 			productName = "SCNText2D-iOSTestApp";
@@ -481,6 +504,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4BE7BB5B225CE6430037CC87 /* PBXTargetDependency */,
 			);
 			name = "SCNText2D-macOSTestApp";
 			productName = "SCNText2D-macOSTestApp";
@@ -609,29 +633,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4B219518225C980500A2CB84 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SCNText2D.framework",
-			);
-			name = Carthage;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SCNText2D.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		4B112A4A22128C1B0067D10F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -716,6 +717,16 @@
 			target = 4B528F68221313C200B52997 /* SCNText2D-Shaders-iOS */;
 			targetProxy = 4B528F812213155200B52997 /* PBXContainerItemProxy */;
 		};
+		4BE7BB55225CE5700037CC87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BF7E985220FDA7B002E8328 /* SCNText2D-iOS */;
+			targetProxy = 4BE7BB54225CE5700037CC87 /* PBXContainerItemProxy */;
+		};
+		4BE7BB5B225CE6430037CC87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BF7E9A2220FDAF8002E8328 /* SCNText2D-macOS */;
+			targetProxy = 4BE7BB5A225CE6430037CC87 /* PBXContainerItemProxy */;
+		};
 		4BF7E992220FDA7C002E8328 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4BF7E985220FDA7B002E8328 /* SCNText2D-iOS */;
@@ -759,6 +770,7 @@
 		4B112A5F22128C1C0067D10F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -796,10 +808,7 @@
 				DEVELOPMENT_TEAM = 5N645UMVDP;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -837,6 +846,7 @@
 		4B112A6022128C1C0067D10F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -874,10 +884,7 @@
 				DEVELOPMENT_TEAM = 5N645UMVDP;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1071,7 +1078,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1154,7 +1161,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1683,10 +1690,7 @@
 				DEVELOPMENT_TEAM = 5N645UMVDP;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1761,10 +1765,7 @@
 				DEVELOPMENT_TEAM = 5N645UMVDP;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
