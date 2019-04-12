@@ -50,8 +50,7 @@ vertex VertexOutput distanceShadowVertex(VertexIn vertexIn [[stage_in]],
 
 // Fragment shader
 fragment float4 distanceShadowFrag(VertexOutput fragmentIn [[stage_in]],
-                                   texture2d<float> diffuseTexture [[texture(0)]],
-                                   device float *time [[ buffer(0) ]],
+                                   texture2d<float> diffuseTexture [[texture(0)]],                                   
                                    device float *smoothing [[ buffer(1) ]],
                                    device float4 *textColor  [[ buffer(2) ]],
                                    device float4 *borderColor  [[ buffer(3) ]]
