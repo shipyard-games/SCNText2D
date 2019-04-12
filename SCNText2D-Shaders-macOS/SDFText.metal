@@ -50,21 +50,21 @@ vertex VertexOutput distanceShadowVertex(VertexIn vertexIn [[stage_in]],
 
 // Fragment shader
 fragment float4 distanceShadowFrag(VertexOutput fragmentIn [[stage_in]],
-                                   texture2d<float> diffuseTexture [[texture(0)]],                                   
+                                   texture2d<float> diffuseTexture [[texture(0)]],
                                    device float *smoothing [[ buffer(1) ]],
                                    device float4 *textColor  [[ buffer(2) ]],
                                    device float4 *borderColor  [[ buffer(3) ]]
                                    )
 {
-    const float textWidth = 0.3;
-    const float outlineWidth = 0.15;
-    const float shadowWidth = 0.15;
+    const float textWidth = 0.4;
+    const float outlineWidth = 0.05;
+    const float shadowWidth = 0.05;
     
     float iSmoothing = *smoothing;
     float4 iTextColor = *textColor;
     const float4 outlineColor = *borderColor;
     
-    const float2 shadowOffset = float2(0.00, 0.005);
+    const float2 shadowOffset = float2(0.00, 0.000);
     const float4 shadowColor = outlineColor;
     
     float4 distanceVec = diffuseTexture.sample(s, fragmentIn.texCoord);
