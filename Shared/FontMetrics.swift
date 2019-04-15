@@ -11,8 +11,6 @@ struct FontMetrics: Codable {
 
     enum CodingKeys: String, CodingKey {
         case ascender
-        case bitmapHeight = "bitmap_height"
-        case bitmapWidth = "bitmap_width"
         case descender
         case glyphData = "glyph_data"
         case height
@@ -23,8 +21,6 @@ struct FontMetrics: Codable {
     }
 
     var ascender: Float
-    var bitmapHeight: Int
-    var bitmapWidth: Int
     var descender: Float
     var glyphData: [String : GlyphData]
     var height: Float

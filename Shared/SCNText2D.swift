@@ -10,6 +10,8 @@ import SceneKit
 
 public class SCNText2D {
     
+    typealias AtlasData = Dictionary<String, Any>
+    
     public enum TextAlignment {
         case left
         case right
@@ -21,6 +23,9 @@ public class SCNText2D {
         let jsonData = try! Data(contentsOf: jsonURL)
 
         let fontMetrics = try! JSONDecoder().decode(FontMetrics.self, from: jsonData)
+        
+        let atlasDataURL = Bundle(for: SCNText2D.self).url(forResource: fontNamed, withExtension: "plist")!
+        let atlasData = NSDictionary(contentsOfFile: atlasDataURL.path) as! AtlasData
 
         let shaderLibraryUrl = Bundle(for: SCNText2D.self).url(forResource: "SCNText2D-Shaders", withExtension: "metallib")!
 
@@ -36,7 +41,7 @@ public class SCNText2D {
         shaderProgram.isOpaque = false
         shaderProgram.library = shaderLibrary
 
-        let geometry = buildGeometry(string, fontMetrics, alignment)
+        let geometry = buildGeometry(string, fontMetrics, atlasData, alignment)
         geometry.materials.first?.program = shaderProgram
 
         if let url = Bundle(for: SCNText2D.self).url(forResource: fontNamed, withExtension: "png") {
@@ -54,8 +59,13 @@ public class SCNText2D {
         return geometry
     }
 
-    private static func buildGeometry(_ string: String, _ fontMetrics: FontMetrics, _ alignment: TextAlignment) -> SCNGeometry {
+    private static func buildGeometry(_ string: String, _ fontMetrics: FontMetrics, _ atlasData: AtlasData, _ alignment: TextAlignment) -> SCNGeometry {
         let fontSize: SCNFloat = 1.0
+        
+        let atlasMeta = atlasData["meta"] as! Dictionary<String, Any>
+        
+        let textureWidth = (atlasMeta["width"] as! NSNumber).floatValue
+        let textureHeight = (atlasMeta["height"] as! NSNumber).floatValue
 
         var cursorX: SCNFloat = 0.0
         var cursorY: SCNFloat = 0.0
@@ -81,8 +91,8 @@ public class SCNText2D {
         // of the test geometry.
         var newlineCount = 0
         
-        for (i, char) in string.enumerated() {
-            guard char != "\n" else {
+        for (i, char) in string.unicodeScalars.enumerated() {
+            guard char != Unicode.Scalar("\n") else { // newline
                 cursorY -= SCNFloat(fontMetrics.height)
                 
                 alignLine(&lineVertices, withAlignment: alignment, lineWidth: cursorX)
@@ -97,6 +107,11 @@ public class SCNText2D {
             guard let glyph = fontMetrics.glyphData["\(char)"] else {
                 cursorX += SCNFloat(fontMetrics.spaceAdvance)
                 continue
+            }
+            
+            let uvKey = String(format: "0x%04X", char.value).lowercased()
+            guard let uvData = (atlasData["frames"] as! Dictionary<String, Dictionary<String, NSNumber>>)[uvKey] else {
+                fatalError("No UV-coordinates for character '\(char)'!")
             }
 
             if (i > 0) {
@@ -132,11 +147,18 @@ public class SCNText2D {
             lineVertices.append(v2)
             lineVertices.append(v3)
             lineVertices.append(v4)
-
-            texCoords.append(CGPoint(x: CGFloat(glyph.s0), y: 1.0 - CGFloat(glyph.t1)))
-            texCoords.append(CGPoint(x: CGFloat(glyph.s1), y: 1.0 - CGFloat(glyph.t1)))
-            texCoords.append(CGPoint(x: CGFloat(glyph.s0), y: 1.0 - CGFloat(glyph.t0)))
-            texCoords.append(CGPoint(x: CGFloat(glyph.s1), y: 1.0 - CGFloat(glyph.t0)))
+            
+            let w = uvData["w"]!.floatValue / textureWidth
+            let h = uvData["h"]!.floatValue / textureHeight
+            let s0 = uvData["x"]!.floatValue / textureWidth
+            let t0 = uvData["y"]!.floatValue / textureHeight
+            let s1 = s0 + w
+            let t1 = t0 + h
+            
+            texCoords.append(CGPoint(x: CGFloat(s0), y: CGFloat(t1)))
+            texCoords.append(CGPoint(x: CGFloat(s1), y: CGFloat(t1)))
+            texCoords.append(CGPoint(x: CGFloat(s0), y: CGFloat(t0)))
+            texCoords.append(CGPoint(x: CGFloat(s1), y: CGFloat(t0)))
 
             let curidx: UInt16 = UInt16(i - newlineCount) * 4
             indices.append(curidx + 0)
