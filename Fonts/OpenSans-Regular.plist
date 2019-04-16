@@ -1,0 +1,3241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+===================================================================
+
+Sprite sheet file created for UIKit using TexturePacker
+https://www.codeandweb.com/texturepacker
+
+===================================================================
+$TexturePacker:SmartUpdate:8bdf0d130bb46745ad5abe7b0174caba:3ea853660edc71b68bfc6369abfb8b3c:cf25f6d72a538d95b23859210dc0c4be$
+-->
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+
+                        <key>0x00c0</key>
+			<dict>
+				<key>x</key><real>244</real>
+				<key>y</key><real>669</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x00c1</key>
+			<dict>
+				<key>x</key><real>429</real>
+				<key>y</key><real>223</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x00c2</key>
+			<dict>
+				<key>x</key><real>509</real>
+				<key>y</key><real>343</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x00c3</key>
+			<dict>
+				<key>x</key><real>324</real>
+				<key>y</key><real>673</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x00c4</key>
+			<dict>
+				<key>x</key><real>838</real>
+				<key>y</key><real>217</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x00c5</key>
+			<dict>
+				<key>x</key><real>990</real>
+				<key>y</key><real>215</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>102</real>
+				
+				
+			</dict>
+                        <key>0x00c6</key>
+			<dict>
+				<key>x</key><real>1307</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>96</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x00c7</key>
+			<dict>
+				<key>x</key><real>357</real>
+				<key>y</key><real>224</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>110</real>
+				
+				
+			</dict>
+                        <key>0x00c8</key>
+			<dict>
+				<key>x</key><real>404</real>
+				<key>y</key><real>673</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x00c9</key>
+			<dict>
+				<key>x</key><real>457</real>
+				<key>y</key><real>564</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x00ca</key>
+			<dict>
+				<key>x</key><real>542</real>
+				<key>y</key><real>673</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x00cb</key>
+			<dict>
+				<key>x</key><real>821</real>
+				<key>y</key><real>773</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x00cc</key>
+			<dict>
+				<key>x</key><real>1366</real>
+				<key>y</key><real>89</real>
+				<key>w</key><real>36</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x00cd</key>
+			<dict>
+				<key>x</key><real>1218</real>
+				<key>y</key><real>650</real>
+				<key>w</key><real>36</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x00ce</key>
+			<dict>
+				<key>x</key><real>301</real>
+				<key>y</key><real>990</real>
+				<key>w</key><real>49</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x00cf</key>
+			<dict>
+				<key>x</key><real>535</real>
+				<key>y</key><real>970</real>
+				<key>w</key><real>44</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x00d0</key>
+			<dict>
+				<key>x</key><real>403</real>
+				<key>y</key><real>1096</real>
+				<key>w</key><real>79</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x00d1</key>
+			<dict>
+				<key>x</key><real>917</real>
+				<key>y</key><real>111</real>
+				<key>w</key><real>71</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x00d2</key>
+			<dict>
+				<key>x</key><real>274</real>
+				<key>y</key><real>226</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x00d3</key>
+			<dict>
+				<key>x</key><real>161</real>
+				<key>y</key><real>450</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x00d4</key>
+			<dict>
+				<key>x</key><real>244</real>
+				<key>y</key><real>336</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x00d5</key>
+			<dict>
+				<key>x</key><real>395</real>
+				<key>y</key><real>116</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>105</real>
+				
+				
+			</dict>
+                        <key>0x00d6</key>
+			<dict>
+				<key>x</key><real>506</real>
+				<key>y</key><real>452</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x00d7</key>
+			<dict>
+				<key>x</key><real>1074</real>
+				<key>y</key><real>1118</real>
+				<key>w</key><real>60</real>
+				<key>h</key><real>60</real>
+				
+				
+			</dict>
+                        <key>0x00d8</key>
+			<dict>
+				<key>x</key><real>397</real>
+				<key>y</key><real>782</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00d9</key>
+			<dict>
+				<key>x</key><real>600</real>
+				<key>y</key><real>673</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x00da</key>
+			<dict>
+				<key>x</key><real>846</real>
+				<key>y</key><real>322</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x00db</key>
+			<dict>
+				<key>x</key><real>722</real>
+				<key>y</key><real>560</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x00dc</key>
+			<dict>
+				<key>x</key><real>1070</real>
+				<key>y</key><real>220</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x00dd</key>
+			<dict>
+				<key>x</key><real>921</real>
+				<key>y</key><real>432</real>
+				<key>w</key><real>71</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x00de</key>
+			<dict>
+				<key>x</key><real>1478</real>
+				<key>y</key><real>942</real>
+				<key>w</key><real>62</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x00df</key>
+			<dict>
+				<key>x</key><real>769</real>
+				<key>y</key><real>1055</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00e0</key>
+			<dict>
+				<key>x</key><real>1522</real>
+				<key>y</key><real>579</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00e1</key>
+			<dict>
+				<key>x</key><real>1565</real>
+				<key>y</key><real>374</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00e2</key>
+			<dict>
+				<key>x</key><real>1583</real>
+				<key>y</key><real>562</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00e3</key>
+			<dict>
+				<key>x</key><real>1926</real>
+				<key>y</key><real>445</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x00e4</key>
+			<dict>
+				<key>x</key><real>1946</real>
+				<key>y</key><real>354</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x00e5</key>
+			<dict>
+				<key>x</key><real>1612</real>
+				<key>y</key><real>182</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x00e6</key>
+			<dict>
+				<key>x</key><real>1754</real>
+				<key>y</key><real>94</real>
+				<key>w</key><real>91</real>
+				<key>h</key><real>71</real>
+				
+				
+			</dict>
+                        <key>0x00e7</key>
+			<dict>
+				<key>x</key><real>712</real>
+				<key>y</key><real>1064</real>
+				<key>w</key><real>55</real>
+				<key>h</key><real>93</real>
+				
+				
+			</dict>
+                        <key>0x00e8</key>
+			<dict>
+				<key>x</key><real>1082</real>
+				<key>y</key><real>848</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00e9</key>
+			<dict>
+				<key>x</key><real>1585</real>
+				<key>y</key><real>656</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00ea</key>
+			<dict>
+				<key>x</key><real>1616</real>
+				<key>y</key><real>468</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00eb</key>
+			<dict>
+				<key>x</key><real>1291</real>
+				<key>y</key><real>942</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x00ec</key>
+			<dict>
+				<key>x</key><real>903</real>
+				<key>y</key><real>1055</real>
+				<key>w</key><real>36</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x00ed</key>
+			<dict>
+				<key>x</key><real>2000</real>
+				<key>y</key><real>511</real>
+				<key>w</key><real>36</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x00ee</key>
+			<dict>
+				<key>x</key><real>1895</real>
+				<key>y</key><real>630</real>
+				<key>w</key><real>49</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x00ef</key>
+			<dict>
+				<key>x</key><real>1992</real>
+				<key>y</key><real>908</real>
+				<key>w</key><real>44</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x00f0</key>
+			<dict>
+				<key>x</key><real>836</real>
+				<key>y</key><real>1055</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00f1</key>
+			<dict>
+				<key>x</key><real>1899</real>
+				<key>y</key><real>909</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x00f2</key>
+			<dict>
+				<key>x</key><real>1549</real>
+				<key>y</key><real>468</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00f3</key>
+			<dict>
+				<key>x</key><real>1626</real>
+				<key>y</key><real>370</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00f4</key>
+			<dict>
+				<key>x</key><real>1644</real>
+				<key>y</key><real>562</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00f5</key>
+			<dict>
+				<key>x</key><real>1812</real>
+				<key>y</key><real>354</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x00f6</key>
+			<dict>
+				<key>x</key><real>1879</real>
+				<key>y</key><real>354</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x00f7</key>
+			<dict>
+				<key>x</key><real>1950</real>
+				<key>y</key><real>188</real>
+				<key>w</key><real>63</real>
+				<key>h</key><real>62</real>
+				
+				
+			</dict>
+                        <key>0x00f8</key>
+			<dict>
+				<key>x</key><real>1411</real>
+				<key>y</key><real>766</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>75</real>
+				
+				
+			</dict>
+                        <key>0x00f9</key>
+			<dict>
+				<key>x</key><real>1648</real>
+				<key>y</key><real>656</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00fa</key>
+			<dict>
+				<key>x</key><real>1693</real>
+				<key>y</key><real>370</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00fb</key>
+			<dict>
+				<key>x</key><real>1711</real>
+				<key>y</key><real>558</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x00fc</key>
+			<dict>
+				<key>x</key><real>1588</real>
+				<key>y</key><real>750</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x00fd</key>
+			<dict>
+				<key>x</key><real>441</real>
+				<key>y</key><real>332</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>114</real>
+				
+				
+			</dict>
+                        <key>0x00fe</key>
+			<dict>
+				<key>x</key><real>589</real>
+				<key>y</key><real>339</real>
+				<key>w</key><real>63</real>
+				<key>h</key><real>114</real>
+				
+				
+			</dict>
+                        <key>0x1e3e</key>
+			<dict>
+				<key>x</key><real>1024</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>86</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x1e3f</key>
+			<dict>
+				<key>x</key><real>1502</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>91</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x1e80</key>
+			<dict>
+				<key>x</key><real>1</real>
+				<key>y</key><real>110</real>
+				<key>w</key><real>104</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x1e81</key>
+			<dict>
+				<key>x</key><real>1687</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>90</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x1e82</key>
+			<dict>
+				<key>x</key><real>107</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>104</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x1e83</key>
+			<dict>
+				<key>x</key><real>1779</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>90</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x1e84</key>
+			<dict>
+				<key>x</key><real>1</real>
+				<key>y</key><real>219</real>
+				<key>w</key><real>104</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x1e85</key>
+			<dict>
+				<key>x</key><real>1871</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>90</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x1ea0</key>
+			<dict>
+				<key>x</key><real>990</real>
+				<key>y</key><real>110</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x1ea1</key>
+			<dict>
+				<key>x</key><real>1605</real>
+				<key>y</key><real>932</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x1ea2</key>
+			<dict>
+				<key>x</key><real>84</real>
+				<key>y</key><real>560</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>112</real>
+				
+				
+			</dict>
+                        <key>0x1ea3</key>
+			<dict>
+				<key>x</key><real>1436</real>
+				<key>y</key><real>385</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x1ea4</key>
+			<dict>
+				<key>x</key><real>164</real>
+				<key>y</key><real>560</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>111</real>
+				
+				
+			</dict>
+                        <key>0x1ea5</key>
+			<dict>
+				<key>x</key><real>1411</real>
+				<key>y</key><real>198</real>
+				<key>w</key><real>64</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x1ea6</key>
+			<dict>
+				<key>x</key><real>244</real>
+				<key>y</key><real>556</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>111</real>
+				
+				
+			</dict>
+                        <key>0x1ea7</key>
+			<dict>
+				<key>x</key><real>1764</real>
+				<key>y</key><real>255</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x1ea8</key>
+			<dict>
+				<key>x</key><real>190</real>
+				<key>y</key><real>111</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>117</real>
+				
+				
+			</dict>
+                        <key>0x1ea9</key>
+			<dict>
+				<key>x</key><real>943</real>
+				<key>y</key><real>866</real>
+				<key>w</key><real>62</real>
+				<key>h</key><real>102</real>
+				
+				
+			</dict>
+                        <key>0x1eaa</key>
+			<dict>
+				<key>x</key><real>1</real>
+				<key>y</key><real>815</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>118</real>
+				
+				
+			</dict>
+                        <key>0x1eab</key>
+			<dict>
+				<key>x</key><real>942</real>
+				<key>y</key><real>761</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x1eac</key>
+			<dict>
+				<key>x</key><real>1</real>
+				<key>y</key><real>324</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>124</real>
+				
+				
+			</dict>
+                        <key>0x1ead</key>
+			<dict>
+				<key>x</key><real>942</real>
+				<key>y</key><real>651</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x1eae</key>
+			<dict>
+				<key>x</key><real>81</real>
+				<key>y</key><real>326</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>115</real>
+				
+				
+			</dict>
+                        <key>0x1eaf</key>
+			<dict>
+				<key>x</key><real>1371</real>
+				<key>y</key><real>484</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>100</real>
+				
+				
+			</dict>
+                        <key>0x1eb0</key>
+			<dict>
+				<key>x</key><real>81</real>
+				<key>y</key><real>443</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>115</real>
+				
+				
+			</dict>
+                        <key>0x1eb1</key>
+			<dict>
+				<key>x</key><real>1432</real>
+				<key>y</key><real>484</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>100</real>
+				
+				
+			</dict>
+                        <key>0x1eb2</key>
+			<dict>
+				<key>x</key><real>1</real>
+				<key>y</key><real>935</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>118</real>
+				
+				
+			</dict>
+                        <key>0x1eb3</key>
+			<dict>
+				<key>x</key><real>1294</real>
+				<key>y</key><real>622</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x1eb4</key>
+			<dict>
+				<key>x</key><real>1</real>
+				<key>y</key><real>1055</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>118</real>
+				
+				
+			</dict>
+                        <key>0x1eb5</key>
+			<dict>
+				<key>x</key><real>1282</real>
+				<key>y</key><real>198</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x1eb6</key>
+			<dict>
+				<key>x</key><real>1</real>
+				<key>y</key><real>450</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>122</real>
+				
+				
+			</dict>
+                        <key>0x1eb7</key>
+			<dict>
+				<key>x</key><real>113</real>
+				<key>y</key><real>897</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>105</real>
+				
+				
+			</dict>
+                        <key>0x1eb8</key>
+			<dict>
+				<key>x</key><real>1309</real>
+				<key>y</key><real>303</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x1eb9</key>
+			<dict>
+				<key>x</key><real>1466</real>
+				<key>y</key><real>1030</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x1eba</key>
+			<dict>
+				<key>x</key><real>703</real>
+				<key>y</key><real>221</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>112</real>
+				
+				
+			</dict>
+                        <key>0x1ebb</key>
+			<dict>
+				<key>x</key><real>1827</real>
+				<key>y</key><real>255</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x1ebc</key>
+			<dict>
+				<key>x</key><real>589</real>
+				<key>y</key><real>1071</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x1ebd</key>
+			<dict>
+				<key>x</key><real>1835</real>
+				<key>y</key><real>833</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x1ebe</key>
+			<dict>
+				<key>x</key><real>783</real>
+				<key>y</key><real>327</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>111</real>
+				
+				
+			</dict>
+                        <key>0x1ebf</key>
+			<dict>
+				<key>x</key><real>1545</real>
+				<key>y</key><real>182</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x1ec0</key>
+			<dict>
+				<key>x</key><real>787</real>
+				<key>y</key><real>440</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>111</real>
+				
+				
+			</dict>
+                        <key>0x1ec1</key>
+			<dict>
+				<key>x</key><real>1371</real>
+				<key>y</key><real>385</real>
+				<key>w</key><real>63</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x1ec2</key>
+			<dict>
+				<key>x</key><real>392</real>
+				<key>y</key><real>462</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>117</real>
+				
+				
+			</dict>
+                        <key>0x1ec3</key>
+			<dict>
+				<key>x</key><real>581</real>
+				<key>y</key><real>967</real>
+				<key>w</key><real>62</real>
+				<key>h</key><real>102</real>
+				
+				
+			</dict>
+                        <key>0x1ec4</key>
+			<dict>
+				<key>x</key><real>509</real>
+				<key>y</key><real>223</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>118</real>
+				
+				
+			</dict>
+                        <key>0x1ec5</key>
+			<dict>
+				<key>x</key><real>879</real>
+				<key>y</key><real>763</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x1ec6</key>
+			<dict>
+				<key>x</key><real>383</real>
+				<key>y</key><real>336</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>124</real>
+				
+				
+			</dict>
+                        <key>0x1ec7</key>
+			<dict>
+				<key>x</key><real>1070</real>
+				<key>y</key><real>110</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x1ec8</key>
+			<dict>
+				<key>x</key><real>81</real>
+				<key>y</key><real>1045</real>
+				<key>w</key><real>35</real>
+				<key>h</key><real>112</real>
+				
+				
+			</dict>
+                        <key>0x1ec9</key>
+			<dict>
+				<key>x</key><real>693</real>
+				<key>y</key><real>966</real>
+				<key>w</key><real>35</real>
+				<key>h</key><real>96</real>
+				
+				
+			</dict>
+                        <key>0x1eca</key>
+			<dict>
+				<key>x</key><real>1355</real>
+				<key>y</key><real>617</real>
+				<key>w</key><real>27</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x1ecb</key>
+			<dict>
+				<key>x</key><real>1280</real>
+				<key>y</key><real>303</real>
+				<key>w</key><real>27</real>
+				<key>h</key><real>105</real>
+				
+				
+			</dict>
+                        <key>0x1ecc</key>
+			<dict>
+				<key>x</key><real>754</real>
+				<key>y</key><real>111</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x1ecd</key>
+			<dict>
+				<key>x</key><real>1478</real>
+				<key>y</key><real>854</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x1ece</key>
+			<dict>
+				<key>x</key><real>270</real>
+				<key>y</key><real>111</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>113</real>
+				
+				
+			</dict>
+                        <key>0x1ecf</key>
+			<dict>
+				<key>x</key><real>1673</real>
+				<key>y</key><real>167</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x1ed0</key>
+			<dict>
+				<key>x</key><real>84</real>
+				<key>y</key><real>674</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>112</real>
+				
+				
+			</dict>
+                        <key>0x1ed1</key>
+			<dict>
+				<key>x</key><real>1343</real>
+				<key>y</key><real>198</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x1ed2</key>
+			<dict>
+				<key>x</key><real>161</real>
+				<key>y</key><real>336</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>112</real>
+				
+				
+			</dict>
+                        <key>0x1ed3</key>
+			<dict>
+				<key>x</key><real>1477</real>
+				<key>y</key><real>182</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x1ed4</key>
+			<dict>
+				<key>x</key><real>1</real>
+				<key>y</key><real>695</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>118</real>
+				
+				
+			</dict>
+                        <key>0x1ed5</key>
+			<dict>
+				<key>x</key><real>468</real>
+				<key>y</key><real>970</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>102</real>
+				
+				
+			</dict>
+                        <key>0x1ed6</key>
+			<dict>
+				<key>x</key><real>1</real>
+				<key>y</key><real>574</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>119</real>
+				
+				
+			</dict>
+                        <key>0x1ed7</key>
+			<dict>
+				<key>x</key><real>176</real>
+				<key>y</key><real>994</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x1ed8</key>
+			<dict>
+				<key>x</key><real>107</real>
+				<key>y</key><real>110</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>124</real>
+				
+				
+			</dict>
+                        <key>0x1ed9</key>
+			<dict>
+				<key>x</key><real>929</real>
+				<key>y</key><real>541</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x1eda</key>
+			<dict>
+				<key>x</key><real>213</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>89</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x1edb</key>
+			<dict>
+				<key>x</key><real>1007</real>
+				<key>y</key><real>848</real>
+				<key>w</key><real>73</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x1edc</key>
+			<dict>
+				<key>x</key><real>304</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>89</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x1edd</key>
+			<dict>
+				<key>x</key><real>1145</real>
+				<key>y</key><real>849</real>
+				<key>w</key><real>73</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x1ede</key>
+			<dict>
+				<key>x</key><real>395</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>89</real>
+				<key>h</key><real>113</real>
+				
+				
+			</dict>
+                        <key>0x1edf</key>
+			<dict>
+				<key>x</key><real>1963</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>73</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x1ee0</key>
+			<dict>
+				<key>x</key><real>666</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>89</real>
+				<key>h</key><real>105</real>
+				
+				
+			</dict>
+                        <key>0x1ee1</key>
+			<dict>
+				<key>x</key><real>1144</real>
+				<key>y</key><real>943</real>
+				<key>w</key><real>73</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x1ee2</key>
+			<dict>
+				<key>x</key><real>575</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>89</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x1ee3</key>
+			<dict>
+				<key>x</key><real>746</real>
+				<key>y</key><real>780</real>
+				<key>w</key><real>73</real>
+				<key>h</key><real>93</real>
+				
+				
+			</dict>
+                        <key>0x1ee4</key>
+			<dict>
+				<key>x</key><real>174</real>
+				<key>y</key><real>783</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x1ee5</key>
+			<dict>
+				<key>x</key><real>1287</real>
+				<key>y</key><real>762</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>85</real>
+				
+				
+			</dict>
+                        <key>0x1ee6</key>
+			<dict>
+				<key>x</key><real>587</real>
+				<key>y</key><real>558</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>113</real>
+				
+				
+			</dict>
+                        <key>0x1ee7</key>
+			<dict>
+				<key>x</key><real>1890</real>
+				<key>y</key><real>255</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x1ee8</key>
+			<dict>
+				<key>x</key><real>757</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>87</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x1ee9</key>
+			<dict>
+				<key>x</key><real>427</real>
+				<key>y</key><real>876</real>
+				<key>w</key><real>77</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x1eea</key>
+			<dict>
+				<key>x</key><real>846</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>87</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x1eeb</key>
+			<dict>
+				<key>x</key><real>571</real>
+				<key>y</key><real>873</real>
+				<key>w</key><real>77</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x1eec</key>
+			<dict>
+				<key>x</key><real>486</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>87</real>
+				<key>h</key><real>113</real>
+				
+				
+			</dict>
+                        <key>0x1eed</key>
+			<dict>
+				<key>x</key><real>318</real>
+				<key>y</key><real>779</real>
+				<key>w</key><real>77</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x1eee</key>
+			<dict>
+				<key>x</key><real>1112</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>87</real>
+				<key>h</key><real>105</real>
+				
+				
+			</dict>
+                        <key>0x1eef</key>
+			<dict>
+				<key>x</key><real>650</real>
+				<key>y</key><real>875</real>
+				<key>w</key><real>77</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x1ef0</key>
+			<dict>
+				<key>x</key><real>935</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>87</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x1ef1</key>
+			<dict>
+				<key>x</key><real>1003</real>
+				<key>y</key><real>753</real>
+				<key>w</key><real>77</real>
+				<key>h</key><real>93</real>
+				
+				
+			</dict>
+                        <key>0x1ef2</key>
+			<dict>
+				<key>x</key><real>1145</real>
+				<key>y</key><real>650</real>
+				<key>w</key><real>71</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x002c</key>
+			<dict>
+				<key>x</key><real>1136</real>
+				<key>y</key><real>1122</real>
+				<key>w</key><real>32</real>
+				<key>h</key><real>41</real>
+				
+				
+			</dict>
+                        <key>0x002d</key>
+			<dict>
+				<key>x</key><real>1170</real>
+				<key>y</key><real>1122</real>
+				<key>w</key><real>41</real>
+				<key>h</key><real>25</real>
+				
+				
+			</dict>
+                        <key>0x002e</key>
+			<dict>
+				<key>x</key><real>2007</real>
+				<key>y</key><real>722</real>
+				<key>w</key><real>29</real>
+				<key>h</key><real>30</real>
+				
+				
+			</dict>
+                        <key>0x002f</key>
+			<dict>
+				<key>x</key><real>1444</real>
+				<key>y</key><real>297</real>
+				<key>w</key><real>51</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x003a</key>
+			<dict>
+				<key>x</key><real>2007</real>
+				<key>y</key><real>347</real>
+				<key>w</key><real>29</real>
+				<key>h</key><real>72</real>
+				
+				
+			</dict>
+                        <key>0x004a</key>
+			<dict>
+				<key>x</key><real>680</real>
+				<key>y</key><real>453</real>
+				<key>w</key><real>42</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x004b</key>
+			<dict>
+				<key>x</key><real>874</real>
+				<key>y</key><real>967</real>
+				<key>w</key><real>67</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x004c</key>
+			<dict>
+				<key>x</key><real>1778</real>
+				<key>y</key><real>930</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x004d</key>
+			<dict>
+				<key>x</key><real>1566</real>
+				<key>y</key><real>94</real>
+				<key>w</key><real>86</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x004e</key>
+			<dict>
+				<key>x</key><real>1384</real>
+				<key>y</key><real>586</real>
+				<key>w</key><real>71</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x004f</key>
+			<dict>
+				<key>x</key><real>560</real>
+				<key>y</key><real>783</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x005a</key>
+			<dict>
+				<key>x</key><real>1478</real>
+				<key>y</key><real>766</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x005b</key>
+			<dict>
+				<key>x</key><real>1330</real>
+				<key>y</key><real>408</real>
+				<key>w</key><real>39</real>
+				<key>h</key><real>101</real>
+				
+				
+			</dict>
+                        <key>0x005c</key>
+			<dict>
+				<key>x</key><real>1413</real>
+				<key>y</key><real>1033</real>
+				<key>w</key><real>51</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x006a</key>
+			<dict>
+				<key>x</key><real>353</real>
+				<key>y</key><real>111</real>
+				<key>w</key><real>40</real>
+				<key>h</key><real>111</real>
+				
+				
+			</dict>
+                        <key>0x006b</key>
+			<dict>
+				<key>x</key><real>1939</real>
+				<key>y</key><real>536</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x006c</key>
+			<dict>
+				<key>x</key><real>2009</real>
+				<key>y</key><real>604</real>
+				<key>w</key><real>25</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x006d</key>
+			<dict>
+				<key>x</key><real>1007</real>
+				<key>y</key><real>942</real>
+				<key>w</key><real>91</real>
+				<key>h</key><real>70</real>
+				
+				
+			</dict>
+                        <key>0x006e</key>
+			<dict>
+				<key>x</key><real>1636</real>
+				<key>y</key><real>1112</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>70</real>
+				
+				
+			</dict>
+                        <key>0x006f</key>
+			<dict>
+				<key>x</key><real>1007</real>
+				<key>y</key><real>1102</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>71</real>
+				
+				
+			</dict>
+                        <key>0x007a</key>
+			<dict>
+				<key>x</key><real>1918</real>
+				<key>y</key><real>1083</real>
+				<key>w</key><real>55</real>
+				<key>h</key><real>69</real>
+				
+				
+			</dict>
+                        <key>0x007b</key>
+			<dict>
+				<key>x</key><real>589</real>
+				<key>y</key><real>455</real>
+				<key>w</key><real>48</real>
+				<key>h</key><real>101</real>
+				
+				
+			</dict>
+                        <key>0x007c</key>
+			<dict>
+				<key>x</key><real>81</real>
+				<key>y</key><real>815</real>
+				<key>w</key><real>24</real>
+				<key>h</key><real>114</real>
+				
+				
+			</dict>
+                        <key>0x010a</key>
+			<dict>
+				<key>x</key><real>561</real>
+				<key>y</key><real>116</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>105</real>
+				
+				
+			</dict>
+                        <key>0x010b</key>
+			<dict>
+				<key>x</key><real>1777</real>
+				<key>y</key><real>746</real>
+				<key>w</key><real>55</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x010c</key>
+			<dict>
+				<key>x</key><real>744</real>
+				<key>y</key><real>670</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x010d</key>
+			<dict>
+				<key>x</key><real>1774</real>
+				<key>y</key><real>652</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x010e</key>
+			<dict>
+				<key>x</key><real>994</real>
+				<key>y</key><real>426</real>
+				<key>w</key><real>72</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x010f</key>
+			<dict>
+				<key>x</key><real>480</real>
+				<key>y</key><real>782</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x011a</key>
+			<dict>
+				<key>x</key><real>334</real>
+				<key>y</key><real>878</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x011b</key>
+			<dict>
+				<key>x</key><real>1711</real>
+				<key>y</key><real>652</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x011c</key>
+			<dict>
+				<key>x</key><real>167</real>
+				<key>y</key><real>673</real>
+				<key>w</key><real>75</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x011d</key>
+			<dict>
+				<key>x</key><real>324</real>
+				<key>y</key><real>557</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>114</real>
+				
+				
+			</dict>
+                        <key>0x011e</key>
+			<dict>
+				<key>x</key><real>991</real>
+				<key>y</key><real>319</real>
+				<key>w</key><real>75</real>
+				<key>h</key><real>105</real>
+				
+				
+			</dict>
+                        <key>0x011f</key>
+			<dict>
+				<key>x</key><real>633</real>
+				<key>y</key><real>110</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>111</real>
+				
+				
+			</dict>
+                        <key>0x012a</key>
+			<dict>
+				<key>x</key><real>645</real>
+				<key>y</key><real>967</real>
+				<key>w</key><real>46</real>
+				<key>h</key><real>98</real>
+				
+				
+			</dict>
+                        <key>0x012b</key>
+			<dict>
+				<key>x</key><real>1870</real>
+				<key>y</key><real>1014</real>
+				<key>w</key><real>46</real>
+				<key>h</key><real>82</real>
+				
+				
+			</dict>
+                        <key>0x012c</key>
+			<dict>
+				<key>x</key><real>1281</real>
+				<key>y</key><real>410</real>
+				<key>w</key><real>47</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x012d</key>
+			<dict>
+				<key>x</key><real>1587</real>
+				<key>y</key><real>1035</real>
+				<key>w</key><real>47</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x012e</key>
+			<dict>
+				<key>x</key><real>392</real>
+				<key>y</key><real>878</real>
+				<key>w</key><real>33</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x012f</key>
+			<dict>
+				<key>x</key><real>299</real>
+				<key>y</key><real>879</real>
+				<key>w</key><real>33</real>
+				<key>h</key><real>109</real>
+				
+				
+			</dict>
+                        <key>0x013a</key>
+			<dict>
+				<key>x</key><real>1256</real>
+				<key>y</key><real>630</real>
+				<key>w</key><real>36</real>
+				<key>h</key><real>110</real>
+				
+				
+			</dict>
+                        <key>0x013b</key>
+			<dict>
+				<key>x</key><real>410</real>
+				<key>y</key><real>987</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x013c</key>
+			<dict>
+				<key>x</key><real>81</real>
+				<key>y</key><real>931</real>
+				<key>w</key><real>30</real>
+				<key>h</key><real>112</real>
+				
+				
+			</dict>
+                        <key>0x013d</key>
+			<dict>
+				<key>x</key><real>1529</real>
+				<key>y</key><real>1035</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x013e</key>
+			<dict>
+				<key>x</key><real>1545</real>
+				<key>y</key><real>766</real>
+				<key>w</key><real>41</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x013f</key>
+			<dict>
+				<key>x</key><real>1693</real>
+				<key>y</key><real>1022</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x014a</key>
+			<dict>
+				<key>x</key><real>1148</real>
+				<key>y</key><real>544</real>
+				<key>w</key><real>71</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x014b</key>
+			<dict>
+				<key>x</key><real>1082</real>
+				<key>y</key><real>753</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>93</real>
+				
+				
+			</dict>
+                        <key>0x014c</key>
+			<dict>
+				<key>x</key><real>1283</real>
+				<key>y</key><real>89</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>99</real>
+				
+				
+			</dict>
+                        <key>0x014d</key>
+			<dict>
+				<key>x</key><real>210</real>
+				<key>y</key><real>1099</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>83</real>
+				
+				
+			</dict>
+                        <key>0x014e</key>
+			<dict>
+				<key>x</key><real>478</real>
+				<key>y</key><real>116</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>105</real>
+				
+				
+			</dict>
+                        <key>0x014f</key>
+			<dict>
+				<key>x</key><real>1859</real>
+				<key>y</key><real>445</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x015a</key>
+			<dict>
+				<key>x</key><real>866</real>
+				<key>y</key><real>543</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x015b</key>
+			<dict>
+				<key>x</key><real>1756</real>
+				<key>y</key><real>366</real>
+				<key>w</key><real>54</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x015c</key>
+			<dict>
+				<key>x</key><real>816</real>
+				<key>y</key><real>663</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x015d</key>
+			<dict>
+				<key>x</key><real>1803</real>
+				<key>y</key><real>460</real>
+				<key>w</key><real>54</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x015e</key>
+			<dict>
+				<key>x</key><real>659</real>
+				<key>y</key><real>559</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>110</real>
+				
+				
+			</dict>
+                        <key>0x015f</key>
+			<dict>
+				<key>x</key><real>1493</real>
+				<key>y</key><real>484</real>
+				<key>w</key><real>54</real>
+				<key>h</key><real>93</real>
+				
+				
+			</dict>
+                        <key>0x016a</key>
+			<dict>
+				<key>x</key><real>246</real>
+				<key>y</key><real>778</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>99</real>
+				
+				
+			</dict>
+                        <key>0x016b</key>
+			<dict>
+				<key>x</key><real>340</real>
+				<key>y</key><real>1099</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>83</real>
+				
+				
+			</dict>
+                        <key>0x016c</key>
+			<dict>
+				<key>x</key><real>1404</real>
+				<key>y</key><real>91</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>105</real>
+				
+				
+			</dict>
+                        <key>0x016d</key>
+			<dict>
+				<key>x</key><real>1715</real>
+				<key>y</key><real>837</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x016e</key>
+			<dict>
+				<key>x</key><real>515</real>
+				<key>y</key><real>558</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>113</real>
+				
+				
+			</dict>
+                        <key>0x016f</key>
+			<dict>
+				<key>x</key><real>880</real>
+				<key>y</key><real>868</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>97</real>
+				
+				
+			</dict>
+                        <key>0x017a</key>
+			<dict>
+				<key>x</key><real>1778</real>
+				<key>y</key><real>837</real>
+				<key>w</key><real>55</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x017b</key>
+			<dict>
+				<key>x</key><real>174</real>
+				<key>y</key><real>888</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x017c</key>
+			<dict>
+				<key>x</key><real>1636</real>
+				<key>y</key><real>1022</real>
+				<key>w</key><real>55</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x017d</key>
+			<dict>
+				<key>x</key><real>107</real>
+				<key>y</key><real>788</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x017e</key>
+			<dict>
+				<key>x</key><real>1950</real>
+				<key>y</key><real>722</real>
+				<key>w</key><real>55</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0020</key>
+			<dict>
+				<key>x</key><real>1221</real>
+				<key>y</key><real>630</real>
+				<key>w</key><real>18</real>
+				<key>h</key><real>18</real>
+				
+				
+			</dict>
+                        <key>0x0021</key>
+			<dict>
+				<key>x</key><real>643</real>
+				<key>y</key><real>783</real>
+				<key>w</key><real>29</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x0026</key>
+			<dict>
+				<key>x</key><real>107</real>
+				<key>y</key><real>236</real>
+				<key>w</key><real>82</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x0027</key>
+			<dict>
+				<key>x</key><real>2002</real>
+				<key>y</key><real>1069</real>
+				<key>w</key><real>26</real>
+				<key>h</key><real>42</real>
+				
+				
+			</dict>
+                        <key>0x0028</key>
+			<dict>
+				<key>x</key><real>639</real>
+				<key>y</key><real>455</real>
+				<key>w</key><real>39</real>
+				<key>h</key><real>101</real>
+				
+				
+			</dict>
+                        <key>0x0030</key>
+			<dict>
+				<key>x</key><real>1222</real>
+				<key>y</key><real>759</real>
+				<key>w</key><real>63</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x0031</key>
+			<dict>
+				<key>x</key><real>1100</real>
+				<key>y</key><real>942</real>
+				<key>w</key><real>42</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0032</key>
+			<dict>
+				<key>x</key><real>1641</real>
+				<key>y</key><real>281</real>
+				<key>w</key><real>63</real>
+				<key>h</key><real>87</real>
+				
+				
+			</dict>
+                        <key>0x0033</key>
+			<dict>
+				<key>x</key><real>1457</real>
+				<key>y</key><real>586</real>
+				<key>w</key><real>63</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x0034</key>
+			<dict>
+				<key>x</key><real>809</real>
+				<key>y</key><real>878</real>
+				<key>w</key><real>69</real>
+				<key>h</key><real>87</real>
+				
+				
+			</dict>
+                        <key>0x0035</key>
+			<dict>
+				<key>x</key><real>1283</real>
+				<key>y</key><real>1034</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>87</real>
+				
+				
+			</dict>
+                        <key>0x0036</key>
+			<dict>
+				<key>x</key><real>943</real>
+				<key>y</key><real>970</real>
+				<key>w</key><real>62</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x0037</key>
+			<dict>
+				<key>x</key><real>1817</real>
+				<key>y</key><real>167</real>
+				<key>w</key><real>63</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0038</key>
+			<dict>
+				<key>x</key><real>1457</real>
+				<key>y</key><real>676</real>
+				<key>w</key><real>63</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x0039</key>
+			<dict>
+				<key>x</key><real>1414</real>
+				<key>y</key><real>843</real>
+				<key>w</key><real>62</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x0041</key>
+			<dict>
+				<key>x</key><real>729</real>
+				<key>y</key><real>875</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0042</key>
+			<dict>
+				<key>x</key><real>1346</real>
+				<key>y</key><real>1033</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0043</key>
+			<dict>
+				<key>x</key><real>1219</real>
+				<key>y</key><real>944</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x0044</key>
+			<dict>
+				<key>x</key><real>1567</real>
+				<key>y</key><real>281</real>
+				<key>w</key><real>72</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0045</key>
+			<dict>
+				<key>x</key><real>1545</real>
+				<key>y</key><real>859</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0046</key>
+			<dict>
+				<key>x</key><real>1666</real>
+				<key>y</key><real>934</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0047</key>
+			<dict>
+				<key>x</key><real>1145</real>
+				<key>y</key><real>759</real>
+				<key>w</key><real>75</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x0048</key>
+			<dict>
+				<key>x</key><real>802</real>
+				<key>y</key><real>967</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0049</key>
+			<dict>
+				<key>x</key><real>1962</real>
+				<key>y</key><real>909</real>
+				<key>w</key><real>26</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0050</key>
+			<dict>
+				<key>x</key><real>1542</real>
+				<key>y</key><real>947</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0051</key>
+			<dict>
+				<key>x</key><real>191</real>
+				<key>y</key><real>230</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x0052</key>
+			<dict>
+				<key>x</key><real>1215</real>
+				<key>y</key><real>1034</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0053</key>
+			<dict>
+				<key>x</key><real>1836</real>
+				<key>y</key><real>924</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x0054</key>
+			<dict>
+				<key>x</key><real>1007</real>
+				<key>y</key><real>1014</real>
+				<key>w</key><real>69</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0055</key>
+			<dict>
+				<key>x</key><real>730</real>
+				<key>y</key><real>963</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>87</real>
+				
+				
+			</dict>
+                        <key>0x0056</key>
+			<dict>
+				<key>x</key><real>1740</real>
+				<key>y</key><real>167</real>
+				<key>w</key><real>75</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0057</key>
+			<dict>
+				<key>x</key><real>1201</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>104</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0058</key>
+			<dict>
+				<key>x</key><real>1963</real>
+				<key>y</key><real>100</real>
+				<key>w</key><real>72</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0059</key>
+			<dict>
+				<key>x</key><real>1384</real>
+				<key>y</key><real>674</real>
+				<key>w</key><real>71</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0061</key>
+			<dict>
+				<key>x</key><real>1847</real>
+				<key>y</key><real>94</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>71</real>
+				
+				
+			</dict>
+                        <key>0x0062</key>
+			<dict>
+				<key>x</key><real>327</real>
+				<key>y</key><real>463</real>
+				<key>w</key><real>63</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x0063</key>
+			<dict>
+				<key>x</key><real>1699</real>
+				<key>y</key><real>1110</real>
+				<key>w</key><real>55</real>
+				<key>h</key><real>71</real>
+				
+				
+			</dict>
+                        <key>0x0064</key>
+			<dict>
+				<key>x</key><real>506</real>
+				<key>y</key><real>876</real>
+				<key>w</key><real>63</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x0065</key>
+			<dict>
+				<key>x</key><real>1751</real>
+				<key>y</key><real>1018</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>71</real>
+				
+				
+			</dict>
+                        <key>0x0066</key>
+			<dict>
+				<key>x</key><real>1908</real>
+				<key>y</key><real>91</real>
+				<key>w</key><real>53</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0067</key>
+			<dict>
+				<key>x</key><real>1220</real>
+				<key>y</key><real>849</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>93</real>
+				
+				
+			</dict>
+                        <key>0x0068</key>
+			<dict>
+				<key>x</key><real>1522</real>
+				<key>y</key><real>673</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0069</key>
+			<dict>
+				<key>x</key><real>2009</real>
+				<key>y</key><real>421</real>
+				<key>w</key><real>27</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x0070</key>
+			<dict>
+				<key>x</key><real>1953</real>
+				<key>y</key><real>252</real>
+				<key>w</key><real>63</real>
+				<key>h</key><real>93</real>
+				
+				
+			</dict>
+                        <key>0x0071</key>
+			<dict>
+				<key>x</key><real>647</real>
+				<key>y</key><real>1067</real>
+				<key>w</key><real>63</real>
+				<key>h</key><real>93</real>
+				
+				
+			</dict>
+                        <key>0x0072</key>
+			<dict>
+				<key>x</key><real>1869</real>
+				<key>y</key><real>1098</real>
+				<key>w</key><real>47</real>
+				<key>h</key><real>70</real>
+				
+				
+			</dict>
+                        <key>0x0073</key>
+			<dict>
+				<key>x</key><real>1814</real>
+				<key>y</key><real>1018</real>
+				<key>w</key><real>54</real>
+				<key>h</key><real>71</real>
+				
+				
+			</dict>
+                        <key>0x0074</key>
+			<dict>
+				<key>x</key><real>1756</real>
+				<key>y</key><real>1091</real>
+				<key>w</key><real>48</real>
+				<key>h</key><real>82</real>
+				
+				
+			</dict>
+                        <key>0x0075</key>
+			<dict>
+				<key>x</key><real>1806</real>
+				<key>y</key><real>1091</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>70</real>
+				
+				
+			</dict>
+                        <key>0x0076</key>
+			<dict>
+				<key>x</key><real>1882</real>
+				<key>y</key><real>184</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>69</real>
+				
+				
+			</dict>
+                        <key>0x0077</key>
+			<dict>
+				<key>x</key><real>118</real>
+				<key>y</key><real>1113</real>
+				<key>w</key><real>90</real>
+				<key>h</key><real>69</real>
+				
+				
+			</dict>
+                        <key>0x0078</key>
+			<dict>
+				<key>x</key><real>941</real>
+				<key>y</key><real>1060</real>
+				<key>w</key><real>64</real>
+				<key>h</key><real>69</real>
+				
+				
+			</dict>
+                        <key>0x0079</key>
+			<dict>
+				<key>x</key><real>1497</real>
+				<key>y</key><real>374</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x0100</key>
+			<dict>
+				<key>x</key><real>1068</real>
+				<key>y</key><real>544</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>98</real>
+				
+				
+			</dict>
+                        <key>0x0101</key>
+			<dict>
+				<key>x</key><real>1350</real>
+				<key>y</key><real>762</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>83</real>
+				
+				
+			</dict>
+                        <key>0x0102</key>
+			<dict>
+				<key>x</key><real>837</real>
+				<key>y</key><real>111</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x0103</key>
+			<dict>
+				<key>x</key><real>1417</real>
+				<key>y</key><real>933</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x0104</key>
+			<dict>
+				<key>x</key><real>462</real>
+				<key>y</key><real>673</real>
+				<key>w</key><real>78</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0105</key>
+			<dict>
+				<key>x</key><real>1946</real>
+				<key>y</key><real>629</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0106</key>
+			<dict>
+				<key>x</key><real>794</real>
+				<key>y</key><real>553</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x0107</key>
+			<dict>
+				<key>x</key><real>1746</real>
+				<key>y</key><real>464</real>
+				<key>w</key><real>55</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x0108</key>
+			<dict>
+				<key>x</key><real>672</real>
+				<key>y</key><real>671</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x0109</key>
+			<dict>
+				<key>x</key><real>1774</real>
+				<key>y</key><real>558</real>
+				<key>w</key><real>55</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x0110</key>
+			<dict>
+				<key>x</key><real>403</real>
+				<key>y</key><real>1096</real>
+				<key>w</key><real>79</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0111</key>
+			<dict>
+				<key>x</key><real>674</real>
+				<key>y</key><real>781</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x0112</key>
+			<dict>
+				<key>x</key><real>1706</real>
+				<key>y</key><real>266</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>98</real>
+				
+				
+			</dict>
+                        <key>0x0113</key>
+			<dict>
+				<key>x</key><real>277</real>
+				<key>y</key><real>1099</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>83</real>
+				
+				
+			</dict>
+                        <key>0x0114</key>
+			<dict>
+				<key>x</key><real>241</real>
+				<key>y</key><real>888</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x0115</key>
+			<dict>
+				<key>x</key><real>1651</real>
+				<key>y</key><real>750</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x0116</key>
+			<dict>
+				<key>x</key><real>243</real>
+				<key>y</key><real>994</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x0117</key>
+			<dict>
+				<key>x</key><real>1714</real>
+				<key>y</key><real>746</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x0118</key>
+			<dict>
+				<key>x</key><real>118</real>
+				<key>y</key><real>1004</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0119</key>
+			<dict>
+				<key>x</key><real>1834</real>
+				<key>y</key><real>742</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x0120</key>
+			<dict>
+				<key>x</key><real>1206</real>
+				<key>y</key><real>89</real>
+				<key>w</key><real>75</real>
+				<key>h</key><real>105</real>
+				
+				
+			</dict>
+                        <key>0x0121</key>
+			<dict>
+				<key>x</key><real>715</real>
+				<key>y</key><real>335</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>111</real>
+				
+				
+			</dict>
+                        <key>0x0122</key>
+			<dict>
+				<key>x</key><real>761</real>
+				<key>y</key><real>217</real>
+				<key>w</key><real>75</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x0123</key>
+			<dict>
+				<key>x</key><real>567</real>
+				<key>y</key><real>223</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>114</real>
+				
+				
+			</dict>
+                        <key>0x0124</key>
+			<dict>
+				<key>x</key><real>996</real>
+				<key>y</key><real>535</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0125</key>
+			<dict>
+				<key>x</key><real>724</real>
+				<key>y</key><real>448</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>110</real>
+				
+				
+			</dict>
+                        <key>0x0126</key>
+			<dict>
+				<key>x</key><real>1476</real>
+				<key>y</key><real>94</real>
+				<key>w</key><real>88</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0127</key>
+			<dict>
+				<key>x</key><real>1497</real>
+				<key>y</key><real>281</real>
+				<key>w</key><real>68</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0128</key>
+			<dict>
+				<key>x</key><real>534</real>
+				<key>y</key><real>1075</real>
+				<key>w</key><real>53</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x0129</key>
+			<dict>
+				<key>x</key><real>1724</real>
+				<key>y</key><real>928</real>
+				<key>w</key><real>52</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x0130</key>
+			<dict>
+				<key>x</key><real>1342</real>
+				<key>y</key><real>511</real>
+				<key>w</key><real>27</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x0131</key>
+			<dict>
+				<key>x</key><real>1975</real>
+				<key>y</key><real>1069</real>
+				<key>w</key><real>25</real>
+				<key>h</key><real>69</real>
+				
+				
+			</dict>
+                        <key>0x0132</key>
+			<dict>
+				<key>x</key><real>1288</real>
+				<key>y</key><real>516</real>
+				<key>w</key><real>52</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x0133</key>
+			<dict>
+				<key>x</key><real>701</real>
+				<key>y</key><real>108</real>
+				<key>w</key><real>51</real>
+				<key>h</key><real>111</real>
+				
+				
+			</dict>
+                        <key>0x0134</key>
+			<dict>
+				<key>x</key><real>327</real>
+				<key>y</key><real>336</real>
+				<key>w</key><real>54</real>
+				<key>h</key><real>125</real>
+				
+				
+			</dict>
+                        <key>0x0135</key>
+			<dict>
+				<key>x</key><real>453</real>
+				<key>y</key><real>448</real>
+				<key>w</key><real>51</real>
+				<key>h</key><real>114</real>
+				
+				
+			</dict>
+                        <key>0x0136</key>
+			<dict>
+				<key>x</key><real>1003</real>
+				<key>y</key><real>644</real>
+				<key>w</key><real>67</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0137</key>
+			<dict>
+				<key>x</key><real>654</real>
+				<key>y</key><real>339</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>112</real>
+				
+				
+			</dict>
+                        <key>0x0138</key>
+			<dict>
+				<key>x</key><real>1968</real>
+				<key>y</key><real>998</real>
+				<key>w</key><real>59</real>
+				<key>h</key><real>69</real>
+				
+				
+			</dict>
+                        <key>0x0139</key>
+			<dict>
+				<key>x</key><real>352</real>
+				<key>y</key><real>987</real>
+				<key>w</key><real>56</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0140</key>
+			<dict>
+				<key>x</key><real>1949</real>
+				<key>y</key><real>816</real>
+				<key>w</key><real>41</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0141</key>
+			<dict>
+				<key>x</key><real>1078</real>
+				<key>y</key><real>1030</real>
+				<key>w</key><real>64</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0142</key>
+			<dict>
+				<key>x</key><real>1992</real>
+				<key>y</key><real>815</real>
+				<key>w</key><real>44</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0143</key>
+			<dict>
+				<key>x</key><real>1133</real>
+				<key>y</key><real>108</real>
+				<key>w</key><real>71</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0144</key>
+			<dict>
+				<key>x</key><real>1288</real>
+				<key>y</key><real>849</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0145</key>
+			<dict>
+				<key>x</key><real>1068</real>
+				<key>y</key><real>326</real>
+				<key>w</key><real>71</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0146</key>
+			<dict>
+				<key>x</key><real>1351</real>
+				<key>y</key><real>847</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0147</key>
+			<dict>
+				<key>x</key><real>1068</real>
+				<key>y</key><real>435</real>
+				<key>w</key><real>71</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0148</key>
+			<dict>
+				<key>x</key><real>1354</real>
+				<key>y</key><real>940</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0149</key>
+			<dict>
+				<key>x</key><real>1367</real>
+				<key>y</key><real>297</real>
+				<key>w</key><real>75</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0150</key>
+			<dict>
+				<key>x</key><real>244</real>
+				<key>y</key><real>446</real>
+				<key>w</key><real>81</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x0151</key>
+			<dict>
+				<key>x</key><real>1679</real>
+				<key>y</key><real>464</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x0152</key>
+			<dict>
+				<key>x</key><real>1405</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>95</real>
+				<key>h</key><real>88</real>
+				
+				
+			</dict>
+                        <key>0x0153</key>
+			<dict>
+				<key>x</key><real>1654</real>
+				<key>y</key><real>94</real>
+				<key>w</key><real>98</real>
+				<key>h</key><real>71</real>
+				
+				
+			</dict>
+                        <key>0x0154</key>
+			<dict>
+				<key>x</key><real>1142</real>
+				<key>y</key><real>217</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0155</key>
+			<dict>
+				<key>x</key><real>1666</real>
+				<key>y</key><real>841</real>
+				<key>w</key><real>47</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0156</key>
+			<dict>
+				<key>x</key><real>1212</real>
+				<key>y</key><real>303</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0157</key>
+			<dict>
+				<key>x</key><real>1897</real>
+				<key>y</key><real>723</real>
+				<key>w</key><real>51</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0158</key>
+			<dict>
+				<key>x</key><real>1213</real>
+				<key>y</key><real>412</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0159</key>
+			<dict>
+				<key>x</key><real>1898</real>
+				<key>y</key><real>816</real>
+				<key>w</key><real>49</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0160</key>
+			<dict>
+				<key>x</key><real>879</real>
+				<key>y</key><real>653</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x0161</key>
+			<dict>
+				<key>x</key><real>1831</real>
+				<key>y</key><real>554</real>
+				<key>w</key><real>54</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x0162</key>
+			<dict>
+				<key>x</key><real>850</real>
+				<key>y</key><real>432</real>
+				<key>w</key><real>69</real>
+				<key>h</key><real>109</real>
+				
+				
+			</dict>
+                        <key>0x0163</key>
+			<dict>
+				<key>x</key><real>484</real>
+				<key>y</key><real>1074</real>
+				<key>w</key><real>48</real>
+				<key>h</key><real>104</real>
+				
+				
+			</dict>
+                        <key>0x0164</key>
+			<dict>
+				<key>x</key><real>1141</real>
+				<key>y</key><real>326</real>
+				<key>w</key><real>69</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0165</key>
+			<dict>
+				<key>x</key><real>1887</real>
+				<key>y</key><real>536</real>
+				<key>w</key><real>50</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x0166</key>
+			<dict>
+				<key>x</key><real>1144</real>
+				<key>y</key><real>1034</real>
+				<key>w</key><real>69</real>
+				<key>h</key><real>86</real>
+				
+				
+			</dict>
+                        <key>0x0167</key>
+			<dict>
+				<key>x</key><real>1918</real>
+				<key>y</key><real>999</real>
+				<key>w</key><real>48</real>
+				<key>h</key><real>82</real>
+				
+				
+			</dict>
+                        <key>0x0168</key>
+			<dict>
+				<key>x</key><real>1210</real>
+				<key>y</key><real>196</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>105</real>
+				
+				
+			</dict>
+                        <key>0x0169</key>
+			<dict>
+				<key>x</key><real>1603</real>
+				<key>y</key><real>841</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>89</real>
+				
+				
+			</dict>
+                        <key>0x0170</key>
+			<dict>
+				<key>x</key><real>918</real>
+				<key>y</key><real>217</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>108</real>
+				
+				
+			</dict>
+                        <key>0x0171</key>
+			<dict>
+				<key>x</key><real>1832</real>
+				<key>y</key><real>648</real>
+				<key>w</key><real>61</real>
+				<key>h</key><real>92</real>
+				
+				
+			</dict>
+                        <key>0x0172</key>
+			<dict>
+				<key>x</key><real>1141</real>
+				<key>y</key><real>435</real>
+				<key>w</key><real>70</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0173</key>
+			<dict>
+				<key>x</key><real>392</real>
+				<key>y</key><real>581</real>
+				<key>w</key><real>63</real>
+				<key>h</key><real>90</real>
+				
+				
+			</dict>
+                        <key>0x0174</key>
+			<dict>
+				<key>x</key><real>1</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>104</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0175</key>
+			<dict>
+				<key>x</key><real>1595</real>
+				<key>y</key><real>1</real>
+				<key>w</key><real>90</real>
+				<key>h</key><real>91</real>
+				
+				
+			</dict>
+                        <key>0x0176</key>
+			<dict>
+				<key>x</key><real>1072</real>
+				<key>y</key><real>644</real>
+				<key>w</key><real>71</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+                        <key>0x0177</key>
+			<dict>
+				<key>x</key><real>635</real>
+				<key>y</key><real>223</real>
+				<key>w</key><real>66</real>
+				<key>h</key><real>114</real>
+				
+				
+			</dict>
+                        <key>0x0178</key>
+			<dict>
+				<key>x</key><real>918</real>
+				<key>y</key><real>327</real>
+				<key>w</key><real>71</real>
+				<key>h</key><real>103</real>
+				
+				
+			</dict>
+                        <key>0x0179</key>
+			<dict>
+				<key>x</key><real>1221</real>
+				<key>y</key><real>521</real>
+				<key>w</key><real>65</real>
+				<key>h</key><real>107</real>
+				
+				
+			</dict>
+		</dict>
+		<key>meta</key>
+		<dict>
+			<key>image</key>
+			<string>OpenSans-Regular.png</string>
+			<key>width</key>
+			<integer>2037</integer>
+			<key>height</key>
+			<integer>1183</integer>
+		</dict>
+	</dict>
+</plist>
