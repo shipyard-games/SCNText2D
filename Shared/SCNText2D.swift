@@ -7,6 +7,8 @@
 
 import Foundation
 import SceneKit
+import Metal
+import MetalKit
 
 public class SCNText2D {
     
@@ -18,13 +20,13 @@ public class SCNText2D {
         case centered
     }
 
-    public static func create(from string: String, withFontNamed fontNamed: String, alignment: TextAlignment = .centered) -> SCNGeometry {
-        let jsonURL = Bundle(for: SCNText2D.self).url(forResource: fontNamed, withExtension: "json")!
+    public static func create(from string: String, withFontNamed fontName: String, alignment: TextAlignment = .centered) -> SCNGeometry {
+        let jsonURL = Bundle.main.url(forResource: fontName, withExtension: "json")!
         let jsonData = try! Data(contentsOf: jsonURL)
 
         let fontMetrics = try! JSONDecoder().decode(FontMetrics.self, from: jsonData)
         
-        let atlasDataURL = Bundle(for: SCNText2D.self).url(forResource: fontNamed, withExtension: "plist")!
+        let atlasDataURL = Bundle.main.url(forResource: fontName, withExtension: "plist")!
         let atlasData = NSDictionary(contentsOfFile: atlasDataURL.path) as! AtlasData
 
         let shaderLibraryUrl = Bundle(for: SCNText2D.self).url(forResource: "SCNText2D-Shaders", withExtension: "metallib")!
@@ -49,9 +51,9 @@ public class SCNText2D {
         let textureLoaderOptions: [MTKTextureLoader.Option: Any] = [
             .SRGB : false
         ]
-
-        let sdfTexture = try! textureLoader.newTexture(texture: MDLTexture(named: "\(fontNamed).png", bundle: Bundle(for: SCNText2D.self))!, options: textureLoaderOptions)
-
+        
+        let mdlTexture = MDLTexture(named: "\(fontName).png", bundle: Bundle(for: SCNText2D.self))!
+        let sdfTexture = try! textureLoader.newTexture(texture: mdlTexture, options: textureLoaderOptions)
         geometry.materials.first?.setValue(SCNMaterialProperty(contents: sdfTexture), forKey: "fontTexture")
         
         return geometry

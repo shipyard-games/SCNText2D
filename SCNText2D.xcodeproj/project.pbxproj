@@ -12,23 +12,25 @@
 		4B112A5822128C1B0067D10F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A5622128C1B0067D10F /* Main.storyboard */; };
 		4B112A5A22128C1C0067D10F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A5922128C1C0067D10F /* Assets.xcassets */; };
 		4B112A5D22128C1C0067D10F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A5B22128C1C0067D10F /* LaunchScreen.storyboard */; };
-		4B112A6B22128E4F0067D10F /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A47221280BF0067D10F /* OpenSans-Regular.json */; };
-		4B112A6D22128E530067D10F /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A47221280BF0067D10F /* OpenSans-Regular.json */; };
-		4B112A6E22128F660067D10F /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A46221280BE0067D10F /* OpenSans-Regular.png */; };
-		4B112A6F22128F670067D10F /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A46221280BE0067D10F /* OpenSans-Regular.png */; };
 		4B219512225C85E200A2CB84 /* SDFText.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4BF7E9E3220FEAA0002E8328 /* SDFText.metal */; };
 		4B528F70221313EA00B52997 /* SCNText2D-Shaders.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 4B528F69221313C200B52997 /* SCNText2D-Shaders.metallib */; };
 		4B528F7A2213141000B52997 /* SCNText2D-Shaders.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 4B528F732213140700B52997 /* SCNText2D-Shaders.metallib */; };
 		4B528F7C2213144E00B52997 /* SDFText.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4B528F7B2213144E00B52997 /* SDFText.metal */; };
+		4BDDFF7E226603FF00E7AC74 /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */; };
+		4BDDFF7F226603FF00E7AC74 /* OpenSans-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */; };
+		4BDDFF80226603FF00E7AC74 /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */; };
+		4BDDFF81226603FF00E7AC74 /* Roboto-Medium.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF79226603F300E7AC74 /* Roboto-Medium.json */; };
+		4BDDFF82226603FF00E7AC74 /* Roboto-Medium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7D226603F300E7AC74 /* Roboto-Medium.plist */; };
+		4BDDFF83226603FF00E7AC74 /* Roboto-Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF78226603F300E7AC74 /* Roboto-Medium.png */; };
+		4BDDFF842266040000E7AC74 /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */; };
+		4BDDFF852266040000E7AC74 /* OpenSans-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */; };
+		4BDDFF862266040000E7AC74 /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */; };
+		4BDDFF872266040000E7AC74 /* Roboto-Medium.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF79226603F300E7AC74 /* Roboto-Medium.json */; };
+		4BDDFF882266040000E7AC74 /* Roboto-Medium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7D226603F300E7AC74 /* Roboto-Medium.plist */; };
+		4BDDFF892266040000E7AC74 /* Roboto-Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF78226603F300E7AC74 /* Roboto-Medium.png */; };
 		4BE7BB56225CE5980037CC87 /* SCNText2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E986220FDA7B002E8328 /* SCNText2D.framework */; };
 		4BE7BB58225CE5BA0037CC87 /* SCNText2D.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E986220FDA7B002E8328 /* SCNText2D.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4BE7BB5C225CE64B0037CC87 /* SCNText2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E9A3220FDAF8002E8328 /* SCNText2D.framework */; };
-		4BE7BB6F2261A3B10037CC87 /* Roboto-Medium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BE7BB6C2261A3B10037CC87 /* Roboto-Medium.plist */; };
-		4BE7BB702261A3B10037CC87 /* Roboto-Medium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BE7BB6C2261A3B10037CC87 /* Roboto-Medium.plist */; };
-		4BE7BB722261A3DB0037CC87 /* Roboto-Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE7BB712261A3DB0037CC87 /* Roboto-Medium.png */; };
-		4BE7BB732261A3DB0037CC87 /* Roboto-Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE7BB712261A3DB0037CC87 /* Roboto-Medium.png */; };
-		4BE7BB752261A3F20037CC87 /* Roboto-Medium.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BE7BB742261A3F20037CC87 /* Roboto-Medium.json */; };
-		4BE7BB762261A3F20037CC87 /* Roboto-Medium.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BE7BB742261A3F20037CC87 /* Roboto-Medium.json */; };
 		4BF7E990220FDA7C002E8328 /* SCNText2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E986220FDA7B002E8328 /* SCNText2D.framework */; };
 		4BF7E995220FDA7C002E8328 /* SCNText2D_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF7E994220FDA7C002E8328 /* SCNText2D_iOSTests.swift */; };
 		4BF7E997220FDA7C002E8328 /* SCNText2D_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BF7E989220FDA7B002E8328 /* SCNText2D_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,8 +119,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4B112A46221280BE0067D10F /* OpenSans-Regular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OpenSans-Regular.png"; sourceTree = "<group>"; };
-		4B112A47221280BF0067D10F /* OpenSans-Regular.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "OpenSans-Regular.json"; sourceTree = "<group>"; };
 		4B112A4E22128C1B0067D10F /* SCNText2D-iOSTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCNText2D-iOSTestApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B112A5022128C1B0067D10F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B112A5422128C1B0067D10F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -131,10 +131,13 @@
 		4B528F69221313C200B52997 /* SCNText2D-Shaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = "SCNText2D-Shaders.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B528F732213140700B52997 /* SCNText2D-Shaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = "SCNText2D-Shaders.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B528F7B2213144E00B52997 /* SDFText.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SDFText.metal; sourceTree = "<group>"; };
-		4BE7BB64226194110037CC87 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		4BE7BB6C2261A3B10037CC87 /* Roboto-Medium.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Roboto-Medium.plist"; sourceTree = "<group>"; };
-		4BE7BB712261A3DB0037CC87 /* Roboto-Medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Roboto-Medium.png"; sourceTree = "<group>"; };
-		4BE7BB742261A3F20037CC87 /* Roboto-Medium.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Roboto-Medium.json"; path = "Fonts/Roboto-Medium/Roboto-Medium.json"; sourceTree = SOURCE_ROOT; };
+		4BDDFF74226601AE00E7AC74 /* Charcodes.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Charcodes.csv; sourceTree = "<group>"; };
+		4BDDFF78226603F300E7AC74 /* Roboto-Medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Roboto-Medium.png"; sourceTree = "<group>"; };
+		4BDDFF79226603F300E7AC74 /* Roboto-Medium.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Roboto-Medium.json"; sourceTree = "<group>"; };
+		4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenSans-Regular.plist"; sourceTree = "<group>"; };
+		4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OpenSans-Regular.png"; sourceTree = "<group>"; };
+		4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "OpenSans-Regular.json"; sourceTree = "<group>"; };
+		4BDDFF7D226603F300E7AC74 /* Roboto-Medium.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Roboto-Medium.plist"; sourceTree = "<group>"; };
 		4BF7E986220FDA7B002E8328 /* SCNText2D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SCNText2D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF7E989220FDA7B002E8328 /* SCNText2D_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCNText2D_iOS.h; sourceTree = "<group>"; };
 		4BF7E98A220FDA7B002E8328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -223,18 +226,6 @@
 			path = "SCNText2D-iOSTestApp";
 			sourceTree = "<group>";
 		};
-		4B112A6A22128E070067D10F /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				4BE7BB742261A3F20037CC87 /* Roboto-Medium.json */,
-				4BE7BB6C2261A3B10037CC87 /* Roboto-Medium.plist */,
-				4BE7BB712261A3DB0037CC87 /* Roboto-Medium.png */,
-				4B112A47221280BF0067D10F /* OpenSans-Regular.json */,
-				4B112A46221280BE0067D10F /* OpenSans-Regular.png */,
-			);
-			path = Font;
-			sourceTree = "<group>";
-		};
 		4B528F6A221313C200B52997 /* SCNText2D-Shaders-iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,7 +245,13 @@
 		4BE7BB63226193E80037CC87 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				4BE7BB64226194110037CC87 /* Makefile */,
+				4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */,
+				4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */,
+				4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */,
+				4BDDFF79226603F300E7AC74 /* Roboto-Medium.json */,
+				4BDDFF7D226603F300E7AC74 /* Roboto-Medium.plist */,
+				4BDDFF78226603F300E7AC74 /* Roboto-Medium.png */,
+				4BDDFF74226601AE00E7AC74 /* Charcodes.csv */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -333,7 +330,6 @@
 		4BF7E9BA220FDB60002E8328 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				4B112A6A22128E070067D10F /* Font */,
 				4BF7E9BB220FDBA3002E8328 /* FontMetrics.swift */,
 				4BF7E9BE220FDBED002E8328 /* GlyphData.swift */,
 				4BF7E9C1220FDCAF002E8328 /* SCNText2D.swift */,
@@ -592,9 +588,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDDFF882266040000E7AC74 /* Roboto-Medium.plist in Resources */,
+				4BDDFF872266040000E7AC74 /* Roboto-Medium.json in Resources */,
 				4B112A5D22128C1C0067D10F /* LaunchScreen.storyboard in Resources */,
+				4BDDFF862266040000E7AC74 /* OpenSans-Regular.png in Resources */,
 				4B112A5A22128C1C0067D10F /* Assets.xcassets in Resources */,
+				4BDDFF852266040000E7AC74 /* OpenSans-Regular.plist in Resources */,
 				4B112A5822128C1B0067D10F /* Main.storyboard in Resources */,
+				4BDDFF842266040000E7AC74 /* OpenSans-Regular.json in Resources */,
+				4BDDFF892266040000E7AC74 /* Roboto-Medium.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,12 +604,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BE7BB6F2261A3B10037CC87 /* Roboto-Medium.plist in Resources */,
-				4B112A6D22128E530067D10F /* OpenSans-Regular.json in Resources */,
-				4B112A6E22128F660067D10F /* OpenSans-Regular.png in Resources */,
-				4BE7BB752261A3F20037CC87 /* Roboto-Medium.json in Resources */,
 				4B528F70221313EA00B52997 /* SCNText2D-Shaders.metallib in Resources */,
-				4BE7BB722261A3DB0037CC87 /* Roboto-Medium.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,12 +619,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BE7BB702261A3B10037CC87 /* Roboto-Medium.plist in Resources */,
-				4B112A6B22128E4F0067D10F /* OpenSans-Regular.json in Resources */,
-				4B112A6F22128F670067D10F /* OpenSans-Regular.png in Resources */,
-				4BE7BB762261A3F20037CC87 /* Roboto-Medium.json in Resources */,
 				4B528F7A2213141000B52997 /* SCNText2D-Shaders.metallib in Resources */,
-				4BE7BB732261A3DB0037CC87 /* Roboto-Medium.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,8 +634,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDDFF82226603FF00E7AC74 /* Roboto-Medium.plist in Resources */,
 				4BF7E9D4220FE2DA002E8328 /* Main.storyboard in Resources */,
+				4BDDFF80226603FF00E7AC74 /* OpenSans-Regular.png in Resources */,
+				4BDDFF7E226603FF00E7AC74 /* OpenSans-Regular.json in Resources */,
+				4BDDFF81226603FF00E7AC74 /* Roboto-Medium.json in Resources */,
+				4BDDFF7F226603FF00E7AC74 /* OpenSans-Regular.plist in Resources */,
 				4BF7E9D1220FE2DA002E8328 /* Assets.xcassets in Resources */,
+				4BDDFF83226603FF00E7AC74 /* Roboto-Medium.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
