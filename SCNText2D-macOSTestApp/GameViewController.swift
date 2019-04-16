@@ -79,8 +79,8 @@ class GameViewController: NSViewController {
         her people and restore
         freedom to the galaxy.....
         """
-
-        let textGeometry = SCNText2D.create(from: text, withFontNamed: "Roboto-Medium")
+        
+        let textGeometry = SCNText2D.create(from: text, withFontNamed: "OpenSans-Regular")
 
         let node = SCNNode()
         node.eulerAngles.x += -35.0 * (180.0 / .pi)
