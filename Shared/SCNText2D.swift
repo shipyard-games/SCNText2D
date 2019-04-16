@@ -52,7 +52,7 @@ public class SCNText2D {
             .SRGB : false
         ]
         
-        let mdlTexture = MDLTexture(named: "\(fontName).png", bundle: Bundle(for: SCNText2D.self))!
+        let mdlTexture = MDLTexture(named: "\(fontName).png")!
         let sdfTexture = try! textureLoader.newTexture(texture: mdlTexture, options: textureLoaderOptions)
         geometry.materials.first?.setValue(SCNMaterialProperty(contents: sdfTexture), forKey: "fontTexture")
         
