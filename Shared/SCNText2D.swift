@@ -44,18 +44,16 @@ public class SCNText2D {
         let geometry = buildGeometry(string, fontMetrics, atlasData, alignment)
         geometry.materials.first?.program = shaderProgram
 
-        if let url = Bundle(for: SCNText2D.self).url(forResource: fontNamed, withExtension: "png") {
-            #if os(iOS)
-            let fontTexture = UIImage(contentsOfFile: url.path)
-            #elseif os(macOS)
-            let fontTexture = NSImage(contentsOf: url)
-            #endif
+        let textureLoader = MTKTextureLoader(device: device)
 
-            if let fontTexture = fontTexture {
-                geometry.materials.first?.setValue(SCNMaterialProperty(contents: fontTexture), forKey: "fontTexture")
-            }
-        }
+        let textureLoaderOptions: [MTKTextureLoader.Option: Any] = [
+            .SRGB : false
+        ]
 
+        let sdfTexture = try! textureLoader.newTexture(texture: MDLTexture(named: "\(fontNamed).png", bundle: Bundle(for: SCNText2D.self))!, options: textureLoaderOptions)
+
+        geometry.materials.first?.setValue(SCNMaterialProperty(contents: sdfTexture), forKey: "fontTexture")
+        
         return geometry
     }
 
