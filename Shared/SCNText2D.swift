@@ -53,7 +53,6 @@ public class SCNText2D {
         
         let mdlTexture = MDLTexture(named: "\(fontName).png")!
         let sdfTexture = try! textureLoader.newTexture(texture: mdlTexture, options: textureLoaderOptions)
-        geometry.materials.first?.program = shaderProgram
         geometry.materials.first?.setValue(SCNMaterialProperty(contents: sdfTexture), forKey: "diffuseTexture")
         geometry.materials.first?.setValue(0.04, forKey: "smoothing")
         #if os(iOS)
