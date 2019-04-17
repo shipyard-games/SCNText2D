@@ -79,16 +79,15 @@ class GameViewController: NSViewController {
         her people and restore
         freedom to the galaxy.....
         """
-        
+
         let textGeometry = SCNText2D.create(from: text, withFontNamed: "OpenSans-Regular")
 
         let node = SCNNode()
         node.eulerAngles.x += -35.0 * (180.0 / .pi)
         
-        
         let textNode = SCNNode()
         textNode.geometry = textGeometry
-        
+
         let moveAction = SCNAction.move(by: SCNVector3(x:0, y: 200.0, z: 0.0), duration: 240.0)
         textNode.runAction(moveAction)
 

@@ -53,7 +53,7 @@ class GameViewController: UIViewController {
         scnView.showsStatistics = true
         
         // configure the view
-        scnView.backgroundColor = UIColor.black
+        scnView.backgroundColor = UIColor(displayP3Red: 3/255, green: 3/255.0, blue: 3/255.0, alpha: 1.0)
 
         let text =
         """
@@ -91,7 +91,6 @@ class GameViewController: UIViewController {
         
         let moveAction = SCNAction.move(by: SCNVector3(x:0, y: 200.0, z: 0.0), duration: 240.0)
         textNode.runAction(moveAction)
-        
         node.addChildNode(textNode)
         
         scene.rootNode.addChildNode(node)

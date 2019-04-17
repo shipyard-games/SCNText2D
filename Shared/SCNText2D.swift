@@ -38,8 +38,8 @@ public class SCNText2D {
         let shaderLibrary = try! device.makeLibrary(URL: shaderLibraryUrl)
 
         let shaderProgram = SCNProgram()
-        shaderProgram.vertexFunctionName = "sdfTextVertex"
-        shaderProgram.fragmentFunctionName = "sdfTextFragment"
+        shaderProgram.vertexFunctionName = "distanceShadowVertex"
+        shaderProgram.fragmentFunctionName = "distanceShadowFrag"
         shaderProgram.isOpaque = false
         shaderProgram.library = shaderLibrary
 
@@ -47,15 +47,21 @@ public class SCNText2D {
         geometry.materials.first?.program = shaderProgram
 
         let textureLoader = MTKTextureLoader(device: device)
-
         let textureLoaderOptions: [MTKTextureLoader.Option: Any] = [
             .SRGB : false
         ]
         
         let mdlTexture = MDLTexture(named: "\(fontName).png")!
         let sdfTexture = try! textureLoader.newTexture(texture: mdlTexture, options: textureLoaderOptions)
-        geometry.materials.first?.setValue(SCNMaterialProperty(contents: sdfTexture), forKey: "fontTexture")
-        
+        geometry.materials.first?.setValue(SCNMaterialProperty(contents: sdfTexture), forKey: "diffuseTexture")
+        geometry.materials.first?.setValue(0.04, forKey: "smoothing")
+        #if os(iOS)
+        geometry.materials.first?.setValue(UIColor.red, forKey: "textColor")
+        geometry.materials.first?.setValue(UIColor.white, forKey: "borderColor")
+        #elseif os(macOS)
+        geometry.materials.first?.setValue(NSColor.red, forKey: "textColor")
+        geometry.materials.first?.setValue(NSColor.white, forKey: "borderColor")
+        #endif
         return geometry
     }
 
@@ -131,7 +137,7 @@ public class SCNText2D {
 
             let x = cursorX + glyphBearingX;
             let y = cursorY + glyphBearingY;
-            let z = SCNFloat(i) * 0.0001
+            let z = SCNFloat(i) * 0.001
 
             if x > maxX { maxX = x }
             if x < minX { minX = x }
