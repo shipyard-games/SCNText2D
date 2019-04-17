@@ -26,15 +26,6 @@ struct Uniforms {
     float4x4 modelViewProjectionTransform;
 };
 
-float3 hsb2rgb(float3 c) {
-    float3 rgb = clamp(abs(fmod(c.x * 6.0 + float3(0.0, 4.0, 2.0), 6.0) -3.0 ) - 1.0,
-                       0.0,
-                       1.0);
-    rgb = rgb * rgb * (3.0 - 2.0 * rgb);
-    return c.z * mix(float3(1.0), rgb, c.y);
-}
-
-
 constexpr sampler s = sampler(coord::normalized, address::clamp_to_zero, filter::linear);
 
 // Vertex shader
