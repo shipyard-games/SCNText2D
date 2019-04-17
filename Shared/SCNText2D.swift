@@ -11,6 +11,12 @@ import Metal
 import MetalKit
 
 public class SCNText2D {
+
+    #if os(iOS)
+    public typealias Color = UIColor
+    #elseif os(macOS)
+    public typealias Color = NSColor
+    #endif
     
     typealias AtlasData = Dictionary<String, Any>
     
@@ -20,7 +26,7 @@ public class SCNText2D {
         case centered
     }
 
-    public static func create(from string: String, withFontNamed fontName: String, alignment: TextAlignment = .centered) -> SCNGeometry {
+    public static func create(from string: String, withFontNamed fontName: String, textColor: Color = .white, borderColor: Color = .black, smoothing: SCNFloat = 0.04, alignment: TextAlignment = .centered) -> SCNGeometry {
         let jsonURL = Bundle.main.url(forResource: fontName, withExtension: "json")!
         let jsonData = try! Data(contentsOf: jsonURL)
 
@@ -54,14 +60,9 @@ public class SCNText2D {
         let mdlTexture = MDLTexture(named: "\(fontName).png")!
         let sdfTexture = try! textureLoader.newTexture(texture: mdlTexture, options: textureLoaderOptions)
         geometry.materials.first?.setValue(SCNMaterialProperty(contents: sdfTexture), forKey: "diffuseTexture")
-        geometry.materials.first?.setValue(0.04, forKey: "smoothing")
-        #if os(iOS)
-        geometry.materials.first?.setValue(UIColor.red, forKey: "textColor")
-        geometry.materials.first?.setValue(UIColor.white, forKey: "borderColor")
-        #elseif os(macOS)
-        geometry.materials.first?.setValue(NSColor.red, forKey: "textColor")
-        geometry.materials.first?.setValue(NSColor.white, forKey: "borderColor")
-        #endif
+        geometry.materials.first?.setValue(smoothing, forKey: "smoothing")
+        geometry.materials.first?.setValue(textColor, forKey: "textColor")
+        geometry.materials.first?.setValue(borderColor, forKey: "borderColor")
         return geometry
     }
 
