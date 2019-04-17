@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C765DA72266FCBB007C06D2 /* Crocodile-Feet.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C765D9E2266FBA4007C06D2 /* Crocodile-Feet.json */; };
+		0C765DA82266FCBB007C06D2 /* Crocodile-Feet.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C765D9E2266FBA4007C06D2 /* Crocodile-Feet.json */; };
+		0C765DA92266FCC0007C06D2 /* Crocodile-Feet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C765D9F2266FBA4007C06D2 /* Crocodile-Feet.plist */; };
+		0C765DAA2266FCC0007C06D2 /* Crocodile-Feet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C765D9F2266FBA4007C06D2 /* Crocodile-Feet.plist */; };
+		0C765DAD2266FCC8007C06D2 /* Crocodile-Feet.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C765DA02266FBA5007C06D2 /* Crocodile-Feet.png */; };
+		0C765DAE2266FCC8007C06D2 /* Crocodile-Feet.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C765DA02266FBA5007C06D2 /* Crocodile-Feet.png */; };
 		4B112A5122128C1B0067D10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B112A5022128C1B0067D10F /* AppDelegate.swift */; };
 		4B112A5522128C1B0067D10F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B112A5422128C1B0067D10F /* GameViewController.swift */; };
 		4B112A5822128C1B0067D10F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A5622128C1B0067D10F /* Main.storyboard */; };
@@ -119,6 +125,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C765D9E2266FBA4007C06D2 /* Crocodile-Feet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Crocodile-Feet.json"; sourceTree = "<group>"; };
+		0C765D9F2266FBA4007C06D2 /* Crocodile-Feet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Crocodile-Feet.plist"; sourceTree = "<group>"; };
+		0C765DA02266FBA5007C06D2 /* Crocodile-Feet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Crocodile-Feet.png"; sourceTree = "<group>"; };
 		4B112A4E22128C1B0067D10F /* SCNText2D-iOSTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCNText2D-iOSTestApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B112A5022128C1B0067D10F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B112A5422128C1B0067D10F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +254,9 @@
 		4BE7BB63226193E80037CC87 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				0C765D9E2266FBA4007C06D2 /* Crocodile-Feet.json */,
+				0C765D9F2266FBA4007C06D2 /* Crocodile-Feet.plist */,
+				0C765DA02266FBA5007C06D2 /* Crocodile-Feet.png */,
 				4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */,
 				4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */,
 				4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */,
@@ -594,8 +606,11 @@
 				4BDDFF862266040000E7AC74 /* OpenSans-Regular.png in Resources */,
 				4B112A5A22128C1C0067D10F /* Assets.xcassets in Resources */,
 				4BDDFF852266040000E7AC74 /* OpenSans-Regular.plist in Resources */,
+				0C765DAD2266FCC8007C06D2 /* Crocodile-Feet.png in Resources */,
 				4B112A5822128C1B0067D10F /* Main.storyboard in Resources */,
 				4BDDFF842266040000E7AC74 /* OpenSans-Regular.json in Resources */,
+				0C765DA82266FCBB007C06D2 /* Crocodile-Feet.json in Resources */,
+				0C765DAA2266FCC0007C06D2 /* Crocodile-Feet.plist in Resources */,
 				4BDDFF892266040000E7AC74 /* Roboto-Medium.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,13 +649,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C765DAE2266FCC8007C06D2 /* Crocodile-Feet.png in Resources */,
 				4BDDFF82226603FF00E7AC74 /* Roboto-Medium.plist in Resources */,
+				0C765DA92266FCC0007C06D2 /* Crocodile-Feet.plist in Resources */,
 				4BF7E9D4220FE2DA002E8328 /* Main.storyboard in Resources */,
 				4BDDFF80226603FF00E7AC74 /* OpenSans-Regular.png in Resources */,
 				4BDDFF7E226603FF00E7AC74 /* OpenSans-Regular.json in Resources */,
 				4BDDFF81226603FF00E7AC74 /* Roboto-Medium.json in Resources */,
 				4BDDFF7F226603FF00E7AC74 /* OpenSans-Regular.plist in Resources */,
 				4BF7E9D1220FE2DA002E8328 /* Assets.xcassets in Resources */,
+				0C765DA72266FCBB007C06D2 /* Crocodile-Feet.json in Resources */,
 				4BDDFF83226603FF00E7AC74 /* Roboto-Medium.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -819,7 +837,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 5N645UMVDP;
+				DEVELOPMENT_TEAM = 3RYP22JA69;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -895,7 +913,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5N645UMVDP;
+				DEVELOPMENT_TEAM = 3RYP22JA69;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1098,7 +1116,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 5N645UMVDP;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1181,7 +1199,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 5N645UMVDP;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1401,7 +1419,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 5N645UMVDP;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1484,7 +1502,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 5N645UMVDP;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1701,7 +1719,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 5N645UMVDP;
+				DEVELOPMENT_TEAM = 3RYP22JA69;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1776,7 +1794,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5N645UMVDP;
+				DEVELOPMENT_TEAM = 3RYP22JA69;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
