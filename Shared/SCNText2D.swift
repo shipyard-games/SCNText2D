@@ -22,12 +22,8 @@ public class SCNText2D {
         let outlineColor: float4
         let shadowColor: float4
     }
-
-    #if os(iOS)
-    public typealias Color = UIColor
-    #elseif os(macOS)
-    public typealias Color = NSColor
-    #endif
+    
+    public typealias Color = float4
     
     typealias AtlasData = Dictionary<String, Any>
     
@@ -37,7 +33,7 @@ public class SCNText2D {
         case centered
     }
 
-    public static func create(from string: String, withFontNamed fontName: String, textColor: Color = .white, borderColor: Color = .black, smoothing: Float = 0.04, scale: SCNFloat = 1.0, lineSpacing: SCNFloat = 1.0, alignment: TextAlignment = .centered) -> SCNGeometry {
+    public static func create(from string: String, withFontNamed fontName: String, fontColor: Color = float4(1.0, 1.0, 1.0, 1.0), outlineColor: Color = float4(0.0, 0.0, 0.0, 0.0), smoothing: Float = 0.04, scale: SCNFloat = 1.0, lineSpacing: SCNFloat = 1.0, alignment: TextAlignment = .centered) -> SCNGeometry {
         let jsonURL = Bundle.main.url(forResource: fontName, withExtension: "json")!
         let jsonData = try! Data(contentsOf: jsonURL)
 
@@ -56,7 +52,14 @@ public class SCNText2D {
 
         let shaderProgram = SCNProgram()
         shaderProgram.vertexFunctionName = "sdfTextVertex"
-        shaderProgram.fragmentFunctionName = "sdfTextFragment"
+        
+        if outlineColor[3] == 0.0 {
+            shaderProgram.fragmentFunctionName = "sdfTextFragment"
+        }
+        else {
+            shaderProgram.fragmentFunctionName = "sdfTextOutlineFragment"
+        }
+        
         shaderProgram.isOpaque = false
         shaderProgram.library = shaderLibrary
 
@@ -73,8 +76,8 @@ public class SCNText2D {
                                outlineWidth: 0.5,
                                shadowWidth: 0.5,
                                shadowOffset: float2(0.0, 0.002),
-                               fontColor: float4(0.0, 0.0, 0.0, 1.0),
-                               outlineColor: float4(1.0, 1.0, 1.0, 1.0),
+                               fontColor: fontColor,
+                               outlineColor: outlineColor,
                                shadowColor: float4(0.5, 0.5, 0.5, 1.0))
         
         let mdlTexture = MDLTexture(named: "\(fontName).png")!

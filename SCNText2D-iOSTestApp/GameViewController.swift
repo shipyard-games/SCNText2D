@@ -80,8 +80,11 @@ class GameViewController: UIViewController {
         freedom to the galaxy.....
         """
         
-        let textGeometry = SCNText2D.create(from: text, withFontNamed: "OpenSans-Regular",
-                                            textColor: .yellow, borderColor: .white, smoothing: 0.04,
+        let textGeometry = SCNText2D.create(from: text,
+                                            withFontNamed: "OpenSans-Regular",
+                                            fontColor: float4(0.0, 0.0, 0.0, 1.0),
+                                            outlineColor: float4(1.0, 1.0, 0.0, 1.0),
+                                            smoothing: 0.1,
                                             alignment: .centered)
         
         let node = SCNNode()

@@ -80,7 +80,12 @@ class GameViewController: NSViewController {
         freedom to the galaxy.....
         """
 
-        let textGeometry = SCNText2D.create(from: text, withFontNamed: "OpenSans-Regular", textColor: .black, borderColor: .white, smoothing: 0.04, alignment: .centered)
+        let textGeometry = SCNText2D.create(from: text,
+                                            withFontNamed: "OpenSans-Regular",
+                                            fontColor: float4(0.0, 0.0, 0.0, 1.0),
+                                            outlineColor: float4(1.0, 1.0, 0.0, 1.0),
+                                            smoothing: 0.1,
+                                            alignment: .centered)
 
         let node = SCNNode()
         node.eulerAngles.x += -35.0 * (180.0 / .pi)
