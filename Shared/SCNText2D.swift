@@ -26,7 +26,7 @@ public class SCNText2D {
         case centered
     }
 
-    public static func create(from string: String, withFontNamed fontName: String, textColor: Color = .white, borderColor: Color = .black, smoothing: SCNFloat = 0.04, alignment: TextAlignment = .centered) -> SCNGeometry {
+    public static func create(from string: String, withFontNamed fontName: String, textColor: Color = .white, borderColor: Color = .black, smoothing: SCNFloat = 0.04, scale: SCNFloat = 1.0, lineSpacing: SCNFloat = 1.0, alignment: TextAlignment = .centered) -> SCNGeometry {
         let jsonURL = Bundle.main.url(forResource: fontName, withExtension: "json")!
         let jsonData = try! Data(contentsOf: jsonURL)
 
@@ -49,7 +49,7 @@ public class SCNText2D {
         shaderProgram.isOpaque = false
         shaderProgram.library = shaderLibrary
 
-        let geometry = buildGeometry(string, fontMetrics, atlasData, alignment)
+        let geometry = buildGeometry(string, fontMetrics, atlasData, alignment, scale, lineSpacing)
         geometry.materials.first?.program = shaderProgram
 
         let textureLoader = MTKTextureLoader(device: device)
@@ -66,8 +66,7 @@ public class SCNText2D {
         return geometry
     }
 
-    private static func buildGeometry(_ string: String, _ fontMetrics: FontMetrics, _ atlasData: AtlasData, _ alignment: TextAlignment) -> SCNGeometry {
-        let fontSize: SCNFloat = 1.0
+    private static func buildGeometry(_ string: String, _ fontMetrics: FontMetrics, _ atlasData: AtlasData, _ alignment: TextAlignment, _ scale: SCNFloat, _ lineSpacing: SCNFloat) -> SCNGeometry {
         
         let atlasMeta = atlasData["meta"] as! Dictionary<String, Any>
         
@@ -100,7 +99,7 @@ public class SCNText2D {
         
         for (i, char) in string.unicodeScalars.enumerated() {
             guard char != Unicode.Scalar("\n") else { // newline
-                cursorY -= SCNFloat(fontMetrics.height)
+                cursorY -= SCNFloat(fontMetrics.height) * scale * lineSpacing
                 
                 alignLine(&lineVertices, withAlignment: alignment, lineWidth: cursorX)
                 vertices.append(contentsOf: lineVertices)
@@ -112,7 +111,7 @@ public class SCNText2D {
             }
             
             guard let glyph = fontMetrics.glyphData["\(char)"] else {
-                cursorX += SCNFloat(fontMetrics.spaceAdvance)
+                cursorX += SCNFloat(fontMetrics.spaceAdvance) * scale
                 continue
             }
             
@@ -126,15 +125,15 @@ public class SCNText2D {
                 let kernChar = String(string[strIndex])
                 let kernVal = glyph.kernings[kernChar] ?? 0.0
                 if (kernVal != 0.0 && (kernVal < -0.001 || kernVal > 0.001)) {
-                    cursorX += SCNFloat(kernVal) * fontSize;
+                    cursorX += SCNFloat(kernVal) * scale;
                 }
             }
 
-            let glyphWidth    = SCNFloat(glyph.bboxWidth) * fontSize;
-            let glyphHeight   = SCNFloat(glyph.bboxHeight) * fontSize;
-            let glyphBearingX = SCNFloat(glyph.bearingX) * fontSize;
-            let glyphBearingY = SCNFloat(glyph.bearingY) * fontSize;
-            let glyphAdvanceX = SCNFloat(glyph.advanceX) * fontSize;
+            let glyphWidth    = SCNFloat(glyph.bboxWidth) * scale;
+            let glyphHeight   = SCNFloat(glyph.bboxHeight) * scale;
+            let glyphBearingX = SCNFloat(glyph.bearingX) * scale;
+            let glyphBearingY = SCNFloat(glyph.bearingY) * scale;
+            let glyphAdvanceX = SCNFloat(glyph.advanceX) * scale;
 
             let x = cursorX + glyphBearingX;
             let y = cursorY + glyphBearingY;
