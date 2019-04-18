@@ -47,15 +47,15 @@ fragment float4 distanceShadowFrag(VertexOutput fragmentIn [[stage_in]],
                                    device float4 *borderColor  [[ buffer(3) ]]
                                    )
 {
-    const float textWidth = 0.4;
-    const float outlineWidth = 0.05;
-    const float shadowWidth = 0.05;
+    const float textWidth = 0.9;
+    const float outlineWidth = 0.5;
+    const float shadowWidth = 0.5;
     
     float iSmoothing = *smoothing;
     float4 iTextColor = *textColor;
     const float4 outlineColor = *borderColor;
     
-    const float2 shadowOffset = float2(0.00, 0.000);
+    const float2 shadowOffset = float2(0.00, 0.001);
     const float4 shadowColor = outlineColor;
     
     float4 distanceVec = diffuseTexture.sample(s, fragmentIn.texCoord);
