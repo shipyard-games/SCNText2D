@@ -5,70 +5,88 @@
 //  Created by Teemu Harju on 10/02/2019.
 //
 
-#import <metal_stdlib>
-
+#include <metal_stdlib>
 using namespace metal;
 
-#import <SceneKit/scn_metal>
+#include <SceneKit/scn_metal>
 
-struct VertexIn {
-    float3 position         [[attribute(SCNVertexSemanticPosition)]];
-    float2 texcoord         [[attribute(SCNVertexSemanticTexcoord0)]];
-};
+typedef struct {
+    float4 position [[ attribute(SCNVertexSemanticPosition) ]];
+    float2 uv       [[ attribute(SCNVertexSemanticTexcoord0) ]];
+} input_t;
 
-struct VertexOutput {
-    float4 position [[position]];
-    float4 color;
-    float2 texCoord;
-};
-
-struct Uniforms {
+typedef struct {
     float4x4 modelViewProjectionTransform;
-};
+} node_t;
 
-constexpr sampler s = sampler(coord::normalized, address::clamp_to_zero, filter::linear);
+typedef struct {
+    float4 position [[ position ]];
+    float2 uv;
+} io_t;
 
-// Vertex shader
-vertex VertexOutput distanceShadowVertex(VertexIn vertexIn [[stage_in]],
-                                         constant Uniforms& scn_node [[buffer(1)]])
-{
-    VertexOutput vertexOut;
-    vertexOut.position = scn_node.modelViewProjectionTransform * float4(vertexIn.position, 1);;
-    vertexOut.texCoord = vertexIn.texcoord;
-    vertexOut.color = float4(1.0);
-    return vertexOut;
+typedef struct {
+    float smoothing;
+    float fontWidth;
+    float outlineWidth;
+    float shadowWidth;
+    float2 shadowOffset;
+    float4 fontColor;
+    float4 outlineColor;
+    float4 shadowColor;
+} params_t;
+
+vertex io_t sdfTextVertex(input_t in [[ stage_in ]],
+                          constant SCNSceneBuffer& scn_frame [[ buffer(0) ]],
+                          constant node_t& scn_node [[ buffer(1) ]]) {
+    io_t out;
+    out.position = scn_node.modelViewProjectionTransform * in.position;
+    out.uv       = in.uv;
+    
+    return out;
 }
 
-// Fragment shader
-fragment float4 distanceShadowFrag(VertexOutput fragmentIn [[stage_in]],
-                                   texture2d<float> diffuseTexture [[texture(0)]],
-                                   device float *smoothing [[ buffer(1) ]],
-                                   device float4 *textColor  [[ buffer(2) ]],
-                                   device float4 *borderColor  [[ buffer(3) ]]
-                                   )
-{
-    const float textWidth = 0.9;
-    const float outlineWidth = 0.5;
-    const float shadowWidth = 0.5;
+constexpr sampler s(coord::normalized, address::clamp_to_zero, filter::linear);
+
+fragment half4 sdfTextFragment(io_t in [[ stage_in ]],
+                               texture2d<float> fontTexture [[ texture(0) ]],
+                               constant params_t& params [[ buffer(1) ]]) {
     
-    float iSmoothing = *smoothing;
-    float4 iTextColor = *textColor;
-    const float4 outlineColor = *borderColor;
+    float4 distanceVec = fontTexture.sample(s, in.uv);
+    float distance     = length(distanceVec.rgb);
+    float finalColor   = smoothstep(params.fontWidth - params.smoothing, params.fontWidth + params.smoothing, distance);
     
-    const float2 shadowOffset = float2(0.00, 0.001);
-    const float4 shadowColor = outlineColor;
+    return half4(finalColor);
+}
+
+fragment half4 sdfTextOutlineFragment(io_t in [[ stage_in ]],
+                                      texture2d<float> fontTexture [[ texture(0) ]],
+                                      constant params_t& params [[ buffer(1) ]]) {
     
-    float4 distanceVec = diffuseTexture.sample(s, fragmentIn.texCoord);
-    float distance = length(distanceVec.rgb);
-    float outlineFactor = smoothstep(textWidth - iSmoothing, textWidth + iSmoothing, distance);
-    float4 color = mix(outlineColor, iTextColor, outlineFactor);
+    float4 distanceVec  = fontTexture.sample(s, in.uv);
+    float distance      = length(distanceVec.rgb);
+    float outlineFactor = smoothstep(params.fontWidth - params.smoothing, params.fontWidth + params.smoothing, distance);
+    float4 color        = mix(params.outlineColor, params.fontColor, outlineFactor);
+    float alpha         = smoothstep(params.outlineWidth - params.smoothing, params.outlineWidth + params.smoothing, distance);
+    float4 finalColor   = float4(color.rgb * alpha, color.a * alpha);
     
-    float alpha = smoothstep(outlineWidth - iSmoothing, outlineWidth + iSmoothing, distance);
-    float4 colorWithOutline = float4(color.rgb * alpha, color.a * alpha);
+    return half4(finalColor);
+}
+
+fragment half4 sdfTextOutlineShadowFragment(io_t in [[ stage_in ]],
+                                            texture2d<float> fontTexture [[ texture(0) ]],
+                                            constant params_t& params [[ buffer(1) ]]) {
     
-    float4 shadowDistanceVec = diffuseTexture.sample(s, fragmentIn.texCoord - shadowOffset);
-    float shadowDistance = length(shadowDistanceVec.rgb);
-    float shadowAlpha = smoothstep(shadowWidth - iSmoothing, shadowWidth + iSmoothing, shadowDistance);
-    float4 shadow = float4(shadowColor.rgb * shadowAlpha, shadowColor.a * shadowAlpha);
-    return mix(shadow, colorWithOutline, smoothstep(0.8, 1.0, colorWithOutline.a));
+    float4 distanceVec       = fontTexture.sample(s, in.uv);
+    float distance           = length(distanceVec.rgb);
+    float outlineFactor      = smoothstep(params.fontWidth - params.smoothing, params.fontWidth + params.smoothing, distance);
+    float4 color             = mix(params.outlineColor, params.fontColor, outlineFactor);
+    float alpha              = smoothstep(params.outlineWidth - params.smoothing, params.outlineWidth + params.smoothing, distance);
+    float4 colorWithOutline  = float4(color.rgb * alpha, color.a * alpha);
+    float4 shadowDistanceVec = fontTexture.sample(s, in.uv - params.shadowOffset);
+    float shadowDistance     = length(shadowDistanceVec.rgb);
+    float shadowAlpha        = smoothstep(params.shadowWidth - params.smoothing, params.shadowWidth + params.smoothing, shadowDistance);
+    float4 shadow            = float4(params.shadowColor.rgb * shadowAlpha, params.shadowColor.a * shadowAlpha);
+    float4 finalColor        = mix(shadow, colorWithOutline, smoothstep(0.8, 1.0, colorWithOutline.a));
+    
+    return half4(finalColor);
 }

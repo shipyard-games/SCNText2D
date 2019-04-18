@@ -11,6 +11,17 @@ import Metal
 import MetalKit
 
 public class SCNText2D {
+    
+    private struct SDFParams {
+        let smoothing: Float
+        let fontWidth: Float
+        let outlineWidth: Float
+        let shadowWidth: Float
+        let shadowOffset: float2
+        let fontColor: float4
+        let outlineColor: float4
+        let shadowColor: float4
+    }
 
     #if os(iOS)
     public typealias Color = UIColor
@@ -26,7 +37,7 @@ public class SCNText2D {
         case centered
     }
 
-    public static func create(from string: String, withFontNamed fontName: String, textColor: Color = .white, borderColor: Color = .black, smoothing: SCNFloat = 0.04, scale: SCNFloat = 1.0, lineSpacing: SCNFloat = 1.0, alignment: TextAlignment = .centered) -> SCNGeometry {
+    public static func create(from string: String, withFontNamed fontName: String, textColor: Color = .white, borderColor: Color = .black, smoothing: Float = 0.04, scale: SCNFloat = 1.0, lineSpacing: SCNFloat = 1.0, alignment: TextAlignment = .centered) -> SCNGeometry {
         let jsonURL = Bundle.main.url(forResource: fontName, withExtension: "json")!
         let jsonData = try! Data(contentsOf: jsonURL)
 
@@ -44,8 +55,8 @@ public class SCNText2D {
         let shaderLibrary = try! device.makeLibrary(URL: shaderLibraryUrl)
 
         let shaderProgram = SCNProgram()
-        shaderProgram.vertexFunctionName = "distanceShadowVertex"
-        shaderProgram.fragmentFunctionName = "distanceShadowFrag"
+        shaderProgram.vertexFunctionName = "sdfTextVertex"
+        shaderProgram.fragmentFunctionName = "sdfTextFragment"
         shaderProgram.isOpaque = false
         shaderProgram.library = shaderLibrary
 
@@ -57,12 +68,21 @@ public class SCNText2D {
             .SRGB : false
         ]
         
+        var params = SDFParams(smoothing: smoothing,
+                               fontWidth: 0.9,
+                               outlineWidth: 0.5,
+                               shadowWidth: 0.5,
+                               shadowOffset: float2(0.0, 0.002),
+                               fontColor: float4(0.0, 0.0, 0.0, 1.0),
+                               outlineColor: float4(1.0, 1.0, 1.0, 1.0),
+                               shadowColor: float4(0.5, 0.5, 0.5, 1.0))
+        
         let mdlTexture = MDLTexture(named: "\(fontName).png")!
+        
         let sdfTexture = try! textureLoader.newTexture(texture: mdlTexture, options: textureLoaderOptions)
-        geometry.materials.first?.setValue(SCNMaterialProperty(contents: sdfTexture), forKey: "diffuseTexture")
-        geometry.materials.first?.setValue(smoothing, forKey: "smoothing")
-        geometry.materials.first?.setValue(textColor, forKey: "textColor")
-        geometry.materials.first?.setValue(borderColor, forKey: "borderColor")
+        geometry.materials.first?.setValue(SCNMaterialProperty(contents: sdfTexture), forKey: "fontTexture")
+        geometry.materials.first?.setValue(Data(bytes: &params, count: MemoryLayout<SDFParams>.size), forKey: "params")
+        
         return geometry
     }
 
