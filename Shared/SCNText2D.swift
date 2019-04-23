@@ -33,7 +33,7 @@ public class SCNText2D {
         case centered
     }
 
-    public static func create(from string: String, withFontNamed fontName: String, fontColor: Color = float4(1.0, 1.0, 1.0, 1.0), outlineColor: Color = float4(0.0, 0.0, 0.0, 0.0), smoothing: Float = 0.04, scale: SCNFloat = 1.0, lineSpacing: SCNFloat = 1.0, alignment: TextAlignment = .centered) -> SCNGeometry {
+    public static func create(from string: String, withFontNamed fontName: String, fontColor: Color = float4(1.0, 1.0, 1.0, 1.0), outlineColor: Color = float4(0.0, 0.0, 0.0, 0.0), shadowColor: Color = float4(0.0, 0.0, 0.0, 0.0), smoothing: Float = 0.04, scale: SCNFloat = 1.0, lineSpacing: SCNFloat = 1.0, alignment: TextAlignment = .centered, fontWidth: Float = 0.9, outlineWidth: Float = 0.5, shadowWidth: Float = 0.5, shadowOffset: float2 = float2(0.0, 0.002)) -> SCNGeometry {
         let jsonURL = Bundle.main.url(forResource: fontName, withExtension: "json")!
         let jsonData = try! Data(contentsOf: jsonURL)
 
@@ -72,13 +72,13 @@ public class SCNText2D {
         ]
         
         var params = SDFParams(smoothing: smoothing,
-                               fontWidth: 0.9,
-                               outlineWidth: 0.5,
-                               shadowWidth: 0.5,
-                               shadowOffset: float2(0.0, 0.002),
+                               fontWidth: fontWidth,
+                               outlineWidth: outlineWidth,
+                               shadowWidth: shadowWidth,
+                               shadowOffset: shadowOffset,
                                fontColor: fontColor,
                                outlineColor: outlineColor,
-                               shadowColor: float4(0.5, 0.5, 0.5, 1.0))
+                               shadowColor: shadowColor)
         
         let mdlTexture = MDLTexture(named: "\(fontName).png")!
         
