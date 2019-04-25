@@ -66,11 +66,11 @@ public class SCNText2D {
         shaderProgram.vertexFunctionName = "sdfTextVertex"
         
         switch (outlineColor[3], shadowColor[3]) {
-            case (let outline, 0.0) where outline > 0.0:
-                shaderProgram.fragmentFunctionName = "sdfTextOutlineFragment"
-
             case (_, let shadow) where shadow > 0.0:
                 shaderProgram.fragmentFunctionName = "sdfTextOutlineShadowFragment"
+
+            case (let outline, _) where outline > 0.0:
+                shaderProgram.fragmentFunctionName = "sdfTextOutlineFragment"
 
             default:
                 shaderProgram.fragmentFunctionName = "sdfTextFragment"
