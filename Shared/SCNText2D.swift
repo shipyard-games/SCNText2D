@@ -32,6 +32,8 @@ public class SCNText2D {
         case right
         case centered
     }
+    
+    private static var textureCache = [String : MTLTexture]()
 
     public static func create(from string: String, withFontNamed fontName: String, fontColor: Color = float4(1.0, 1.0, 1.0, 1.0), outlineColor: Color = float4(0.0, 0.0, 0.0, 0.0), smoothing: Float = 0.04, scale: SCNFloat = 1.0, lineSpacing: SCNFloat = 1.0, alignment: TextAlignment = .centered) -> SCNGeometry {
         let jsonURL = Bundle.main.url(forResource: fontName, withExtension: "json")!
@@ -80,9 +82,16 @@ public class SCNText2D {
                                outlineColor: outlineColor,
                                shadowColor: float4(0.5, 0.5, 0.5, 1.0))
         
-        let mdlTexture = MDLTexture(named: "\(fontName).png")!
+        let sdfTexture: MTLTexture
+        if let mdlTexture = SCNText2D.textureCache[fontName] {
+            sdfTexture = mdlTexture
+        }
+        else {
+            let mdlTexture = MDLTexture(named: "\(fontName).png")!
+            sdfTexture = try! textureLoader.newTexture(texture: mdlTexture, options: textureLoaderOptions)
+            SCNText2D.textureCache[fontName] = sdfTexture
+        }
         
-        let sdfTexture = try! textureLoader.newTexture(texture: mdlTexture, options: textureLoaderOptions)
         geometry.materials.first?.setValue(SCNMaterialProperty(contents: sdfTexture), forKey: "fontTexture")
         geometry.materials.first?.setValue(Data(bytes: &params, count: MemoryLayout<SDFParams>.size), forKey: "params")
         
