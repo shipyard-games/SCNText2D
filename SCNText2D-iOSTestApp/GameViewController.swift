@@ -84,8 +84,10 @@ class GameViewController: UIViewController {
                                             withFontNamed: "OpenSans-Regular",
                                             fontColor: float4(0.0, 0.0, 0.0, 1.0),
                                             outlineColor: float4(1.0, 1.0, 0.0, 1.0),
+                                            shadowColor: float4(1.0, 1.0, 0.0, 1.0),
                                             smoothing: 0.1,
-                                            alignment: .centered)
+                                            alignment: .centered,
+                                            shadowOffset: float2(0.0, 0.002))
         
         let node = SCNNode()
         node.eulerAngles.x += -35.0 * (180.0 / .pi)
