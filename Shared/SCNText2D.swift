@@ -34,6 +34,8 @@ public class SCNText2D {
     }
     
     private static var textureCache = [String : MTLTexture]()
+    private static var metricsCache = [String : FontMetrics]()
+    private static var atlasCache   = [String : AtlasData]()
 
     public static func create(from string: String,
                               withFontNamed fontName: String,
@@ -48,13 +50,9 @@ public class SCNText2D {
                               outlineWidth: Float = 0.5,
                               shadowWidth: Float = 0.5,
                               shadowOffset: float2 = float2(0.0, 0.0)) -> SCNGeometry {
-        let jsonURL = Bundle.main.url(forResource: fontName, withExtension: "json")!
-        let jsonData = try! Data(contentsOf: jsonURL)
-
-        let fontMetrics = try! JSONDecoder().decode(FontMetrics.self, from: jsonData)
         
-        let atlasDataURL = Bundle.main.url(forResource: fontName, withExtension: "plist")!
-        let atlasData = NSDictionary(contentsOfFile: atlasDataURL.path) as! AtlasData
+        let fontMetrics = SCNText2D.metricsCache[fontName] ?? loadFontMetrics(for: fontName)
+        let atlasData = SCNText2D.atlasCache[fontName] ?? loadAtlasData(for: fontName)
 
         let shaderLibraryUrl = Bundle(for: SCNText2D.self).url(forResource: "SCNText2D-Shaders", withExtension: "metallib")!
 
@@ -279,6 +277,26 @@ public class SCNText2D {
                 return vertex
             }
         }
+    }
+    
+    private static func loadFontMetrics(for fontNamed: String) -> FontMetrics {
+        let jsonURL = Bundle.main.url(forResource: fontNamed, withExtension: "json")!
+        let jsonData = try! Data(contentsOf: jsonURL)
+        
+        let metrics = try! JSONDecoder().decode(FontMetrics.self, from: jsonData)
+        
+        SCNText2D.metricsCache[fontNamed] = metrics
+        
+        return metrics
+    }
+    
+    private static func loadAtlasData(for fontNamed: String) -> AtlasData {
+        let atlasDataURL = Bundle.main.url(forResource: fontNamed, withExtension: "plist")!
+        let atlas = NSDictionary(contentsOfFile: atlasDataURL.path) as! AtlasData
+        
+        SCNText2D.atlasCache[fontNamed] = atlas
+        
+        return atlas
     }
 }
 
