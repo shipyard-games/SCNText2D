@@ -80,6 +80,8 @@ class GameViewController: UIViewController {
         freedom to the galaxy.....
         """
         
+        SCNText2D.load(font: "OpenSans-Regular")
+        
         let textGeometry = SCNText2D.create(from: text,
                                             withFontNamed: "OpenSans-Regular",
                                             fontColor: float4(0.0, 0.0, 0.0, 1.0),

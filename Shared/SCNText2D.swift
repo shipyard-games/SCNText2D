@@ -36,6 +36,16 @@ public class SCNText2D {
     private static var textureCache = [String : MTLTexture]()
     private static var metricsCache = [String : FontMetrics]()
     private static var atlasCache   = [String : AtlasData]()
+    
+    public static func load(font fontName: String) {
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError( "Failed to get the system's default Metal device." )
+        }
+        
+        SCNText2D.loadTexture(for: fontName, device: device)
+        SCNText2D.loadFontMetrics(for: fontName)
+        SCNText2D.loadAtlasData(for: fontName)
+    }
 
     public static func create(from string: String,
                               withFontNamed fontName: String,
@@ -51,8 +61,13 @@ public class SCNText2D {
                               shadowWidth: Float = 0.5,
                               shadowOffset: float2 = float2(0.0, 0.0)) -> SCNGeometry {
         
-        let fontMetrics = SCNText2D.metricsCache[fontName] ?? loadFontMetrics(for: fontName)
-        let atlasData = SCNText2D.atlasCache[fontName] ?? loadAtlasData(for: fontName)
+        guard let fontMetrics = SCNText2D.metricsCache[fontName] else {
+            fatalError("Font '\(fontName)' not loaded. No font metrics found.")
+        }
+        
+        guard let atlasData = SCNText2D.atlasCache[fontName] else {
+            fatalError("Font '\(fontName)' not loaded. No atlas data found.")
+        }
 
         let shaderLibraryUrl = Bundle(for: SCNText2D.self).url(forResource: "SCNText2D-Shaders", withExtension: "metallib")!
 
@@ -81,11 +96,6 @@ public class SCNText2D {
 
         let geometry = buildGeometry(string, fontMetrics, atlasData, alignment, scale, lineSpacing)
         geometry.materials.first?.program = shaderProgram
-
-        let textureLoader = MTKTextureLoader(device: device)
-        let textureLoaderOptions: [MTKTextureLoader.Option: Any] = [
-            .SRGB : false
-        ]
         
         var params = SDFParams(smoothing: smoothing,
                                fontWidth: fontWidth,
@@ -96,17 +106,11 @@ public class SCNText2D {
                                outlineColor: outlineColor,
                                shadowColor: shadowColor)
         
-        let sdfTexture: MTLTexture
-        if let mdlTexture = SCNText2D.textureCache[fontName] {
-            sdfTexture = mdlTexture
-        }
-        else {
-            let mdlTexture = MDLTexture(named: "\(fontName).png")!
-            sdfTexture = try! textureLoader.newTexture(texture: mdlTexture, options: textureLoaderOptions)
-            SCNText2D.textureCache[fontName] = sdfTexture
+        guard let texture = textureCache[fontName] else {
+            fatalError("Font '\(fontName)' not loaded. No texture found.")
         }
         
-        geometry.materials.first?.setValue(SCNMaterialProperty(contents: sdfTexture), forKey: "fontTexture")
+        geometry.materials.first?.setValue(SCNMaterialProperty(contents: texture), forKey: "fontTexture")
         geometry.materials.first?.setValue(Data(bytes: &params, count: MemoryLayout<SDFParams>.size), forKey: "params")
         
         return geometry
@@ -279,24 +283,31 @@ public class SCNText2D {
         }
     }
     
-    private static func loadFontMetrics(for fontNamed: String) -> FontMetrics {
+    private static func loadTexture(for fontNamed: String, device: MTLDevice) {
+        let textureLoader = MTKTextureLoader(device: device)
+        let textureLoaderOptions: [MTKTextureLoader.Option: Any] = [
+            .SRGB : false
+        ]
+        
+        let mdlTexture = MDLTexture(named: "\(fontNamed).png")!
+        let texture = try! textureLoader.newTexture(texture: mdlTexture, options: textureLoaderOptions)
+        SCNText2D.textureCache[fontNamed] = texture
+    }
+    
+    private static func loadFontMetrics(for fontNamed: String) {
         let jsonURL = Bundle.main.url(forResource: fontNamed, withExtension: "json")!
         let jsonData = try! Data(contentsOf: jsonURL)
         
         let metrics = try! JSONDecoder().decode(FontMetrics.self, from: jsonData)
         
         SCNText2D.metricsCache[fontNamed] = metrics
-        
-        return metrics
     }
     
-    private static func loadAtlasData(for fontNamed: String) -> AtlasData {
+    private static func loadAtlasData(for fontNamed: String) {
         let atlasDataURL = Bundle.main.url(forResource: fontNamed, withExtension: "plist")!
         let atlas = NSDictionary(contentsOfFile: atlasDataURL.path) as! AtlasData
         
         SCNText2D.atlasCache[fontNamed] = atlas
-        
-        return atlas
     }
 }
 

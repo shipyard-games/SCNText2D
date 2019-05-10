@@ -79,6 +79,8 @@ class GameViewController: NSViewController {
         her people and restore
         freedom to the galaxy.....
         """
+        
+        SCNText2D.load(font: "OpenSans-Regular")
 
         let textGeometry = SCNText2D.create(from: text,
                                             withFontNamed: "OpenSans-Regular",
