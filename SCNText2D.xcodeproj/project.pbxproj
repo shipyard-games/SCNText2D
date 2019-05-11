@@ -16,6 +16,9 @@
 		4B528F70221313EA00B52997 /* SCNText2D-Shaders.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 4B528F69221313C200B52997 /* SCNText2D-Shaders.metallib */; };
 		4B528F7A2213141000B52997 /* SCNText2D-Shaders.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 4B528F732213140700B52997 /* SCNText2D-Shaders.metallib */; };
 		4B528F7C2213144E00B52997 /* SDFText.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4B528F7B2213144E00B52997 /* SDFText.metal */; };
+		4BAC83DF2286A25C007B6900 /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */; };
+		4BAC83E02286A25C007B6900 /* OpenSans-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */; };
+		4BAC83E12286A25C007B6900 /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */; };
 		4BDDFF7E226603FF00E7AC74 /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */; };
 		4BDDFF7F226603FF00E7AC74 /* OpenSans-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */; };
 		4BDDFF80226603FF00E7AC74 /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */; };
@@ -627,6 +630,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BAC83E02286A25C007B6900 /* OpenSans-Regular.plist in Resources */,
+				4BAC83E12286A25C007B6900 /* OpenSans-Regular.png in Resources */,
+				4BAC83DF2286A25C007B6900 /* OpenSans-Regular.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

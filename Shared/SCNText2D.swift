@@ -23,6 +23,11 @@ public class SCNText2D {
         let shadowColor: float4
     }
     
+    private struct Vertex {
+        var x, y, z: Float
+        var u, v: Float
+    }
+    
     public typealias Color = float4
     
     typealias AtlasData = Dictionary<String, Any>
@@ -36,15 +41,12 @@ public class SCNText2D {
     private static var textureCache = [String : MTLTexture]()
     private static var metricsCache = [String : FontMetrics]()
     private static var atlasCache   = [String : AtlasData]()
+    private static let device = MTLCreateSystemDefaultDevice()!
     
-    public static func load(font fontName: String) {
-        guard let device = MTLCreateSystemDefaultDevice() else {
-            fatalError( "Failed to get the system's default Metal device." )
-        }
-        
-        SCNText2D.loadTexture(for: fontName, device: device)
-        SCNText2D.loadFontMetrics(for: fontName)
-        SCNText2D.loadAtlasData(for: fontName)
+    public static func load(font fontName: String, bundle: Bundle) {
+        SCNText2D.loadFontMetrics(for: fontName, bundle: bundle)
+        SCNText2D.loadTexture(for: fontName, bundle: bundle)
+        SCNText2D.loadAtlasData(for: fontName, bundle: bundle)
     }
 
     public static func create(from string: String,
@@ -53,8 +55,8 @@ public class SCNText2D {
                               outlineColor: Color = float4(0.0, 0.0, 0.0, 0.0),
                               shadowColor: Color = float4(0.0, 0.0, 0.0, 0.0),
                               smoothing: Float = 0.04,
-                              scale: SCNFloat = 1.0,
-                              lineSpacing: SCNFloat = 1.0,
+                              scale: Float = 1.0,
+                              lineSpacing: Float = 1.0,
                               alignment: TextAlignment = .centered,
                               fontWidth: Float = 0.9,
                               outlineWidth: Float = 0.5,
@@ -116,31 +118,28 @@ public class SCNText2D {
         return geometry
     }
 
-    private static func buildGeometry(_ string: String, _ fontMetrics: FontMetrics, _ atlasData: AtlasData, _ alignment: TextAlignment, _ scale: SCNFloat, _ lineSpacing: SCNFloat) -> SCNGeometry {
+    private static func buildGeometry(_ string: String, _ fontMetrics: FontMetrics, _ atlasData: AtlasData, _ alignment: TextAlignment, _ scale: Float, _ lineSpacing: Float) -> SCNGeometry {
         
         let atlasMeta = atlasData["meta"] as! Dictionary<String, Any>
         
         let textureWidth = (atlasMeta["width"] as! NSNumber).floatValue
         let textureHeight = (atlasMeta["height"] as! NSNumber).floatValue
 
-        var cursorX: SCNFloat = 0.0
-        var cursorY: SCNFloat = 0.0
+        var cursorX: Float = 0.0
+        var cursorY: Float = 0.0
 
-        var vertices = [SCNVector3]()
-        vertices.reserveCapacity(string.count * 4)
+        var vertices = [Vertex]()
+        vertices.reserveCapacity(string.count * 4) // 4 vertices per character
         
-        var lineVertices = [SCNVector3]()
-
-        var texCoords = [CGPoint]()
-        texCoords.reserveCapacity(vertices.count)
+        var lineVertices = [Vertex]()
 
         var indices = [UInt16]()
-        indices.reserveCapacity(string.count * 6)
+        indices.reserveCapacity(string.count * 6) // 6 indices per character
 
-        var minX: SCNFloat = SCNFloat.infinity
-        var minY: SCNFloat = SCNFloat.infinity
-        var maxX: SCNFloat = -SCNFloat.infinity
-        var maxY: SCNFloat = -SCNFloat.infinity
+        var minX: Float = Float.infinity
+        var minY: Float = Float.infinity
+        var maxX: Float = -Float.infinity
+        var maxY: Float = -Float.infinity
 
         // We keep track of the number of newlines, since they don't generate any
         // vertices like all other glyphs do. We use this count to adjust the indices
@@ -149,7 +148,7 @@ public class SCNText2D {
         
         for (i, char) in string.unicodeScalars.enumerated() {
             guard char != Unicode.Scalar("\n") else { // newline
-                cursorY -= SCNFloat(fontMetrics.height) * scale * lineSpacing
+                cursorY -= fontMetrics.height * scale * lineSpacing
                 
                 alignLine(&lineVertices, withAlignment: alignment, lineWidth: cursorX)
                 vertices.append(contentsOf: lineVertices)
@@ -161,7 +160,7 @@ public class SCNText2D {
             }
             
             guard let glyph = fontMetrics.glyphData["\(char)"] else {
-                cursorX += SCNFloat(fontMetrics.spaceAdvance) * scale
+                cursorX += fontMetrics.spaceAdvance * scale
                 continue
             }
             
@@ -175,34 +174,24 @@ public class SCNText2D {
                 let kernChar = String(string[strIndex])
                 let kernVal = glyph.kernings[kernChar] ?? 0.0
                 if (kernVal != 0.0 && (kernVal < -0.001 || kernVal > 0.001)) {
-                    cursorX += SCNFloat(kernVal) * scale;
+                    cursorX += kernVal * scale;
                 }
             }
 
-            let glyphWidth    = SCNFloat(glyph.bboxWidth) * scale;
-            let glyphHeight   = SCNFloat(glyph.bboxHeight) * scale;
-            let glyphBearingX = SCNFloat(glyph.bearingX) * scale;
-            let glyphBearingY = SCNFloat(glyph.bearingY) * scale;
-            let glyphAdvanceX = SCNFloat(glyph.advanceX) * scale;
+            let glyphWidth    = glyph.bboxWidth * scale;
+            let glyphHeight   = glyph.bboxHeight * scale;
+            let glyphBearingX = glyph.bearingX * scale;
+            let glyphBearingY = glyph.bearingY * scale;
+            let glyphAdvanceX = glyph.advanceX * scale;
 
             let x = cursorX + glyphBearingX;
             let y = cursorY + glyphBearingY;
-            let z = SCNFloat(i) * 0.001
+            let z = Float(i) * 0.001
 
             if x > maxX { maxX = x }
             if x < minX { minX = x }
             if y > maxY { maxY = y }
             if y < minY { minY = y }
-            
-            let v1 = SCNVector3(x, y - glyphHeight, z)
-            let v2 = SCNVector3(x + glyphWidth, y - glyphHeight, z)
-            let v3 = SCNVector3(x, y, z)
-            let v4 = SCNVector3(x + glyphWidth, y, z)
-            
-            lineVertices.append(v1)
-            lineVertices.append(v2)
-            lineVertices.append(v3)
-            lineVertices.append(v4)
             
             let w = uvData["w"]!.floatValue / textureWidth
             let h = uvData["h"]!.floatValue / textureHeight
@@ -211,10 +200,15 @@ public class SCNText2D {
             let s1 = s0 + w
             let t1 = t0 + h
             
-            texCoords.append(CGPoint(x: CGFloat(s0), y: CGFloat(t1)))
-            texCoords.append(CGPoint(x: CGFloat(s1), y: CGFloat(t1)))
-            texCoords.append(CGPoint(x: CGFloat(s0), y: CGFloat(t0)))
-            texCoords.append(CGPoint(x: CGFloat(s1), y: CGFloat(t0)))
+            let v1 = Vertex(x: x, y: y - glyphHeight, z: z, u: s0, v: t1)
+            let v2 = Vertex(x: x + glyphWidth, y: y - glyphHeight, z: z, u: s1, v: t1)
+            let v3 = Vertex(x: x, y: y, z: z, u: s0, v: t0)
+            let v4 = Vertex(x: x + glyphWidth, y: y, z: z, u: s1, v: t0)
+            
+            lineVertices.append(v1)
+            lineVertices.append(v2)
+            lineVertices.append(v3)
+            lineVertices.append(v4)
 
             let curidx: UInt16 = UInt16(i - newlineCount) * 4
             indices.append(curidx + 0)
@@ -236,7 +230,7 @@ public class SCNText2D {
         let width = maxX - minX
 
         vertices = vertices.map {
-            (vertex: SCNVector3) in
+            (vertex: Vertex) in
             var vertex = vertex
             vertex.y -= height / 2
             
@@ -250,21 +244,33 @@ public class SCNText2D {
             }
             return vertex
         }
-
-        let element = SCNGeometryElement(indices: indices, primitiveType: .triangles)
-        let vertexSource = SCNGeometrySource(vertices: vertices)
-        let uvSource = SCNGeometrySource(textureCoordinates: texCoords)
+        
+        let indicesData = Data(bytes: &indices, count: MemoryLayout<UInt16>.size * indices.count)
+        let element = SCNGeometryElement(data: indicesData, primitiveType: .triangles, primitiveCount: indices.count / 3, bytesPerIndex: MemoryLayout<UInt16>.size)
+        
+        let verticesData = Data(bytes: &vertices, count: MemoryLayout<Vertex>.size * vertices.count)
+        
+        let vertexSource = SCNGeometrySource(data: verticesData, semantic: .vertex, vectorCount: vertices.count,
+                                             usesFloatComponents: true, componentsPerVector: 3,
+                                             bytesPerComponent: MemoryLayout<Float>.size, dataOffset: 0,
+                                             dataStride: MemoryLayout<Vertex>.size)
+        
+        let uvSource = SCNGeometrySource(data: verticesData, semantic: .texcoord, vectorCount: vertices.count,
+                                         usesFloatComponents: true, componentsPerVector: 2,
+                                         bytesPerComponent: MemoryLayout<Float>.size,
+                                         dataOffset: MemoryLayout<Float>.size * 3,
+                                         dataStride: MemoryLayout<Vertex>.size)
 
         let geometry = SCNGeometry(sources: [vertexSource, uvSource], elements: [element])
 
         return geometry
     }
     
-    private static func alignLine(_ lineVertices: inout [SCNVector3], withAlignment alignment: TextAlignment, lineWidth: SCNFloat) {
+    private static func alignLine(_ lineVertices: inout [Vertex], withAlignment alignment: TextAlignment, lineWidth: Float) {
         switch (alignment) {
         case .centered:
             lineVertices = lineVertices.map {
-                (vertex: SCNVector3) -> SCNVector3 in
+                (vertex: Vertex) -> Vertex in
                 var vertex = vertex
                 vertex.x -= lineWidth / 2
                 return vertex
@@ -275,7 +281,7 @@ public class SCNText2D {
         case .right:
             // we move the last glyphs position to zero so we can do right alignment once the geometry is complete
             lineVertices = lineVertices.map {
-                (vertex: SCNVector3) -> SCNVector3 in
+                (vertex: Vertex) -> Vertex in
                 var vertex = vertex
                 vertex.x -= lineWidth
                 return vertex
@@ -283,19 +289,19 @@ public class SCNText2D {
         }
     }
     
-    private static func loadTexture(for fontNamed: String, device: MTLDevice) {
-        let textureLoader = MTKTextureLoader(device: device)
+    private static func loadTexture(for fontNamed: String, bundle: Bundle) {
+        let textureLoader = MTKTextureLoader(device: SCNText2D.device)
         let textureLoaderOptions: [MTKTextureLoader.Option: Any] = [
             .SRGB : false
         ]
         
-        let mdlTexture = MDLTexture(named: "\(fontNamed).png")!
+        let mdlTexture = MDLTexture(named: "\(fontNamed).png", bundle: bundle)!
         let texture = try! textureLoader.newTexture(texture: mdlTexture, options: textureLoaderOptions)
         SCNText2D.textureCache[fontNamed] = texture
     }
     
-    private static func loadFontMetrics(for fontNamed: String) {
-        let jsonURL = Bundle.main.url(forResource: fontNamed, withExtension: "json")!
+    private static func loadFontMetrics(for fontNamed: String, bundle: Bundle) {
+        let jsonURL = bundle.url(forResource: fontNamed, withExtension: "json")!
         let jsonData = try! Data(contentsOf: jsonURL)
         
         let metrics = try! JSONDecoder().decode(FontMetrics.self, from: jsonData)
@@ -303,8 +309,8 @@ public class SCNText2D {
         SCNText2D.metricsCache[fontNamed] = metrics
     }
     
-    private static func loadAtlasData(for fontNamed: String) {
-        let atlasDataURL = Bundle.main.url(forResource: fontNamed, withExtension: "plist")!
+    private static func loadAtlasData(for fontNamed: String, bundle: Bundle) {
+        let atlasDataURL = bundle.url(forResource: fontNamed, withExtension: "plist")!
         let atlas = NSDictionary(contentsOfFile: atlasDataURL.path) as! AtlasData
         
         SCNText2D.atlasCache[fontNamed] = atlas
