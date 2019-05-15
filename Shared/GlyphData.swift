@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GlyphData: Codable {
+class GlyphData: Codable {
 
     enum CodingKeys: String, CodingKey {
         case advanceX = "advance_x"

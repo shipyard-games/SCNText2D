@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FontMetrics: Codable {
+class FontMetrics: Codable {
 
     enum CodingKeys: String, CodingKey {
         case ascender

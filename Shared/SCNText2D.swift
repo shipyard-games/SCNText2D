@@ -30,8 +30,6 @@ public class SCNText2D {
     
     public typealias Color = float4
     
-    typealias AtlasData = Dictionary<String, Any>
-    
     public enum TextAlignment {
         case left
         case right
@@ -119,11 +117,9 @@ public class SCNText2D {
     }
 
     private static func buildGeometry(_ string: String, _ fontMetrics: FontMetrics, _ atlasData: AtlasData, _ alignment: TextAlignment, _ scale: Float, _ lineSpacing: Float) -> SCNGeometry {
-        
-        let atlasMeta = atlasData["meta"] as! Dictionary<String, Any>
-        
-        let textureWidth = (atlasMeta["width"] as! NSNumber).floatValue
-        let textureHeight = (atlasMeta["height"] as! NSNumber).floatValue
+    
+        let textureWidth = atlasData.meta.width
+        let textureHeight = atlasData.meta.height
 
         var cursorX: Float = 0.0
         var cursorY: Float = 0.0
@@ -165,7 +161,7 @@ public class SCNText2D {
             }
             
             let uvKey = String(format: "0x%04X", char.value).lowercased()
-            guard let uvData = (atlasData["frames"] as! Dictionary<String, Dictionary<String, NSNumber>>)[uvKey] else {
+            guard let uvData = atlasData.frames[uvKey] else {
                 fatalError("No UV-coordinates for character '\(char)'!")
             }
 
@@ -193,10 +189,10 @@ public class SCNText2D {
             if y > maxY { maxY = y }
             if y < minY { minY = y }
             
-            let w = uvData["w"]!.floatValue / textureWidth
-            let h = uvData["h"]!.floatValue / textureHeight
-            let s0 = uvData["x"]!.floatValue / textureWidth
-            let t0 = uvData["y"]!.floatValue / textureHeight
+            let w = uvData["w"]! / textureWidth
+            let h = uvData["h"]! / textureHeight
+            let s0 = uvData["x"]! / textureWidth
+            let t0 = uvData["y"]! / textureHeight
             let s1 = s0 + w
             let t1 = t0 + h
             
@@ -311,7 +307,8 @@ public class SCNText2D {
     
     private static func loadAtlasData(for fontNamed: String, bundle: Bundle) {
         let atlasDataURL = bundle.url(forResource: fontNamed, withExtension: "plist")!
-        let atlas = NSDictionary(contentsOfFile: atlasDataURL.path) as! AtlasData
+        
+        let atlas = try! PropertyListDecoder().decode(AtlasData.self, from: Data(contentsOf: atlasDataURL))
         
         SCNText2D.atlasCache[fontNamed] = atlas
     }
