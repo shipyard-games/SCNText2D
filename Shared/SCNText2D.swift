@@ -154,7 +154,8 @@ public class SCNText2D {
                 lineVertices = []
                 continue
             }
-            
+
+            let char = fontMetrics.glyphData["\(char)"] != nil ? char : " " // If char not found in atlas, use space " "
             guard let glyph = fontMetrics.glyphData["\(char)"] else {
                 cursorX += fontMetrics.spaceAdvance * scale
                 continue
