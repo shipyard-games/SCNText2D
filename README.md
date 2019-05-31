@@ -18,7 +18,7 @@ Currently this framework uses a pre-generated font texture atlas to render 2D te
 Add this line to your `Cartfile`.
 
 ```
-github "shipyard-games/SCNText2D" "v0.1.0-alpha"
+github "shipyard-games/SCNText2D" "v0.1.0"
 ```
 
 ### Running the test applications
