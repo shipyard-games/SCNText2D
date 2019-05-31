@@ -80,16 +80,22 @@ class GameViewController: UIViewController {
         freedom to the galaxy.....
         """
         
-        SCNText2D.load(font: "OpenSans-Regular", bundle: Bundle.main)
+        let fontConfig = SCNText2D.SDFParams(
+            smoothing: 0.1,
+            fontWidth: 0.9,
+            outlineWidth: 0.5,
+            shadowWidth: 0.5,
+            shadowOffset: float2(0.0, 0.0),
+            fontColor: float4(0.0, 0.0, 0.0, 1.0),
+            outlineColor: float4(1.0, 1.0, 0.0, 1.0),
+            shadowColor: float4(0.0, 0.0, 0.0, 0.0)
+        )
+        
+        SCNText2D.load(font: "OpenSans-Regular", bundle: Bundle.main, fontConfig: fontConfig)
         
         let textGeometry = SCNText2D.create(from: text,
                                             withFontNamed: "OpenSans-Regular",
-                                            fontColor: float4(0.0, 0.0, 0.0, 1.0),
-                                            outlineColor: float4(1.0, 1.0, 0.0, 1.0),
-                                            shadowColor: float4(1.0, 1.0, 0.0, 1.0),
-                                            smoothing: 0.1,
-                                            alignment: .centered,
-                                            shadowOffset: float2(0.0, 0.002))
+                                            alignment: .centered)
         
         let node = SCNNode()
         node.eulerAngles.x += -35.0 * (180.0 / .pi)

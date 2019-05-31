@@ -12,7 +12,7 @@ import MetalKit
 
 public class SCNText2D {
     
-    private struct SDFParams {
+    public struct SDFParams {
         let smoothing: Float
         let fontWidth: Float
         let outlineWidth: Float
@@ -21,6 +21,17 @@ public class SCNText2D {
         let fontColor: float4
         let outlineColor: float4
         let shadowColor: float4
+        
+        public init(smoothing: Float, fontWidth: Float, outlineWidth: Float, shadowWidth: Float, shadowOffset: float2, fontColor: float4, outlineColor: float4, shadowColor: float4) {
+            self.smoothing = smoothing
+            self.fontWidth = fontWidth
+            self.outlineWidth = outlineWidth
+            self.shadowWidth = shadowWidth
+            self.shadowOffset = shadowOffset
+            self.fontColor = fontColor
+            self.outlineColor = outlineColor
+            self.shadowColor = shadowColor
+        }
     }
     
     private struct Vertex {
@@ -36,31 +47,60 @@ public class SCNText2D {
         case centered
     }
     
-    private static var textureCache = [String : MTLTexture]()
-    private static var metricsCache = [String : FontMetrics]()
-    private static var atlasCache   = [String : AtlasData]()
-    private static let device = MTLCreateSystemDefaultDevice()!
+    private static var textureCache       = [String: MTLTexture]()
+    private static var metricsCache       = [String: FontMetrics]()
+    private static var atlasCache         = [String: AtlasData]()
+    private static var materialCache      = [String: SCNMaterial]()
     
-    public static func load(font fontName: String, bundle: Bundle) {
+    public static func load(font fontName: String, bundle: Bundle, fontConfig: SDFParams) {
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError( "Failed to get the system's default Metal device." )
+        }
+        
         SCNText2D.loadFontMetrics(for: fontName, bundle: bundle)
-        SCNText2D.loadTexture(for: fontName, bundle: bundle)
+        SCNText2D.loadTexture(for: fontName, bundle: bundle, using: device)
         SCNText2D.loadAtlasData(for: fontName, bundle: bundle)
+        
+        let shaderLibraryUrl = Bundle(for: SCNText2D.self).url(forResource: "SCNText2D-Shaders", withExtension: "metallib")!
+        let shaderLibrary = try! device.makeLibrary(URL: shaderLibraryUrl)
+        
+        let shaderProgram = SCNProgram()
+        shaderProgram.vertexFunctionName = "sdfTextVertex"
+        
+        switch (fontConfig.outlineColor[3], fontConfig.shadowColor[3]) {
+        case (_, let shadow) where shadow > 0.0:
+            shaderProgram.fragmentFunctionName = "sdfTextOutlineShadowFragment"
+            
+        case (let outline, _) where outline > 0.0:
+            shaderProgram.fragmentFunctionName = "sdfTextOutlineFragment"
+            
+        default:
+            shaderProgram.fragmentFunctionName = "sdfTextFragment"
+        }
+        
+        shaderProgram.isOpaque = false
+        shaderProgram.library = shaderLibrary
+        
+        guard let texture = textureCache[fontName] else {
+            fatalError("Font '\(fontName)' not loaded. No texture found.")
+        }
+        
+        var fontConfig = fontConfig
+        
+        let textureMaterialProperty = SCNMaterialProperty(contents: texture)
+        
+        let fontConfigData = Data(bytes: &fontConfig, count: MemoryLayout<SDFParams>.size)
+        
+        let material = SCNMaterial()
+        material.name = "SDFText2D::\(fontName)"
+        material.program = shaderProgram
+        material.setValue(textureMaterialProperty, forKey: "fontTexture")
+        material.setValue(fontConfigData, forKey: "params")
+        
+        SCNText2D.materialCache[fontName] = material
     }
 
-    public static func create(from string: String,
-                              withFontNamed fontName: String,
-                              fontColor: Color = float4(1.0, 1.0, 1.0, 1.0),
-                              outlineColor: Color = float4(0.0, 0.0, 0.0, 0.0),
-                              shadowColor: Color = float4(0.0, 0.0, 0.0, 0.0),
-                              smoothing: Float = 0.04,
-                              scale: Float = 1.0,
-                              lineSpacing: Float = 1.0,
-                              alignment: TextAlignment = .centered,
-                              fontWidth: Float = 0.9,
-                              outlineWidth: Float = 0.5,
-                              shadowWidth: Float = 0.5,
-                              shadowOffset: float2 = float2(0.0, 0.0)) -> SCNGeometry {
-        
+    public static func create(from string: String, withFontNamed fontName: String, scale: Float = 1.0, lineSpacing: Float = 1.0, alignment: TextAlignment = .centered) -> SCNGeometry {
         guard let fontMetrics = SCNText2D.metricsCache[fontName] else {
             fatalError("Font '\(fontName)' not loaded. No font metrics found.")
         }
@@ -69,50 +109,10 @@ public class SCNText2D {
             fatalError("Font '\(fontName)' not loaded. No atlas data found.")
         }
 
-        let shaderLibraryUrl = Bundle(for: SCNText2D.self).url(forResource: "SCNText2D-Shaders", withExtension: "metallib")!
-
-        guard let device = MTLCreateSystemDefaultDevice() else {
-            fatalError( "Failed to get the system's default Metal device." )
-        }
-
-        let shaderLibrary = try! device.makeLibrary(URL: shaderLibraryUrl)
-
-        let shaderProgram = SCNProgram()
-        shaderProgram.vertexFunctionName = "sdfTextVertex"
-        
-        switch (outlineColor[3], shadowColor[3]) {
-            case (_, let shadow) where shadow > 0.0:
-                shaderProgram.fragmentFunctionName = "sdfTextOutlineShadowFragment"
-
-            case (let outline, _) where outline > 0.0:
-                shaderProgram.fragmentFunctionName = "sdfTextOutlineFragment"
-
-            default:
-                shaderProgram.fragmentFunctionName = "sdfTextFragment"
-        }
-
-        shaderProgram.isOpaque = false
-        shaderProgram.library = shaderLibrary
-
         let geometry = buildGeometry(string, fontMetrics, atlasData, alignment, scale, lineSpacing)
-        geometry.materials.first?.program = shaderProgram
-        
-        var params = SDFParams(smoothing: smoothing,
-                               fontWidth: fontWidth,
-                               outlineWidth: outlineWidth,
-                               shadowWidth: shadowWidth,
-                               shadowOffset: shadowOffset,
-                               fontColor: fontColor,
-                               outlineColor: outlineColor,
-                               shadowColor: shadowColor)
-        
-        guard let texture = textureCache[fontName] else {
-            fatalError("Font '\(fontName)' not loaded. No texture found.")
+        if let material = SCNText2D.materialCache[fontName] {
+            geometry.materials = [material]
         }
-        
-        geometry.materials.first?.setValue(SCNMaterialProperty(contents: texture), forKey: "fontTexture")
-        geometry.materials.first?.setValue(Data(bytes: &params, count: MemoryLayout<SDFParams>.size), forKey: "params")
-        
         return geometry
     }
 
@@ -285,8 +285,8 @@ public class SCNText2D {
         }
     }
     
-    private static func loadTexture(for fontNamed: String, bundle: Bundle) {
-        let textureLoader = MTKTextureLoader(device: SCNText2D.device)
+    private static func loadTexture(for fontNamed: String, bundle: Bundle, using device: MTLDevice) {
+        let textureLoader = MTKTextureLoader(device: device)
         let textureLoaderOptions: [MTKTextureLoader.Option: Any] = [
             .SRGB : false
         ]
