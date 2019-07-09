@@ -140,6 +140,7 @@ public class SCNText2D {
         newMaterial.program = SCNProgram()
         newMaterial.program?.library = library
         newMaterial.program?.vertexFunctionName = "sdfTextVertex"
+        newMaterial.program?.isOpaque = false
         
         switch (fontConfig.outlineColor[3], fontConfig.shadowColor[3]) {
         case (_, let shadow) where shadow > 0.0:
