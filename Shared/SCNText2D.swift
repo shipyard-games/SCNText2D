@@ -128,9 +128,11 @@ public class SCNText2D {
         atlasCache[newFontName] = atlas
         
         // Create new material using the new font config.
-        guard let newMaterial = material.copy() as? SCNMaterial else {
+        guard let newMaterial = material.copy() as? SCNMaterial, let newShaderProgram = material.program?.copy() as? SCNProgram else {
             fatalError("Failed to copy material.")
         }
+        
+        newMaterial.program = newShaderProgram
         
         switch (fontConfig.outlineColor[3], fontConfig.shadowColor[3]) {
         case (_, let shadow) where shadow > 0.0:
