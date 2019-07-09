@@ -47,6 +47,14 @@ public class SCNText2D {
         case centered
     }
     
+    private static let library: MTLLibrary = {
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError( "Failed to get the system's default Metal device." )
+        }
+        let shaderLibraryUrl = Bundle(for: SCNText2D.self).url(forResource: "SCNText2D-Shaders", withExtension: "metallib")!
+        return try! device.makeLibrary(URL: shaderLibraryUrl)
+    }()
+    
     private static var textureCache       = [String: MTLTexture]()
     private static var metricsCache       = [String: FontMetrics]()
     private static var atlasCache         = [String: AtlasData]()
@@ -60,9 +68,6 @@ public class SCNText2D {
         SCNText2D.loadFontMetrics(for: fontName, bundle: bundle)
         SCNText2D.loadTexture(for: fontName, bundle: bundle, using: device)
         SCNText2D.loadAtlasData(for: fontName, bundle: bundle)
-        
-        let shaderLibraryUrl = Bundle(for: SCNText2D.self).url(forResource: "SCNText2D-Shaders", withExtension: "metallib")!
-        let shaderLibrary = try! device.makeLibrary(URL: shaderLibraryUrl)
         
         let shaderProgram = SCNProgram()
         shaderProgram.vertexFunctionName = "sdfTextVertex"
@@ -79,7 +84,7 @@ public class SCNText2D {
         }
         
         shaderProgram.isOpaque = false
-        shaderProgram.library = shaderLibrary
+        shaderProgram.library = library
         
         guard let texture = textureCache[fontName] else {
             fatalError("Font '\(fontName)' not loaded. No texture found.")
@@ -128,11 +133,13 @@ public class SCNText2D {
         atlasCache[newFontName] = atlas
         
         // Create new material using the new font config.
-        guard let newMaterial = material.copy() as? SCNMaterial, let newShaderProgram = material.program?.copy() as? SCNProgram else {
+        guard let newMaterial = material.copy() as? SCNMaterial else {
             fatalError("Failed to copy material.")
         }
         
-        newMaterial.program = newShaderProgram
+        newMaterial.program = SCNProgram()
+        newMaterial.program?.library = library
+        newMaterial.program?.vertexFunctionName = "sdfTextVertex"
         
         switch (fontConfig.outlineColor[3], fontConfig.shadowColor[3]) {
         case (_, let shadow) where shadow > 0.0:
