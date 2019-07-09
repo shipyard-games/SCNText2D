@@ -133,7 +133,7 @@
 		4B112A5E22128C1C0067D10F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B21951D225C99EC00A2CB84 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4B21951E225C99F600A2CB84 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		4B528F69221313C200B52997 /* SCNText2D-Shaders.metallib */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "archive.metal-library"; path = "SCNText2D-Shaders.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B528F69221313C200B52997 /* SCNText2D-Shaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = "SCNText2D-Shaders.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B528F732213140700B52997 /* SCNText2D-Shaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = "SCNText2D-Shaders.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B528F7B2213144E00B52997 /* SDFText.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SDFText.metal; sourceTree = "<group>"; };
 		4BAC83E2228C3C4B007B6900 /* AtlasData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasData.swift; sourceTree = "<group>"; };
@@ -861,7 +861,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "im.teemu.SCNText2D-iOSTestApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -930,7 +930,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "im.teemu.SCNText2D-iOSTestApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
@@ -951,7 +951,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "SCNText2D-Shaders";
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = iphoneos;
 			};
 			name = Debug;
 		};
@@ -967,7 +967,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "SCNText2D-Shaders";
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = iphoneos;
 			};
 			name = Release;
 		};
@@ -1147,7 +1147,7 @@
 				PRODUCT_NAME = "${PROJECT_NAME}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1223,7 +1223,7 @@
 				PRODUCT_NAME = "${PROJECT_NAME}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
