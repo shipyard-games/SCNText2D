@@ -115,6 +115,41 @@ public class SCNText2D {
         }
         return geometry
     }
+    
+    public static func clone(fontNamed fontName: String, toFontNamed newFontName: String, using fontConfig: SDFParams) {
+        guard let texture = textureCache[fontName], let metrics = metricsCache[fontName],
+            let atlas = atlasCache[fontName], let material = materialCache[fontName] else {
+            fatalError("Trying to clone a font that does not exist. fontName=\(fontName)")
+        }
+        
+        // Use same texture, metrics and atlas for new font
+        textureCache[newFontName] = texture
+        metricsCache[newFontName] = metrics
+        atlasCache[newFontName] = atlas
+        
+        // Create new material using the new font config.
+        guard let newMaterial = material.copy() as? SCNMaterial else {
+            fatalError("Failed to copy material.")
+        }
+        
+        switch (fontConfig.outlineColor[3], fontConfig.shadowColor[3]) {
+        case (_, let shadow) where shadow > 0.0:
+            newMaterial.program?.fragmentFunctionName = "sdfTextOutlineShadowFragment"
+            
+        case (let outline, _) where outline > 0.0:
+            newMaterial.program?.fragmentFunctionName = "sdfTextOutlineFragment"
+            
+        default:
+            newMaterial.program?.fragmentFunctionName = "sdfTextFragment"
+        }
+        
+        var fontConfig = fontConfig
+        let fontConfigData = Data(bytes: &fontConfig, count: MemoryLayout<SDFParams>.size)
+        
+        newMaterial.setValue(fontConfigData, forKey: "params")
+        
+        materialCache[newFontName] = newMaterial
+    }
 
     private static func buildGeometry(_ string: String, _ fontMetrics: FontMetrics, _ atlasData: AtlasData, _ alignment: TextAlignment, _ scale: Float, _ lineSpacing: Float) -> SCNGeometry {
     
