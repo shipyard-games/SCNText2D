@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0BEBE2235706C500255FE6 /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */; };
+		4B0BEBE3235706C500255FE6 /* OpenSans-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */; };
+		4B0BEBE4235706C500255FE6 /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */; };
+		4B0BEBE5235706C500255FE6 /* Roboto-Medium.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF79226603F300E7AC74 /* Roboto-Medium.json */; };
+		4B0BEBE6235706C500255FE6 /* Roboto-Medium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7D226603F300E7AC74 /* Roboto-Medium.plist */; };
+		4B0BEBE7235706C500255FE6 /* Roboto-Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF78226603F300E7AC74 /* Roboto-Medium.png */; };
+		4B0BEBE8235706C600255FE6 /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */; };
+		4B0BEBE9235706C600255FE6 /* OpenSans-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */; };
+		4B0BEBEA235706C600255FE6 /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */; };
+		4B0BEBEB235706C600255FE6 /* Roboto-Medium.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF79226603F300E7AC74 /* Roboto-Medium.json */; };
+		4B0BEBEC235706C600255FE6 /* Roboto-Medium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7D226603F300E7AC74 /* Roboto-Medium.plist */; };
+		4B0BEBED235706C600255FE6 /* Roboto-Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF78226603F300E7AC74 /* Roboto-Medium.png */; };
 		4B112A5122128C1B0067D10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B112A5022128C1B0067D10F /* AppDelegate.swift */; };
 		4B112A5522128C1B0067D10F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B112A5422128C1B0067D10F /* GameViewController.swift */; };
 		4B112A5822128C1B0067D10F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A5622128C1B0067D10F /* Main.storyboard */; };
@@ -612,6 +624,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B528F70221313EA00B52997 /* SCNText2D-Shaders.metallib in Resources */,
+				4B0BEBE4235706C500255FE6 /* OpenSans-Regular.png in Resources */,
+				4B0BEBE7235706C500255FE6 /* Roboto-Medium.png in Resources */,
+				4B0BEBE5235706C500255FE6 /* Roboto-Medium.json in Resources */,
+				4B0BEBE3235706C500255FE6 /* OpenSans-Regular.plist in Resources */,
+				4B0BEBE6235706C500255FE6 /* Roboto-Medium.plist in Resources */,
+				4B0BEBE2235706C500255FE6 /* OpenSans-Regular.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +645,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B528F7A2213141000B52997 /* SCNText2D-Shaders.metallib in Resources */,
+				4B0BEBEA235706C600255FE6 /* OpenSans-Regular.png in Resources */,
+				4B0BEBED235706C600255FE6 /* Roboto-Medium.png in Resources */,
+				4B0BEBEB235706C600255FE6 /* Roboto-Medium.json in Resources */,
+				4B0BEBE9235706C600255FE6 /* OpenSans-Regular.plist in Resources */,
+				4B0BEBEC235706C600255FE6 /* Roboto-Medium.plist in Resources */,
+				4B0BEBE8235706C600255FE6 /* OpenSans-Regular.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
