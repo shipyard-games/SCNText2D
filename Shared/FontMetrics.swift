@@ -10,22 +10,33 @@ import Foundation
 class FontMetrics: Codable {
 
     enum CodingKeys: String, CodingKey {
-        case ascender
-        case descender
-        case glyphData = "glyph_data"
-        case height
-        case maxAdvance = "max_advance"
-        case name
-        case size
-        case spaceAdvance = "space_advance"
+        case centerOffset = "CenterOffset"
+        case edgeWidth = "EdgeWidth"
+        case fontHeight = "FontHeight"
+        case horizontalPad = "HorizontalPad"
+        case naturalHeight = "NaturalHeight"
+        case naturalWidth = "NaturalWidth"
+        case numGlyphs = "NumGlyphs"
+        case tweakScale = "TweakScale"
+        case version = "Version"
+        case verticalPad = "VerticalPad"
+        case glyphs = "Glyphs"
     }
-
-    var ascender: Float
-    var descender: Float
-    var glyphData: [String : GlyphData]
-    var height: Float
-    var maxAdvance: Float
-    var name: String
-    var size: Int
-    var spaceAdvance: Float
+    
+    let centerOffset: Float
+    let edgeWidth: Float
+    let fontHeight: Float
+    let horizontalPad: Float
+    let naturalHeight: Float
+    let naturalWidth: Float
+    let numGlyphs: Int
+    let tweakScale: Float
+    let version: Float
+    let verticalPad: Float
+    let glyphs: [GlyphData]
+    
+    // Glyphs are populated here when font is loaded.
+    var glyphMap: [Unicode.Scalar: GlyphData] = [:]
+    var maxAscent: Float = 0.0
+    var maxDescent: Float = 0.0
 }

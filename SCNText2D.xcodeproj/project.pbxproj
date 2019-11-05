@@ -7,44 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B0BEBE2235706C500255FE6 /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */; };
-		4B0BEBE3235706C500255FE6 /* OpenSans-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */; };
-		4B0BEBE4235706C500255FE6 /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */; };
-		4B0BEBE5235706C500255FE6 /* Roboto-Medium.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF79226603F300E7AC74 /* Roboto-Medium.json */; };
-		4B0BEBE6235706C500255FE6 /* Roboto-Medium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7D226603F300E7AC74 /* Roboto-Medium.plist */; };
-		4B0BEBE7235706C500255FE6 /* Roboto-Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF78226603F300E7AC74 /* Roboto-Medium.png */; };
-		4B0BEBE8235706C600255FE6 /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */; };
-		4B0BEBE9235706C600255FE6 /* OpenSans-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */; };
-		4B0BEBEA235706C600255FE6 /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */; };
-		4B0BEBEB235706C600255FE6 /* Roboto-Medium.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF79226603F300E7AC74 /* Roboto-Medium.json */; };
-		4B0BEBEC235706C600255FE6 /* Roboto-Medium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7D226603F300E7AC74 /* Roboto-Medium.plist */; };
-		4B0BEBED235706C600255FE6 /* Roboto-Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF78226603F300E7AC74 /* Roboto-Medium.png */; };
 		4B112A5122128C1B0067D10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B112A5022128C1B0067D10F /* AppDelegate.swift */; };
 		4B112A5522128C1B0067D10F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B112A5422128C1B0067D10F /* GameViewController.swift */; };
 		4B112A5822128C1B0067D10F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A5622128C1B0067D10F /* Main.storyboard */; };
 		4B112A5A22128C1C0067D10F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A5922128C1C0067D10F /* Assets.xcassets */; };
 		4B112A5D22128C1C0067D10F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B112A5B22128C1C0067D10F /* LaunchScreen.storyboard */; };
 		4B219512225C85E200A2CB84 /* SDFText.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4BF7E9E3220FEAA0002E8328 /* SDFText.metal */; };
+		4B3BBF892371A5FD00ED60BD /* crocodile_feet_sdf.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3BBF882371A5FD00ED60BD /* crocodile_feet_sdf.png */; };
+		4B3BBF8A2371A5FD00ED60BD /* crocodile_feet_sdf.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3BBF882371A5FD00ED60BD /* crocodile_feet_sdf.png */; };
+		4B3BBF8C2371A61000ED60BD /* crocodile_feet.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 4B3BBF8B2371A61000ED60BD /* crocodile_feet.fnt */; };
+		4B3BBF8D2371A61000ED60BD /* crocodile_feet.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 4B3BBF8B2371A61000ED60BD /* crocodile_feet.fnt */; };
+		4B3BBF8E2371AA2A00ED60BD /* crocodile_feet_sdf.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3BBF882371A5FD00ED60BD /* crocodile_feet_sdf.png */; };
+		4B3BBF8F2371AA2A00ED60BD /* crocodile_feet.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 4B3BBF8B2371A61000ED60BD /* crocodile_feet.fnt */; };
+		4B3BBF902371AA2A00ED60BD /* crocodile_feet_sdf.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3BBF882371A5FD00ED60BD /* crocodile_feet_sdf.png */; };
+		4B3BBF912371AA2A00ED60BD /* crocodile_feet.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 4B3BBF8B2371A61000ED60BD /* crocodile_feet.fnt */; };
 		4B528F70221313EA00B52997 /* SCNText2D-Shaders.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 4B528F69221313C200B52997 /* SCNText2D-Shaders.metallib */; };
 		4B528F7A2213141000B52997 /* SCNText2D-Shaders.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 4B528F732213140700B52997 /* SCNText2D-Shaders.metallib */; };
 		4B528F7C2213144E00B52997 /* SDFText.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4B528F7B2213144E00B52997 /* SDFText.metal */; };
-		4BAC83DF2286A25C007B6900 /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */; };
-		4BAC83E02286A25C007B6900 /* OpenSans-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */; };
-		4BAC83E12286A25C007B6900 /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */; };
-		4BAC83E3228C3C4B007B6900 /* AtlasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC83E2228C3C4B007B6900 /* AtlasData.swift */; };
-		4BAC83E4228C3C4B007B6900 /* AtlasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC83E2228C3C4B007B6900 /* AtlasData.swift */; };
-		4BDDFF7E226603FF00E7AC74 /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */; };
-		4BDDFF7F226603FF00E7AC74 /* OpenSans-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */; };
-		4BDDFF80226603FF00E7AC74 /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */; };
-		4BDDFF81226603FF00E7AC74 /* Roboto-Medium.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF79226603F300E7AC74 /* Roboto-Medium.json */; };
-		4BDDFF82226603FF00E7AC74 /* Roboto-Medium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7D226603F300E7AC74 /* Roboto-Medium.plist */; };
-		4BDDFF83226603FF00E7AC74 /* Roboto-Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF78226603F300E7AC74 /* Roboto-Medium.png */; };
-		4BDDFF842266040000E7AC74 /* OpenSans-Regular.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */; };
-		4BDDFF852266040000E7AC74 /* OpenSans-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */; };
-		4BDDFF862266040000E7AC74 /* OpenSans-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */; };
-		4BDDFF872266040000E7AC74 /* Roboto-Medium.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF79226603F300E7AC74 /* Roboto-Medium.json */; };
-		4BDDFF882266040000E7AC74 /* Roboto-Medium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF7D226603F300E7AC74 /* Roboto-Medium.plist */; };
-		4BDDFF892266040000E7AC74 /* Roboto-Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDFF78226603F300E7AC74 /* Roboto-Medium.png */; };
 		4BE7BB56225CE5980037CC87 /* SCNText2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E986220FDA7B002E8328 /* SCNText2D.framework */; };
 		4BE7BB58225CE5BA0037CC87 /* SCNText2D.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E986220FDA7B002E8328 /* SCNText2D.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4BE7BB5C225CE64B0037CC87 /* SCNText2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7E9A3220FDAF8002E8328 /* SCNText2D.framework */; };
@@ -145,17 +124,12 @@
 		4B112A5E22128C1C0067D10F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B21951D225C99EC00A2CB84 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4B21951E225C99F600A2CB84 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		4B3BBF882371A5FD00ED60BD /* crocodile_feet_sdf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crocodile_feet_sdf.png; sourceTree = "<group>"; };
+		4B3BBF8B2371A61000ED60BD /* crocodile_feet.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crocodile_feet.fnt; sourceTree = "<group>"; };
 		4B528F69221313C200B52997 /* SCNText2D-Shaders.metallib */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "archive.metal-library"; path = "SCNText2D-Shaders.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B528F732213140700B52997 /* SCNText2D-Shaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = "SCNText2D-Shaders.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B528F7B2213144E00B52997 /* SDFText.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SDFText.metal; sourceTree = "<group>"; };
-		4BAC83E2228C3C4B007B6900 /* AtlasData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasData.swift; sourceTree = "<group>"; };
 		4BDDFF74226601AE00E7AC74 /* Charcodes.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Charcodes.csv; sourceTree = "<group>"; };
-		4BDDFF78226603F300E7AC74 /* Roboto-Medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Roboto-Medium.png"; sourceTree = "<group>"; };
-		4BDDFF79226603F300E7AC74 /* Roboto-Medium.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Roboto-Medium.json"; sourceTree = "<group>"; };
-		4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenSans-Regular.plist"; sourceTree = "<group>"; };
-		4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OpenSans-Regular.png"; sourceTree = "<group>"; };
-		4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "OpenSans-Regular.json"; sourceTree = "<group>"; };
-		4BDDFF7D226603F300E7AC74 /* Roboto-Medium.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Roboto-Medium.plist"; sourceTree = "<group>"; };
 		4BF7E986220FDA7B002E8328 /* SCNText2D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SCNText2D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF7E989220FDA7B002E8328 /* SCNText2D_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCNText2D_iOS.h; sourceTree = "<group>"; };
 		4BF7E98A220FDA7B002E8328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -263,12 +237,8 @@
 		4BE7BB63226193E80037CC87 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				4BDDFF7C226603F300E7AC74 /* OpenSans-Regular.json */,
-				4BDDFF7A226603F300E7AC74 /* OpenSans-Regular.plist */,
-				4BDDFF7B226603F300E7AC74 /* OpenSans-Regular.png */,
-				4BDDFF79226603F300E7AC74 /* Roboto-Medium.json */,
-				4BDDFF7D226603F300E7AC74 /* Roboto-Medium.plist */,
-				4BDDFF78226603F300E7AC74 /* Roboto-Medium.png */,
+				4B3BBF882371A5FD00ED60BD /* crocodile_feet_sdf.png */,
+				4B3BBF8B2371A61000ED60BD /* crocodile_feet.fnt */,
 				4BDDFF74226601AE00E7AC74 /* Charcodes.csv */,
 			);
 			path = Fonts;
@@ -351,7 +321,6 @@
 				4BF7E9BB220FDBA3002E8328 /* FontMetrics.swift */,
 				4BF7E9BE220FDBED002E8328 /* GlyphData.swift */,
 				4BF7E9C1220FDCAF002E8328 /* SCNText2D.swift */,
-				4BAC83E2228C3C4B007B6900 /* AtlasData.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -607,15 +576,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BDDFF882266040000E7AC74 /* Roboto-Medium.plist in Resources */,
-				4BDDFF872266040000E7AC74 /* Roboto-Medium.json in Resources */,
 				4B112A5D22128C1C0067D10F /* LaunchScreen.storyboard in Resources */,
-				4BDDFF862266040000E7AC74 /* OpenSans-Regular.png in Resources */,
+				4B3BBF902371AA2A00ED60BD /* crocodile_feet_sdf.png in Resources */,
 				4B112A5A22128C1C0067D10F /* Assets.xcassets in Resources */,
-				4BDDFF852266040000E7AC74 /* OpenSans-Regular.plist in Resources */,
+				4B3BBF912371AA2A00ED60BD /* crocodile_feet.fnt in Resources */,
 				4B112A5822128C1B0067D10F /* Main.storyboard in Resources */,
-				4BDDFF842266040000E7AC74 /* OpenSans-Regular.json in Resources */,
-				4BDDFF892266040000E7AC74 /* Roboto-Medium.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,12 +589,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B528F70221313EA00B52997 /* SCNText2D-Shaders.metallib in Resources */,
-				4B0BEBE4235706C500255FE6 /* OpenSans-Regular.png in Resources */,
-				4B0BEBE7235706C500255FE6 /* Roboto-Medium.png in Resources */,
-				4B0BEBE5235706C500255FE6 /* Roboto-Medium.json in Resources */,
-				4B0BEBE3235706C500255FE6 /* OpenSans-Regular.plist in Resources */,
-				4B0BEBE6235706C500255FE6 /* Roboto-Medium.plist in Resources */,
-				4B0BEBE2235706C500255FE6 /* OpenSans-Regular.json in Resources */,
+				4B3BBF892371A5FD00ED60BD /* crocodile_feet_sdf.png in Resources */,
+				4B3BBF8C2371A61000ED60BD /* crocodile_feet.fnt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,12 +606,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B528F7A2213141000B52997 /* SCNText2D-Shaders.metallib in Resources */,
-				4B0BEBEA235706C600255FE6 /* OpenSans-Regular.png in Resources */,
-				4B0BEBED235706C600255FE6 /* Roboto-Medium.png in Resources */,
-				4B0BEBEB235706C600255FE6 /* Roboto-Medium.json in Resources */,
-				4B0BEBE9235706C600255FE6 /* OpenSans-Regular.plist in Resources */,
-				4B0BEBEC235706C600255FE6 /* Roboto-Medium.plist in Resources */,
-				4B0BEBE8235706C600255FE6 /* OpenSans-Regular.json in Resources */,
+				4B3BBF8A2371A5FD00ED60BD /* crocodile_feet_sdf.png in Resources */,
+				4B3BBF8D2371A61000ED60BD /* crocodile_feet.fnt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,9 +615,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BAC83E02286A25C007B6900 /* OpenSans-Regular.plist in Resources */,
-				4BAC83E12286A25C007B6900 /* OpenSans-Regular.png in Resources */,
-				4BAC83DF2286A25C007B6900 /* OpenSans-Regular.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,14 +622,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BDDFF82226603FF00E7AC74 /* Roboto-Medium.plist in Resources */,
+				4B3BBF8E2371AA2A00ED60BD /* crocodile_feet_sdf.png in Resources */,
 				4BF7E9D4220FE2DA002E8328 /* Main.storyboard in Resources */,
-				4BDDFF80226603FF00E7AC74 /* OpenSans-Regular.png in Resources */,
-				4BDDFF7E226603FF00E7AC74 /* OpenSans-Regular.json in Resources */,
-				4BDDFF81226603FF00E7AC74 /* Roboto-Medium.json in Resources */,
-				4BDDFF7F226603FF00E7AC74 /* OpenSans-Regular.plist in Resources */,
+				4B3BBF8F2371AA2A00ED60BD /* crocodile_feet.fnt in Resources */,
 				4BF7E9D1220FE2DA002E8328 /* Assets.xcassets in Resources */,
-				4BDDFF83226603FF00E7AC74 /* Roboto-Medium.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,7 +662,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BF7E9BF220FDBED002E8328 /* GlyphData.swift in Sources */,
-				4BAC83E3228C3C4B007B6900 /* AtlasData.swift in Sources */,
 				4BF7E9BC220FDBA3002E8328 /* FontMetrics.swift in Sources */,
 				4BF7E9C2220FDCAF002E8328 /* SCNText2D.swift in Sources */,
 			);
@@ -731,7 +680,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BF7E9C0220FDBED002E8328 /* GlyphData.swift in Sources */,
-				4BAC83E4228C3C4B007B6900 /* AtlasData.swift in Sources */,
 				4BF7E9BD220FDBA3002E8328 /* FontMetrics.swift in Sources */,
 				4BF7E9C3220FDCAF002E8328 /* SCNText2D.swift in Sources */,
 			);

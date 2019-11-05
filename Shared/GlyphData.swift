@@ -10,28 +10,24 @@ import Foundation
 class GlyphData: Codable {
 
     enum CodingKeys: String, CodingKey {
-        case advanceX = "advance_x"
-        case bboxHeight = "bbox_height"
-        case bboxWidth = "bbox_width"
-        case bearingX = "bearing_x"
-        case bearingY = "bearing_y"
-        case charcode
-        case kernings
-        case s0
-        case s1
-        case t0
-        case t1
+        case advanceX = "AdvanceX"
+        case advanceY = "AdvanceY"
+        case height = "Height"
+        case width = "Width"
+        case bearingX = "BearingX"
+        case bearingY = "BearingY"
+        case charCode = "CharCode"
+        case x = "X"
+        case y = "Y"
     }
 
-    var advanceX: Float
-    var bboxHeight: Float
-    var bboxWidth: Float
-    var bearingX: Float
-    var bearingY: Float
-    var charcode: String
-    var kernings: [String : Float]
-    var s0: Float
-    var s1: Float
-    var t0: Float
-    var t1: Float
+    let advanceX: Float
+    let advanceY: Float
+    let height: Float
+    let width: Float
+    let bearingX: Float
+    let bearingY: Float
+    let charCode: Int
+    let x: Float
+    let y: Float
 }
