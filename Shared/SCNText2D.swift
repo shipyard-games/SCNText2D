@@ -163,122 +163,117 @@ public class SCNText2D {
 
     private static func buildGeometry(_ string: String, _ fontMetrics: FontMetrics, _ atlasData: AtlasData, _ alignment: TextAlignment, _ scale: Float, _ lineSpacing: Float) -> SCNGeometry {
     
+        let lines = string.unicodeScalars.split(separator: Unicode.Scalar("\n"))
+        
         let textureWidth = atlasData.meta.width
         let textureHeight = atlasData.meta.height
-
+        
         var cursorX: Float = 0.0
         var cursorY: Float = 0.0
 
         var vertices = [Vertex]()
-        vertices.reserveCapacity(string.count * 4) // 4 vertices per character
         
         var lineVertices = [Vertex]()
 
         var indices = [UInt16]()
-        indices.reserveCapacity(string.count * 6) // 6 indices per character
 
         var minX: Float = Float.infinity
         var minY: Float = Float.infinity
         var maxX: Float = -Float.infinity
         var maxY: Float = -Float.infinity
-
-        // We keep track of the number of newlines, since they don't generate any
-        // vertices like all other glyphs do. We use this count to adjust the indices
-        // of the test geometry.
-        var newlineCount = 0
         
-        for (i, char) in string.unicodeScalars.enumerated() {
-            guard char != Unicode.Scalar("\n") else { // newline
-                cursorY -= fontMetrics.height * scale * lineSpacing
-                
-                alignLine(&lineVertices, withAlignment: alignment, lineWidth: cursorX)
-                vertices.append(contentsOf: lineVertices)
-                
-                cursorX = 0
-                newlineCount += 1
-                lineVertices = []
-                continue
-            }
-
-            let char = fontMetrics.glyphData["\(char)"] != nil ? char : " " // If char not found in atlas, use space " "
-            guard let glyph = fontMetrics.glyphData["\(char)"] else {
-                cursorX += fontMetrics.spaceAdvance * scale
-                continue
-            }
-            
-            let uvKey = String(format: "0x%04X", char.value).lowercased()
-            guard let uvData = atlasData.frames[uvKey] else {
-                fatalError("No UV-coordinates for character '\(char)'!")
-            }
-
-            if (i > 0) {
-                let strIndex = string.index(string.startIndex, offsetBy: i - 1)
-                let kernChar = String(string[strIndex])
-                let kernVal = glyph.kernings[kernChar] ?? 0.0
-                if (kernVal != 0.0 && (kernVal < -0.001 || kernVal > 0.001)) {
-                    cursorX += kernVal * scale;
+        for line in lines {
+            var lineMaxYOffset: Float = -Float.infinity
+            for (i, char) in line.enumerated() {
+                guard let glyph = fontMetrics.glyphData["\(char)"] else {
+                    cursorX += fontMetrics.spaceAdvance * scale
+                    continue
                 }
+                
+                let uvKey = String(format: "0x%04X", char.value).lowercased()
+                guard let uvData = atlasData.frames[uvKey] else {
+                    fatalError("No UV-coordinates for character '\(char)'!")
+                }
+                
+                if (i > 0) {
+                    let strIndex = string.index(string.startIndex, offsetBy: i - 1)
+                    let kernChar = String(string[strIndex])
+                    let kernVal = glyph.kernings[kernChar] ?? 0.0
+                    if (kernVal != 0.0 && (kernVal < -0.001 || kernVal > 0.001)) {
+                        cursorX += kernVal * scale;
+                    }
+                }
+                
+                let glyphWidth    = glyph.bboxWidth * scale;
+                let glyphHeight   = glyph.bboxHeight * scale;
+                let glyphBearingX = glyph.bearingX * scale;
+                let glyphBearingY = glyph.bearingY * scale;
+                let glyphAdvanceX = glyph.advanceX * scale;
+                
+                let x = cursorX + glyphBearingX;
+                let y = cursorY + glyphBearingY;
+                let z = Float(i) * 0.001
+                
+                let lineYOffset = glyphBearingY - glyphHeight
+                
+                if lineYOffset < 0.0 { // below baseline
+                    if lineYOffset < lineMaxYOffset {
+                        lineMaxYOffset = lineYOffset
+                    }
+                }
+                
+                if y > maxY { maxY = y}
+                if x < minX { minX = x }
+                
+                if (y - glyphHeight) < minY { minY = y - glyphHeight }
+                if (x + glyphWidth) > maxX { maxX = x + glyphWidth }
+                
+                let w = uvData["w"]! / textureWidth
+                let h = uvData["h"]! / textureHeight
+                let s0 = uvData["x"]! / textureWidth
+                let t0 = uvData["y"]! / textureHeight
+                let s1 = s0 + w
+                let t1 = t0 + h
+                
+                let v1 = Vertex(x: x, y: y - glyphHeight, z: z, u: s0, v: t1)
+                let v2 = Vertex(x: x + glyphWidth, y: y - glyphHeight, z: z, u: s1, v: t1)
+                let v3 = Vertex(x: x, y: y, z: z, u: s0, v: t0)
+                let v4 = Vertex(x: x + glyphWidth, y: y, z: z, u: s1, v: t0)
+                
+                lineVertices.append(v1)
+                lineVertices.append(v2)
+                lineVertices.append(v3)
+                lineVertices.append(v4)
+                
+                let curidx = UInt16(vertices.count + i * 4)
+                indices.append(curidx + 0)
+                indices.append(curidx + 1)
+                indices.append(curidx + 2) // first triangle
+                indices.append(curidx + 1)
+                indices.append(curidx + 3)
+                indices.append(curidx + 2) // second triangle
+                
+                cursorX += glyphAdvanceX
             }
-
-            let glyphWidth    = glyph.bboxWidth * scale;
-            let glyphHeight   = glyph.bboxHeight * scale;
-            let glyphBearingX = glyph.bearingX * scale;
-            let glyphBearingY = glyph.bearingY * scale;
-            let glyphAdvanceX = glyph.advanceX * scale;
-
-            let x = cursorX + glyphBearingX;
-            let y = cursorY + glyphBearingY;
-            let z = Float(i) * 0.001
-
-            if x > maxX { maxX = x }
-            if x < minX { minX = x }
-            if y > maxY { maxY = y }
-            if y < minY { minY = y }
             
-            let w = uvData["w"]! / textureWidth
-            let h = uvData["h"]! / textureHeight
-            let s0 = uvData["x"]! / textureWidth
-            let t0 = uvData["y"]! / textureHeight
-            let s1 = s0 + w
-            let t1 = t0 + h
+            cursorY -= fontMetrics.height * scale * lineSpacing
             
-            let v1 = Vertex(x: x, y: y - glyphHeight, z: z, u: s0, v: t1)
-            let v2 = Vertex(x: x + glyphWidth, y: y - glyphHeight, z: z, u: s1, v: t1)
-            let v3 = Vertex(x: x, y: y, z: z, u: s0, v: t0)
-            let v4 = Vertex(x: x + glyphWidth, y: y, z: z, u: s1, v: t0)
+            alignLine(&lineVertices, withAlignment: alignment, lineWidth: cursorX)
             
-            lineVertices.append(v1)
-            lineVertices.append(v2)
-            lineVertices.append(v3)
-            lineVertices.append(v4)
-
-            let curidx: UInt16 = UInt16(i - newlineCount) * 4
-            indices.append(curidx + 0)
-            indices.append(curidx + 1)
-            indices.append(curidx + 2) // first triangle
-            indices.append(curidx + 1)
-            indices.append(curidx + 3)
-            indices.append(curidx + 2) // second triangle
-
-            cursorX += glyphAdvanceX
+            vertices.append(contentsOf: lineVertices)
+            
+            cursorX = 0
+            lineVertices = []
         }
-        
-        // Add the last line too.
-        alignLine(&lineVertices, withAlignment: alignment, lineWidth: cursorX)
-        vertices.append(contentsOf: lineVertices)
 
         // Center align the vertices vertically
-        let height = maxY - minY
         let width = maxX - minX
-
         vertices = vertices.map {
             (vertex: Vertex) in
             var vertex = vertex
-            vertex.y -= height / 2
-            
             switch (alignment) {
             case .centered:
-                break // already aligned per line
+            break // already aligned per line
             case .left:
                 vertex.x -= width / 2
             case .right:
