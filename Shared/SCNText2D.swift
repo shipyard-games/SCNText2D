@@ -175,7 +175,6 @@ public class SCNText2D {
                 let glyphBearingX = glyph.bearingX * scale;
                 let glyphBearingY = glyph.bearingY * scale;
                 let glyphAdvanceX = glyph.advanceX * scale;
-                let glyphAdvanceY = glyph.advanceY * scale;
 
                 let x = cursorX + glyphBearingX;
                 let y = cursorY + glyphBearingY;
@@ -223,7 +222,7 @@ public class SCNText2D {
                 cursorX += glyphAdvanceX
             }
 
-            cursorY -= fontMetrics.maxDescent + fontMetrics.fontHeight * scale * lineSpacing
+            cursorY -= (fontMetrics.maxAscent * lineSpacing) * scale
 
             alignLine(&lineVertices, withAlignment: alignment, lineWidth: cursorX)
 
