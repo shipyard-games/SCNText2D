@@ -81,14 +81,14 @@ class GameViewController: UIViewController {
         """
         
         let fontConfig = SCNText2D.SDFParams(
-            smoothing: 0.1,
-            fontWidth: 0.9,
-            outlineWidth: 0.5,
-            shadowWidth: 0.5,
-            shadowOffset: float2(0.0, 0.0),
-            fontColor: float4(0.0, 0.0, 0.0, 1.0),
-            outlineColor: float4(1.0, 1.0, 0.0, 1.0),
-            shadowColor: float4(0.0, 0.0, 0.0, 0.0)
+            smoothing: 0.02,
+            fontWidth: 0.234,
+            outlineWidth: 0.137,
+            shadowWidth: 0.0,
+            shadowOffset: SCNVector4(0.0, 0.0, 0.0, 0.0),
+            fontColor: SCNText2D.Color.red,
+            outlineColor: SCNText2D.Color.yellow,
+            shadowColor: SCNText2D.Color.clear
         )
         
         SCNText2D.load(font: "OpenSans-Regular", bundle: Bundle.main, fontConfig: fontConfig)
@@ -99,7 +99,6 @@ class GameViewController: UIViewController {
         
         let node = SCNNode()
         node.eulerAngles.x += -35.0 * (180.0 / .pi)
-        
         
         let textNode = SCNNode()
         textNode.geometry = textGeometry

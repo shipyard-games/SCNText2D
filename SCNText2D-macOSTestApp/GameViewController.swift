@@ -91,15 +91,14 @@ class GameViewController: NSViewController {
             shadowColor: SCNText2D.Color.clear
         )
         
-        SCNText2D.load(font: "crocodile_feet", bundle: Bundle.main, fontConfig: fontConfig)
+        SCNText2D.load(font: "OpenSans-Regular", bundle: Bundle.main, fontConfig: fontConfig)
 
         let textGeometry = SCNText2D.create(from: text,
-                                            withFontNamed: "crocodile_feet",
+                                            withFontNamed: "OpenSans-Regular",
                                             alignment: .centered)
 
         let node = SCNNode()
         node.eulerAngles.x += -35.0 * (180.0 / .pi)
-        node.scale = SCNVector3(0.01, 0.01, 0.01)
         
         let textNode = SCNNode()
         textNode.geometry = textGeometry

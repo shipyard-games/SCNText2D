@@ -56,10 +56,8 @@ public class SCNText2D {
     
     public static func load(font fontName: String, bundle: Bundle, fontConfig: SDFParams) {
         SCNText2D.loadFontMetrics(for: fontName, bundle: bundle)
-    
-        let bundle = Bundle(for: SCNText2D.self)
         
-        let textureURL = bundle.url(forResource: "crocodile_feet_sdf", withExtension: "png")!
+        let textureURL = bundle.url(forResource: "\(fontName)_sdf", withExtension: "png")!
         let textureMaterialProperty = SCNMaterialProperty(contents: textureURL)
         
         let material = SCNMaterial()
@@ -143,6 +141,9 @@ public class SCNText2D {
 
     private static func buildGeometry(_ string: String, _ fontMetrics: FontMetrics, _ alignment: TextAlignment, _ scale: Float, _ lineSpacing: Float) -> SCNGeometry {
     
+        // Fontue creates huge geometries so we "scale the scale" a bit.
+        let scale = scale * 0.01
+        
         let lines = string.unicodeScalars.split(separator: Unicode.Scalar("\n"))
         
         let textureWidth = fontMetrics.naturalWidth
@@ -178,7 +179,7 @@ public class SCNText2D {
 
                 let x = cursorX + glyphBearingX;
                 let y = cursorY + glyphBearingY;
-                let z = Float(i) * 0.1
+                let z = Float(i) * 0.1 * scale
 
                 let lineYOffset = glyphBearingY - glyphHeight
 
